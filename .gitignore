@@ -1,0 +1,6 @@
+*.pt
+*.pth
+*.gz
+*.pyc
+.vscode
+runs
