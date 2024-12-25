@@ -65,7 +65,7 @@ def cfg():
     t_loss_scaler = 0.0
     ignore_label = 255
     print_interval = 100
-    save_snapshot_every = 3000
+    save_snapshot_every = 2000
     max_iters_per_load = 1000  # epoch size, interval for reloading the dataset
 
     # Network

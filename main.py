@@ -5,6 +5,24 @@ import os
 import psutil  # 用于系统内存管理
 import torch
 from log2csv import extract_logger_data
+import csv
+
+
+def find_max_mean_row(file_path):
+    max_mean_value = float("-inf")
+    max_mean_row = None
+
+    with open(file_path, mode="r", newline="") as file:
+        reader = csv.DictReader(file)
+
+        for row in reader:
+            mean_value = float(row["mean"])
+            if mean_value > max_mean_value:
+                max_mean_value = mean_value
+                max_mean_row = row
+
+    print(max_mean_row)
+
 
 def config_procee(config_updates):
     # 转换配置为Sacred格式
@@ -90,7 +108,7 @@ def run_test(config_updates):
 if __name__ == "__main__":
 
     eval_fold_list = [0, 1, 2, 3, 4]
-    eval_fold_list = eval_fold_list[:]
+    eval_fold_list = eval_fold_list[:1]
     dataset = "CMR"
 
     for eval_fold in eval_fold_list:
@@ -99,22 +117,23 @@ if __name__ == "__main__":
 
         # 配置参数保持不变
         train_config_updates = {
-            # "reload_model_path": "{prepath}/2/snapshots/1000.pth",
-            "n_steps": 36000,
+            "reload_model_path": "{prepath}/1/snapshots/9000.pth",
+            "n_steps": 24000,
             "mode": "train",
             "eval_fold": eval_fold,
             "dataset": dataset,
+            "save_snapshot_every": 2000,
         }
         # 运行脚本
         print("Running training...")
         run_train(train_config_updates)
 
         # 验证模型测试
-        val_model = range(3, 36, 3)
+        val_model = range(3, 24, 3)
         # val_model = [7]
         for i in val_model:
             test_config_updates = {
-                "reload_model_path": f"{prepath}/1/snapshots/{i}000.pth",
+                "reload_model_path": f"{prepath}/2/snapshots/{i}000.pth",
                 # "reload_model_path": f"{prepath}/4/snapshots/7000.pth",
                 "mode": "val",
                 "dataset": dataset,
@@ -128,3 +147,5 @@ if __name__ == "__main__":
         base_directory = f"./runs/GMRD_{dataset}_CV{eval_fold}_val"
         output_csv_path = "GMRD_{dataset}_CV{eval_fold}_val.csv"
         extract_logger_data(base_directory, output_csv_path)
+        # 输出最高Dice值行
+        find_max_mean_row(output_csv_path)

@@ -117,6 +117,9 @@ def main(_run, _config, _log):
     i_iter = 0
     _log.info(f"Start training...")
 
+    # 初始化最低损失值为无穷大
+    min_total_loss = float("inf")
+
     for sub_epoch in tqdm(range(n_sub_epochs), desc="Sub Epochs"):
         _log.info(f'This is epoch "{sub_epoch}" of "{n_sub_epochs}" epochs.')
         for _, sample in tqdm(
@@ -208,5 +211,19 @@ def main(_run, _config, _log):
                 )
 
             i_iter += 1
+
+        # 计算当前的平均损失
+        current_total_loss = log_loss["total_loss"] / _config["print_interval"]
+        # 比较当前损失与最低损失
+        if current_total_loss < min_total_loss:
+            _log.info(
+                f"Total loss {min_total_loss}-{min_total_loss - current_total_loss}"
+            )
+            min_total_loss = current_total_loss
+        else:
+            _log.info(
+                f"Total loss {min_total_loss}+{current_total_loss - min_total_loss}"
+            )
+
     _log.info("End of training.")
     return 1
