@@ -39,7 +39,7 @@ def cfg():
     # RUNS = 1
 
     ## dataset
-    dataset = "CHAOST2"  # i.e. abdominal MRI - 'CHAOST2'; cardiac MRI - CMR ; SABS
+    dataset = "CMR"  # i.e. abdominal MRI - 'CHAOST2'; cardiac MRI - CMR ; SABS
     exclude_label = None  # None, for not excluding test labels;
     # 1 for Liver, 2 for RK, 3 for LK, 4 for Spleen in 'CHAOST2'
     if dataset == "CMR":
@@ -85,7 +85,7 @@ def cfg():
     path = {
         "log_dir": "./runs",
         "CHAOST2": {"data_dir": "./data/CHAOST2"},
-        "SABS": {"data_dir": "E:\\CodeAchieve\\Data\\sabs_CT_normalized"},
+        "SABS": {"data_dir": "/data/SABS"},
         "CMR": {"data_dir": "./data/CMR"},
     }
 
