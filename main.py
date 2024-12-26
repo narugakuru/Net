@@ -13,8 +13,8 @@ if __name__ == "__main__":
 
         # 配置参数保持不变
         train_config_updates = {
-            "reload_model_path": f"{prepath}/2/snapshots/8000.pth",
-            "n_steps": 20000,
+            "reload_model_path": f"{prepath}/2/snapshots/6000.pth",
+            "n_steps": 30000,
             "mode": "train",
             "eval_fold": eval_fold,
             "dataset": dataset,
