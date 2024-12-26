@@ -23,8 +23,14 @@ labels = sorted(labels, key=lambda x: int(x.split('_')[-1].split('.nii.gz')[0]))
 fg_thresh = 10
 
 MODE = 'MIDDLE'
+# 控制 Felzenszwalb 算法生成的超像素区域的最小尺寸
+# 较大的 n_sv 值会生成较大的超像素区域,导致分割更粗糙
+# 较小的 n_sv 值会生成较小的超像素区域,分割更细致
+# n_sv 值越小占用显存越高？
 n_sv = 5000
 # n_sv = 1000
+
+
 # if ~os.path.exists(f'./data/CHAOST2/supervoxels_{n_sv}/'):
 #     os.mkdir(f'./data/CHAOST2/supervoxels_{n_sv}/')
 if ~os.path.exists(f"./data/SABS/supervoxels_{n_sv}/"):

@@ -118,7 +118,7 @@ def main(_run, _config, _log):
     _log.info(f"Start training...")
 
     # 初始化最低损失值为无穷大
-    min_total_loss = float("inf")
+    min_total_loss = 1e10
 
     for sub_epoch in tqdm(range(n_sub_epochs), desc="Sub Epochs"):
         _log.info(f'This is epoch "{sub_epoch}" of "{n_sub_epochs}" epochs.')
@@ -201,6 +201,15 @@ def main(_run, _config, _log):
                     f" align_loss: {align_loss}"
                 )
 
+                # 比较当前损失与最低损失
+                if total_loss < min_total_loss:
+                    _log.info(
+                        f"Min total loss {min_total_loss}-{min_total_loss - total_loss}"
+                    )
+                    min_total_loss = total_loss
+                else:
+                    _log.info(f"Min total loss {min_total_loss}")
+
             if (i_iter + 1) % _config["save_snapshot_every"] == 0:
                 _log.info("###### Taking snapshot ######")
                 torch.save(
@@ -211,19 +220,6 @@ def main(_run, _config, _log):
                 )
 
             i_iter += 1
-
-        # 计算当前的平均损失
-        current_total_loss = log_loss["total_loss"] / _config["print_interval"]
-        # 比较当前损失与最低损失
-        if current_total_loss < min_total_loss:
-            _log.info(
-                f"Total loss {min_total_loss}-{min_total_loss - current_total_loss}"
-            )
-            min_total_loss = current_total_loss
-        else:
-            _log.info(
-                f"Total loss {min_total_loss}+{current_total_loss - min_total_loss}"
-            )
 
     _log.info("End of training.")
     return 1

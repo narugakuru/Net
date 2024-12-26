@@ -74,7 +74,7 @@ def cfg():
 
     optim_type = "sgd"
     optim = {
-        "lr": 1e-3,
+        "lr": 1e-4,
         "momentum": 0.9,
         "weight_decay": 5e-4,
     }
