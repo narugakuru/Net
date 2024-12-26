@@ -4,4 +4,7 @@
 *.pyc
 *.7z
 .vscode
+# runs/*/*.py
 runs
+*/source/*
+output.log

@@ -28,6 +28,10 @@ Download pre-trained ResNet-101 weights [vanilla version](https://download.pytor
 ### Training and Inference
 Run `main.py` 
 
+**后台保持运行**
+
+nohup python main.py > output.log 2>&1 &
+
 ```
 FewShotSeg (nn.Module)
 ├── encoder: Res101Encoder (特征提取器，可加载预训练权重)

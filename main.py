@@ -13,8 +13,8 @@ if __name__ == "__main__":
 
         # 配置参数保持不变
         train_config_updates = {
-            "reload_model_path": f"{prepath}/2/snapshots/8000.pth",
-            "n_steps": 20000,
+            "reload_model_path": f"{prepath}/2/snapshots/6000.pth",
+            "n_steps": 30000,
             "mode": "train",
             "eval_fold": eval_fold,
             "dataset": dataset,
@@ -27,9 +27,9 @@ if __name__ == "__main__":
         # 验证模型测试
         snapshot_files = get_latest_snapshot_files(prepath)
         files = [
-            "E:/CodeAchieve/PaperCode/GMRD/runs/GMRD_CMR_CV0_train/1/snapshots/3000.pth",
-            "E:/CodeAchieve/PaperCode/GMRD/runs/GMRD_CMR_CV0_train/1/snapshots/6000.pth",
-            "E:/CodeAchieve/PaperCode/GMRD/runs/GMRD_CMR_CV0_train/1/snapshots/9000.pth",
+            "./runs/GMRD_CMR_CV0_train/1/snapshots/3000.pth",
+            "./runs/GMRD_CMR_CV0_train/1/snapshots/6000.pth",
+            "./runs/GMRD_CMR_CV0_train/1/snapshots/9000.pth",
         ]
         for snapshot in snapshot_files:
             test_config_updates = {
