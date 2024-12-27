@@ -9,7 +9,10 @@ import re
 
 
 def find_max_mean_row(file_path):
-    """找到mean列的最大值"""
+    """找到mean列的最大值
+    参数:
+        file_path (str): 输入的CSV文件路径
+    """
     max_mean_value = float("-inf")
     max_mean_row = None
 
@@ -26,7 +29,12 @@ def find_max_mean_row(file_path):
 
 
 def get_latest_snapshot_files(prepath):
-    """动态获取最新所有模型路径"""
+    """动态获取最新所有模型路径
+    参数:
+        prepath (str): 要搜索的父路径
+    返回:
+        List[str]: 最新快照文件的路径列表
+    """
     # 获取prepath路径下的所有文件夹
     subdirs = [
         d for d in os.listdir(prepath) if os.path.isdir(os.path.join(prepath, d))
@@ -55,7 +63,12 @@ def get_latest_snapshot_files(prepath):
 
 
 def config_procee(config_updates):
-    """转换配置为Sacred格式"""
+    """转换配置为Sacred格式
+    参数:
+        config_updates (dict): 包含配置项的字典
+    返回:
+        List[str]: 转换后的配置参数列表
+    """
     config_args = ["with"]
     for key, value in config_updates.items():
         if isinstance(value, str):
@@ -97,7 +110,12 @@ def clean_memory():
 
 
 def memory_cleanup(func):
-    """清理GPU和系统内存的装饰器"""
+    """清理GPU和系统内存的装饰器
+    参数:
+        func (function): 需要装饰的函数
+    返回:
+        function: 包装后的函数
+    """
 
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
@@ -121,6 +139,10 @@ def memory_cleanup(func):
 
 @memory_cleanup
 def run_train(config_updates):
+    """运行训练过程
+    参数:
+        config_updates (dict): 更新的训练配置
+    """
     config_args = config_procee(config_updates)
     command = ["python", "train.py"] + config_args
     print("Executing command:", " ".join(command))
@@ -129,6 +151,10 @@ def run_train(config_updates):
 
 @memory_cleanup
 def run_test(config_updates):
+    """运行测试过程
+    参数:
+        config_updates (dict): 更新的测试配置
+    """
     config_args = config_procee(config_updates)
     command = ["python", "test.py"] + config_args
     print("Executing command:", " ".join(command))
@@ -136,7 +162,11 @@ def run_test(config_updates):
 
 
 def extract_logger_data(base_dir, output_csv):
-    """获取所有子文件夹路径，并按自然排序，提取所有log日志的精度"""
+    """获取所有子文件夹路径，并按自然排序，提取所有log日志的精度
+    参数:
+        base_dir (str): 基础目录路径
+        output_csv (str): 输出CSV文件路径
+    """
 
     def natural_sort_key(s):
         return [

@@ -4,6 +4,7 @@
 *.pyc
 *.7z
 .vscode
+demo.py
 # runs/*/*.py
 runs
 */source/*

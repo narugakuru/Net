@@ -566,14 +566,14 @@ class FewShotSeg(nn.Module):
 
     def get_fg_fts(self, fts, mask):
         """
-        通过掩模选择前景特征
+               通过掩模选择前景特征
 
-        Args:
-            fts: 输入特征，形状为 1 x C x H x W
-            mask: 前景掩模，形状为 H x W
+               Args:
+                   fts: 输入特征，形状为 1 x C x H x W
+                   mask: 前景掩模，形状为 H x W
 
         Returns:
-            fg_fts: 掩模后的前景特征
+                   fg_fts: 掩模后的前景特征
         """
         _, c, h, w = fts.shape
         # 选择掩模后的前景特征
