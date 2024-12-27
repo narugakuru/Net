@@ -1,6 +1,4 @@
 import math
-
-import numpy as np
 from einops import rearrange
 import torch
 import torch.nn as nn
@@ -13,10 +11,6 @@ from mmseg.models.utils import PatchEmbed, nchw_to_nlc, nlc_to_nchw
 from mmseg.ops import resize
 from model.MaskMultiheadAttention import MaskMultiHeadAttention
 
-#add
-from util.util import scoremap2bbox
-import torch.nn.functional as F
-from pytorch_grad_cam.utils.image import scale_cam_image
 
 class MixFFN(BaseModule):
     def __init__(self,
@@ -113,13 +107,14 @@ class EfficientMultiheadAttention(MultiheadAttention):
         else:
             x_kv = source
         if self.sr_ratio > 1:
-            x_kv = nlc_to_nchw(x_kv, hw_shape)  #[2,3600,64]->[2,64,60,60]
-            x_kv = self.sr(x_kv)  #[2,64,60,60]->[2,64,15,15]
-            x_kv = nchw_to_nlc(x_kv) #[2,64,15,15]->[2,225,64]
+            x_kv = nlc_to_nchw(x_kv, hw_shape)
+            x_kv = self.sr(x_kv)
+            x_kv = nchw_to_nlc(x_kv)
             x_kv = self.norm(x_kv)
 
         if identity is None:
             identity = x_q
+
         out, weight = self.attn(q=x_q, k=x_kv, v=x_kv, mask=mask, cross=cross)
         return identity + self.dropout_layer(self.proj_drop(out)), weight
 
@@ -167,32 +162,41 @@ class TransformerEncoderLayer(BaseModule):
         if source is None:
             x, weight = self.attn(self.norm1(x), hw_shape, identity=x)
         else:
-            x, weight = self.attn(self.norm1(x), hw_shape, source=self.norm1(source), identity=x, mask=mask,
-                                  cross=cross)
+            x, weight = self.attn(
+                self.norm1(x),
+                hw_shape,
+                source=self.norm1(source),
+                identity=x,
+                mask=mask,
+                cross=cross,
+            )
         x = self.ffn(self.norm2(x), hw_shape, identity=x)
         return x, weight
 
 
 class MixVisionTransformer(BaseModule):
-    def __init__(self,
-                 shot=1,
-                 in_channels=64,
-                 num_similarity_channels=2,
-                 num_down_stages=3,
-                 embed_dims=64,
-                 num_heads=[2, 4, 8],
-                 match_dims=64,
-                 match_nums_heads=2,
-                 down_patch_sizes=[1, 3, 3],
-                 down_stridess=[1, 2, 2],
-                 down_sr_ratio=[4, 2, 1],
-                 mlp_ratio=4,
-                 drop_rate=0.1,
-                 attn_drop_rate=0.,
-                 qkv_bias=False,
-                 act_cfg=dict(type='GELU'),
-                 norm_cfg=dict(type='LN', eps=1e-6),
-                 init_cfg=None):
+
+    def __init__(
+        self,
+        shot=1,
+        in_channels=64,
+        num_similarity_channels=2,
+        num_down_stages=3,
+        embed_dims=64,
+        num_heads=[2, 4, 8],
+        match_dims=64,
+        match_nums_heads=2,
+        down_patch_sizes=[1, 3, 3],
+        down_stridess=[1, 2, 2],
+        down_sr_ratio=[4, 2, 1],
+        mlp_ratio=4,
+        drop_rate=0.1,
+        attn_drop_rate=0.0,
+        qkv_bias=False,
+        act_cfg=dict(type="GELU"),
+        norm_cfg=dict(type="LN", eps=1e-6),
+        init_cfg=None,
+    ):
         super(MixVisionTransformer, self).__init__(init_cfg=init_cfg)
         self.shot = shot
 
@@ -243,25 +247,30 @@ class MixVisionTransformer(BaseModule):
 
         # -------------------------------------------------------- Corss Attention for Down Matching ------------------------------------------------------------
         self.match_layers = ModuleList()
-        if self.shot == 1:
-            conv_channel = self.match_dims + 2 * self.num_similarity_channels
-        else:
-            conv_channel = self.match_dims + 2 * self.num_similarity_channels + 8
         for i in range(self.num_down_stages):
-            level_match_layers = ModuleList([
-                TransformerEncoderLayer(
-                    embed_dims=self.match_dims,
-                    num_heads=self.match_nums_heads,
-                    feedforward_channels=self.mlp_ratio * self.match_dims,
-                    drop_rate=drop_rate,
-                    attn_drop_rate=attn_drop_rate,
-                    qkv_bias=qkv_bias,
-                    act_cfg=act_cfg,
-                    norm_cfg=norm_cfg,
-                    sr_ratio=1
-                ),
-                ConvModule(conv_channel, self.match_dims, kernel_size=3, stride=1,
-                           padding=1, norm_cfg=dict(type="SyncBN"))])
+            level_match_layers = ModuleList(
+                [
+                    TransformerEncoderLayer(
+                        embed_dims=self.match_dims,
+                        num_heads=self.match_nums_heads,
+                        feedforward_channels=self.mlp_ratio * self.match_dims,
+                        drop_rate=drop_rate,
+                        attn_drop_rate=attn_drop_rate,
+                        qkv_bias=qkv_bias,
+                        act_cfg=act_cfg,
+                        norm_cfg=norm_cfg,
+                        sr_ratio=1,
+                    ),
+                    ConvModule(
+                        self.match_dims + self.num_similarity_channels,
+                        self.match_dims,
+                        kernel_size=3,
+                        stride=1,
+                        padding=1,
+                        norm_cfg=dict(type="SyncBN"),
+                    ),
+                ]
+            )
             self.match_layers.append(level_match_layers)
 
         self.parse_layers = nn.ModuleList([nn.Sequential(
@@ -299,13 +308,12 @@ class MixVisionTransformer(BaseModule):
         else:
             super(MixVisionTransformer, self).init_weights()
 
-    def forward(self, q_x, s_x, mask, similarity, ori_similarity):
+    def forward(self, q_x, s_x, mask, similarity):
         down_query_features = []
         down_support_features = []
         hw_shapes = []
         down_masks = []
         down_similarity = []
-        down_similarity_ori = []
         weights = []
         for i, layer in enumerate(self.down_sample_layers):
             q_x, q_hw_shape = layer[0](q_x)
@@ -317,13 +325,13 @@ class MixVisionTransformer(BaseModule):
             tmp_mask = rearrange(tmp_mask, "(b n) 1 h w -> b 1 (n h w)", n=self.shot)
             tmp_mask = tmp_mask.repeat(1, q_hw_shape[0] * q_hw_shape[1], 1)
             tmp_similarity = resize(similarity, q_hw_shape, mode="bilinear", align_corners=True)
-            tmp_ori_similarity = resize(ori_similarity, q_hw_shape, mode="bilinear", align_corners=True)
-            down_query_features.append(q_x)     # intermediate feature maps
-            down_support_features.append(rearrange(s_x, "(b n) l c -> b (n l) c", n=self.shot))  # intermediate feature maps
+            down_query_features.append(q_x)
+            down_support_features.append(
+                rearrange(s_x, "(b n) l c -> b (n l) c", n=self.shot)
+            )
             hw_shapes.append(q_hw_shape)
             down_masks.append(tmp_mask)
             down_similarity.append(tmp_similarity)
-            down_similarity_ori.append(tmp_ori_similarity)
             if i != self.num_down_stages - 1:
                 q_x, s_x = nlc_to_nchw(q_x, q_hw_shape), nlc_to_nchw(s_x, s_hw_shape)
 
@@ -335,10 +343,11 @@ class MixVisionTransformer(BaseModule):
                 hw_shape=hw_shapes[i],
                 source=down_support_features[i],
                 mask=down_masks[i],
-                cross=True)
+                cross=True,
+            )
             out = nlc_to_nchw(out, hw_shapes[i])
             weight = weight.view(out.shape[0], hw_shapes[i][0], hw_shapes[i][1])
-            out = layer[1](torch.cat([out, down_similarity[i], down_similarity_ori[i]], dim=1))
+            out = layer[1](torch.cat([out, down_similarity[i]], dim=1))
             weights.append(weight)
             # print(layer_out.shape)
             if outs is None:
@@ -356,7 +365,7 @@ class Transformer(nn.Module):
         self.shot = shot
         self.mix_transformer = MixVisionTransformer(shot=self.shot)
 
-    def forward(self, features, supp_features, mask, similaryty, ori_similarity):
+    def forward(self, features, supp_features, mask, similaryty):
         shape = features.shape[-2:]
-        outs, weights = self.mix_transformer(features, supp_features, mask, similaryty, ori_similarity)
+        outs, weights = self.mix_transformer(features, supp_features, mask, similaryty)
         return outs, weights
