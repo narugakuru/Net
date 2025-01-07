@@ -1,0 +1,58 @@
+model modules:
+encoder : Res101Encoder(
+  省略
+)
+criterion : NLLLoss()
+criterion_MSE : MSELoss()
+mlp1 : MLP(
+  (reduce): Sequential(
+    (0): Linear(in_features=65536, out_features=100, bias=True)
+    (1): Dropout(p=0.2, inplace=False)
+    (2): ReLU(inplace=True)
+    (3): Linear(in_features=100, out_features=100, bias=True)
+  )
+)
+mlp2 : MLP(
+  (reduce): Sequential(
+    (0): Linear(in_features=65536, out_features=600, bias=True)
+    (1): Dropout(p=0.2, inplace=False)
+    (2): ReLU(inplace=True)
+    (3): Linear(in_features=600, out_features=600, bias=True)
+  )
+)
+decoder1 : Decoder(
+  (res1): Sequential(
+    (0): Conv2d(102, 100, kernel_size=(1, 1), stride=(1, 1), bias=False)
+    (1): ReLU(inplace=True)
+  )
+  (res2): Sequential(
+    (0): Conv2d(100, 100, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): ReLU(inplace=True)
+    (2): Conv2d(100, 100, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (3): ReLU(inplace=True)
+  )
+  (down): Sequential(
+    (0): Conv2d(100, 100, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): ReLU(inplace=True)
+    (2): Dropout2d(p=0.1, inplace=False)
+    (3): Conv2d(100, 1, kernel_size=(1, 1), stride=(1, 1), bias=False)
+  )
+)
+decoder2 : Decoder(
+  (res1): Sequential(
+    (0): Conv2d(602, 600, kernel_size=(1, 1), stride=(1, 1), bias=False)
+    (1): ReLU(inplace=True)
+  )
+  (res2): Sequential(
+    (0): Conv2d(600, 600, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): ReLU(inplace=True)
+    (2): Conv2d(600, 600, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (3): ReLU(inplace=True)
+  )
+  (down): Sequential(
+    (0): Conv2d(600, 100, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): ReLU(inplace=True)
+    (2): Dropout2d(p=0.1, inplace=False)
+    (3): Conv2d(100, 1, kernel_size=(1, 1), stride=(1, 1), bias=False)
+  )
+)

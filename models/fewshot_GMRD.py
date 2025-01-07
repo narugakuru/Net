@@ -104,9 +104,13 @@ class FewShotSeg(nn.Module):
         self.thresh_pred = [self.t for _ in range(self.n_ways)]
 
         ###### 计算损失 ######
+        # 初始化损失值为0
         align_loss = torch.zeros(1).to(self.device)
         aux_loss = torch.zeros(1).to(self.device)
         outputs = []
+
+        # supp_bs支持集的批量大小。
+        # 对支持集批量的每个Support单独和Query 进行计算相似度。获取累加损失和预测结果。
         for epi in range(supp_bs):
             ###### 提取原型 ######
             if supp_mask[epi][0].sum() == 0:  # 如果没有前景
@@ -589,22 +593,22 @@ class FewShotSeg(nn.Module):
 
     def get_all_prototypes(self, fg_fts):
         """
-        获取所有前景原型
+        获取所有原型的平均值，每way独立计算n个shot的平均值作为这个way的原型
 
         Args:
-            fg_fts: 前景特征列表
+            fg_fts: 原型特征列表
                 期望形状: Wa x Sh x [all x C]
 
         Returns:
-            fg_prototypes: 前景原型列表
+            fg_prototypes: 原型列表
                 形状: [(all, 512) * way]
         """
 
         n_ways, n_shots = len(fg_fts), len(fg_fts[0])  # 获取way和shot的数量
         prototypes = [
             sum([shot for shot in way]) / n_shots for way in fg_fts
-        ]  # 计算平均前景原型
-        return prototypes  # 返回前景原型
+        ]  # 计算平均原型
+        return prototypes  # 返回平均原型
 
     def get_fg_sim(self, fts, prototypes):
         """

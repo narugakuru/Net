@@ -85,7 +85,7 @@ def cfg():
     path = {
         "log_dir": "./runs",
         "CHAOST2": {"data_dir": "./data/CHAOST2"},
-        "SABS": {"data_dir": "/data/SABS"},
+        "SABS": {"data_dir": "./data/SABS"},
         "CMR": {"data_dir": "./data/CMR"},
     }
 

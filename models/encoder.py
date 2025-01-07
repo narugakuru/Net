@@ -33,6 +33,11 @@ class Res101Encoder(nn.Module):
         for dic, m in _model.named_children():
             self.backbone[dic] = m
 
+        # # Print the backbone's key-value pairs
+        # print("Backbone modules:")
+        # for key, value in self.backbone.items():
+        #     print(f"{key} : {value}")
+
         self.reduce1 = nn.Conv2d(1024, 512, kernel_size=1, bias=False)
         self.reduce2 = nn.Conv2d(2048, 512, kernel_size=1, bias=False)
         self.reduce1d = nn.Linear(in_features=1000, out_features=1, bias=True)
@@ -55,6 +60,8 @@ class Res101Encoder(nn.Module):
 
         # feature map -> avgpool -> fc -> single value
         # (avgpool): AdaptiveAvgPool2d(output_size=(1, 1)); (fc): Linear(in_features=2048, out_features=1000, bias=True)
+
+        # t 是根据输入特征动态调整的阈值
         t = self.backbone["avgpool"](x)
         t = torch.flatten(t, 1)
         t = self.backbone["fc"](t)

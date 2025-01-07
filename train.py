@@ -60,6 +60,12 @@ def main(_run, _config, _log):
 
     _log.info(f"Create model...")
     model = FewShotSeg()
+
+    # Print the model layer
+    print("model modules:")
+    for dic, m in model.named_children():
+        print(f"{dic} : {m}")
+
     model = model.cuda()
     model.train()
 
