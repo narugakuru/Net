@@ -67,9 +67,15 @@ class FewShotSeg(nn.Module):
             [torch.stack(way, dim=0) for way in supp_mask], dim=0
         ).view(
             supp_bs, self.n_ways, self.n_shots, *img_size
-        )  # 形状: B x Wa x Sh x H x W
+        )  # 形状: Batch x way x shot x 3 x H x W 实际：1*1*1*256*256
 
         ###### 特征提取 ######
+        # 支持图像集维度 Batch x way x shot x 3 x H x W
+        # - >(shot * B) x 3 x H x W
+        # -> (way * shot * B) x 3 x H x W
+        # 查询图像集 N x B x 3 x H x W
+        # -> (N * B) x 3 x H x W
+        # 两者拼接 (way * shot * B + N * B) x 3 x H x W
         imgs_concat = torch.cat(
             [torch.cat(way, dim=0) for way in supp_imgs]
             + [
@@ -78,13 +84,15 @@ class FewShotSeg(nn.Module):
             dim=0,
         )  # (2, 3, 256,256)
         # 编码器输出
+        # 将 (way * shot * B) x C x H' x W' 的张量重新调整为 B x Wa x Sh x C x H' x W'。
+        # img_fts包含layer2，layer3层的特征
         img_fts, tao = self.encoder(imgs_concat)
         supp_fts = [
             img_fts[dic][
                 : self.n_ways * self.n_shots * supp_bs
             ].view(  # B x Wa x Sh x C x H' x W'
                 supp_bs, self.n_ways, self.n_shots, -1, *img_fts[dic].shape[-2:]
-            )
+            )  # -1：自动推断特征通道数（C）
             for _, dic in enumerate(img_fts)
         ]
         supp_fts = supp_fts[0]
@@ -100,7 +108,7 @@ class FewShotSeg(nn.Module):
         qry_fts = qry_fts[0]
 
         ##### 获取阈值 #######
-        self.t = tao[self.n_ways * self.n_shots * supp_bs :]  # 获取阈值
+        self.t = tao[self.n_ways * self.n_shots * supp_bs :]  # 获取查询图像的阈值
         self.thresh_pred = [self.t for _ in range(self.n_ways)]
 
         ###### 计算损失 ######
@@ -155,7 +163,7 @@ class FewShotSeg(nn.Module):
                     ]
                     for way in range(self.n_ways)
                 ]
-                fg_pts = self.get_all_prototypes(fg_pts)  # 所有前景原型
+                fg_pts = self.get_all_prototypes(fg_pts)  # 所有前景原型 （100+2）*512
 
                 bg_pts = [
                     [
@@ -166,7 +174,7 @@ class FewShotSeg(nn.Module):
                     ]
                     for way in range(self.n_ways)
                 ]
-                bg_pts = self.get_all_prototypes(bg_pts)  # 所有背景原型
+                bg_pts = self.get_all_prototypes(bg_pts)  # 所有背景原型 （600+2）* 512
 
                 ###### 获取查询预测 ######
                 fg_sim = torch.stack(
@@ -440,7 +448,9 @@ class FewShotSeg(nn.Module):
 
     def get_fg_pts(self, features, mask):
         """
-        获取前景原型
+        获取生成前景原型
+        该方法通过调整特征大小、形态学腐蚀、特征加权平均和 MLP 计算，从输入特征和前景掩模中提取前景原型。
+        最终返回的前景原型 fg_prototypes 包含了多个不同区域的原型信息，形状为 k x C。
 
         Args:
             features: 输入特征，形状为 1 x C x H x W
