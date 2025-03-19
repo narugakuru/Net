@@ -12,7 +12,7 @@ import numpy as np
 import random
 import cv2
 from models.moudles import MLP, Decoder
-from models.FAMNet import FAM
+from models.FAMNet import FADAM
 
 class FewShotSeg(nn.Module):
 
@@ -28,8 +28,9 @@ class FewShotSeg(nn.Module):
         self.scaler = 20.0  # 缩放因子
         self.criterion = nn.NLLLoss()  # 负对数似然损失
         self.criterion_MSE = nn.MSELoss()  # 均方误差损失
-        self.fg_num = 100  # 前景类别数量
-        self.bg_num = 600  # 背景类别数量
+        self.fg_num = 100  # 前景原型数量
+        self.bg_num = 600  # 背景原型数量
+        self.FADAM = FADAM(feature_dim=512, N=900)
         self.mlp1 = MLP(256, self.fg_num)  # 多层感知机，用于前景
         self.mlp2 = MLP(256, self.bg_num)  # 多层感知机，用于背景
         self.decoder1 = Decoder(self.fg_num)  # 前景解码器
@@ -87,6 +88,7 @@ class FewShotSeg(nn.Module):
         # 将 (way * shot * B) x C x H' x W' 的张量重新调整为 B x Wa x Sh x C x H' x W'。
         # img_fts包含layer2，layer3层的特征
         img_fts, tao = self.encoder(imgs_concat)
+
         supp_fts = [
             img_fts[dic][
                 : self.n_ways * self.n_shots * supp_bs
@@ -106,6 +108,9 @@ class FewShotSeg(nn.Module):
             for _, dic in enumerate(img_fts)
         ]
         qry_fts = qry_fts[0]
+
+        # 使用FADAM清洗域信息
+        supp_fts = self.FADAM(supp_fts, qry_fts)
 
         ##### 获取阈值 #######
         self.t = tao[self.n_ways * self.n_shots * supp_bs :]  # 获取查询图像的阈值

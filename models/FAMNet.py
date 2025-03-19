@@ -1,3 +1,4 @@
+from turtle import forward
 import torch  # 导入PyTorch库
 import torch.nn as nn  # 导入PyTorch的神经网络模块
 import torch.nn.functional as F  # 导入PyTorch的函数式API模块
@@ -95,6 +96,13 @@ class AttentionMacthcing(nn.Module):  # 定义AttentionMacthcing类，继承自n
 
 class FAM(nn.Module):  # 定义FAM类（特征注意力匹配模块）
     def __init__(self, feature_dim=512, N=900):  # 初始化方法
+        """
+        参数:
+            feature_dim 在这里没有使用到，只是为了保持一致
+            N 池化层，AttentionMacthcing的序列长度控制参数
+        返回:
+
+        """
         super(FAM, self).__init__()  # 调用父类的初始化方法
         if torch.cuda.is_available():  # 检查CUDA是否可用
             self.device = torch.device("cuda")  # 如果可用，设置为CUDA设备
@@ -664,3 +672,17 @@ class FewShotSeg(nn.Module):  # 定义FewShotSeg类（少量样本分割模型�
         proto = torch.sum(fts, dim=2) / (N + 1e-5)  # 计算新的原型
 
         return proto  # 返回新原型
+
+
+class FADAM(nn.Module):
+    def __init__(self, featrue_dim=512, N=900):
+        # Frequency-Aware Domain Adaptation Module (FADAM)
+        self.FAM = FAM(feature_dim=512, N=N)  # 实例化特征注意力匹配模块
+        self.MSFM = MSFM(feature_dim=512)  # 实例化多尺度特征融合模块
+
+    def forward(self, sp_fts, qry_fts):
+        fused_fts_low, fused_fts_mid, fused_fts_high = self.FAM(  # 融合特征
+            sp_fts, qry_fts
+        )
+        fused_fts = self.MSFM(fused_fts_low, fused_fts_mid, fused_fts_high)
+        return fused_fts

@@ -232,9 +232,7 @@ def extract_logger_data(base_dir, output_csv):
                         row.update(formatted_dict)
                         # 计算平均值并格式化为4位小数
                         values = [float(v) for v in data_dict.values()]
-                        # 乘以100，保留小数点后2位
-                        values = values * 100
-                        row["mean"] = "{:.2f}".format(sum(values) / len(values))
+                        row["mean"] = "{:.4f}".format(sum(values) / len(values))
                         csvwriter.writerow(row)
                     except Exception as e:
                         print(f"处理文件 {log_file_path} 时出错: {e}")
