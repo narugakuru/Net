@@ -1,0 +1,2217 @@
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "45"
+INFO - main - Run "CHAOST2_cv0" with ID "5"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.7674968838691711
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.6823093295097351
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.7689477205276489
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.6156505346298218
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.5524672865867615
+INFO - main - Mean class Dice: 0.7086011171340942
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.817513108253479
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.8669518828392029
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.8917228579521179
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.8144311308860779
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.7370144128799438
+INFO - main - Mean class Dice: 0.8476547598838806
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.7654966115951538
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.7766910791397095
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.8632946610450745
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.746529757976532
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.6525089740753174
+INFO - main - Mean class Dice: 0.7880030274391174
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.827038049697876
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.8506007194519043
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.8694198131561279
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.7641004920005798
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.7080955505371094
+INFO - main - Mean class Dice: 0.8277897834777832
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.5524672865867615, 'RK': 0.7370144128799438, 'LK': 0.6525089740753174, 'SPLEEN': 0.7080955505371094}
+INFO - main - Mean Dice: {'LIVER': 0.7086011171340942, 'RK': 0.8476547598838806, 'LK': 0.7880030274391174, 'SPLEEN': 0.8277897834777832}
+INFO - main - Total Mean Dice: 0.7930121719837189
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:46
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "46"
+INFO - main - Run "CHAOST2_cv0" with ID "6"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.8010402917861938
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.7410913109779358
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.7992541790008545
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.7327220439910889
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.6251518726348877
+INFO - main - Mean class Dice: 0.7685269713401794
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.8504349589347839
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.8922125101089478
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.8988872170448303
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.8488494157791138
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.7747313380241394
+INFO - main - Mean class Dice: 0.872596025466919
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.7541905045509338
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.748475968837738
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.8617076277732849
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.7731238007545471
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.6476519107818604
+INFO - main - Mean class Dice: 0.784374475479126
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.8517550826072693
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.831758975982666
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.8701813220977783
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.8372329473495483
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.7359986901283264
+INFO - main - Mean class Dice: 0.8477320671081543
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.6251518726348877, 'RK': 0.7747313380241394, 'LK': 0.6476519107818604, 'SPLEEN': 0.7359986901283264}
+INFO - main - Mean Dice: {'LIVER': 0.7685269713401794, 'RK': 0.872596025466919, 'LK': 0.784374475479126, 'SPLEEN': 0.8477320671081543}
+INFO - main - Total Mean Dice: 0.8183073848485947
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:45
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "1"
+INFO - main - Run "SABS_cv0" with ID "1"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: SPLEEN
+ERROR - GMRD - Failed after 0:00:02!
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "1"
+INFO - main - Run "CHAOST2_cv1" with ID "1"
+INFO - main - Create model...
+INFO - main - Loaded model from ./runs/GMRD_CHAOST2_CV1_train/15/snapshots/6000.pth
+ERROR - GMRD - Failed after 0:00:01!
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "2"
+INFO - main - Run "CHAOST2_cv1" with ID "2"
+INFO - main - Create model...
+INFO - main - Loaded model from runs/GMRD_CHAOST2_CV0_train/15/snapshots/6000.pth
+INFO - main - Set optimizer...
+INFO - main - Load data...
+INFO - main - Loading data completed...
+INFO - main - Start training...
+INFO - main - This is epoch "0" of "16" epochs.
+INFO - main - step 100: total_loss: 0.2742930372059345, query_loss: 0.09963154694065451, aux_loss: [0.01594311] align_loss: [0.16239144]
+INFO - main - Min total loss 10000000000.0-9999999999.725706
+INFO - main - step 200: total_loss: 0.24995337858796118, query_loss: 0.0954202728997916, aux_loss: [0.01341426] align_loss: [0.14167051]
+INFO - main - Min total loss 0.2742930372059345-0.024339658617973325
+INFO - main - step 300: total_loss: 0.2736507361382246, query_loss: 0.10541691302321851, aux_loss: [0.01437062] align_loss: [0.15539835]
+INFO - main - Min total loss 0.24995337858796118
+INFO - main - step 400: total_loss: 0.2607673190534115, query_loss: 0.10529150326736271, aux_loss: [0.01100951] align_loss: [0.14250803]
+INFO - main - Min total loss 0.24995337858796118
+INFO - main - step 500: total_loss: 0.24540716573596, query_loss: 0.09301367194391787, aux_loss: [0.01320574] align_loss: [0.13978198]
+INFO - main - Min total loss 0.24995337858796118-0.004546212852001186
+INFO - main - step 600: total_loss: 0.27474556896835567, query_loss: 0.10290841209702194, aux_loss: [0.01130345] align_loss: [0.15919101]
+INFO - main - Min total loss 0.24540716573596
+INFO - main - step 700: total_loss: 0.2698751777037978, query_loss: 0.11098786063492298, aux_loss: [0.01365557] align_loss: [0.14579579]
+INFO - main - Min total loss 0.24540716573596
+INFO - main - step 800: total_loss: 0.23576577253639697, query_loss: 0.09034965761937201, aux_loss: [0.00992033] align_loss: [0.13265961]
+INFO - main - Min total loss 0.24540716573596-0.009641393199563031
+INFO - main - step 900: total_loss: 0.24673202089965343, query_loss: 0.10076422978192567, aux_loss: [0.01349664] align_loss: [0.13367917]
+INFO - main - Min total loss 0.23576577253639697
+INFO - main - step 1000: total_loss: 0.2713522117584944, query_loss: 0.1081858879327774, aux_loss: [0.01583052] align_loss: [0.15007699]
+INFO - main - Min total loss 0.23576577253639697
+INFO - main - This is epoch "1" of "16" epochs.
+INFO - main - step 1100: total_loss: 0.3096027868241072, query_loss: 0.13545540554448962, aux_loss: [0.01148388] align_loss: [0.16075508]
+INFO - main - Min total loss 0.23576577253639697
+INFO - main - step 1200: total_loss: 0.2527003997564316, query_loss: 0.09678990912623703, aux_loss: [0.01234248] align_loss: [0.1431871]
+INFO - main - Min total loss 0.23576577253639697
+INFO - main - step 1300: total_loss: 0.2722000440955162, query_loss: 0.10973207173869014, aux_loss: [0.01209643] align_loss: [0.14973842]
+INFO - main - Min total loss 0.23576577253639697
+INFO - main - step 1400: total_loss: 0.2753413981199265, query_loss: 0.10661034953780472, aux_loss: [0.01340729] align_loss: [0.15635103]
+INFO - main - Min total loss 0.23576577253639697
+INFO - main - step 1500: total_loss: 0.25531225115060807, query_loss: 0.09703235337976367, aux_loss: [0.0129011] align_loss: [0.14472362]
+INFO - main - Min total loss 0.23576577253639697
+INFO - main - step 1600: total_loss: 0.2539671199396253, query_loss: 0.09922067283652723, aux_loss: [0.01161766] align_loss: [0.14200665]
+INFO - main - Min total loss 0.23576577253639697
+INFO - main - step 1700: total_loss: 0.2658100737631321, query_loss: 0.10390670853666961, aux_loss: [0.01326296] align_loss: [0.14973772]
+INFO - main - Min total loss 0.23576577253639697
+INFO - main - step 1800: total_loss: 0.2382764730602503, query_loss: 0.08889496324583888, aux_loss: [0.01140916] align_loss: [0.13721052]
+INFO - main - Min total loss 0.23576577253639697
+INFO - main - step 1900: total_loss: 0.26678081825375555, query_loss: 0.0960412619356066, aux_loss: [0.01066238] align_loss: [0.1587538]
+INFO - main - Min total loss 0.23576577253639697
+INFO - main - step 2000: total_loss: 0.24010862000286579, query_loss: 0.08897897728718818, aux_loss: [0.01063386] align_loss: [0.1383571]
+INFO - main - Min total loss 0.23576577253639697
+INFO - main - ###### Taking snapshot, model is saved ######
+INFO - main - This is epoch "2" of "16" epochs.
+INFO - main - step 2100: total_loss: 0.25771198004484175, query_loss: 0.10321077706292271, aux_loss: [0.01338819] align_loss: [0.14265314]
+INFO - main - Min total loss 0.23576577253639697
+INFO - main - step 2200: total_loss: 0.22800813600420952, query_loss: 0.09413974612951279, aux_loss: [0.01189438] align_loss: [0.12050853]
+INFO - main - Min total loss 0.23576577253639697-0.007757636532187445
+INFO - main - step 2300: total_loss: 0.2725181056931615, query_loss: 0.10992690823040903, aux_loss: [0.01161009] align_loss: [0.15082358]
+INFO - main - Min total loss 0.22800813600420952
+INFO - main - step 2400: total_loss: 0.25735122203826905, query_loss: 0.10381792964413762, aux_loss: [0.01253381] align_loss: [0.14171249]
+INFO - main - Min total loss 0.22800813600420952
+INFO - main - step 2500: total_loss: 0.2868659722059965, query_loss: 0.12998725339770317, aux_loss: [0.01224294] align_loss: [0.1433745]
+INFO - main - Min total loss 0.22800813600420952
+INFO - main - step 2600: total_loss: 0.24944940589368345, query_loss: 0.09567208069376648, aux_loss: [0.01265258] align_loss: [0.14111584]
+INFO - main - Min total loss 0.22800813600420952
+INFO - main - step 2700: total_loss: 0.2236842568218708, query_loss: 0.08599173660390079, aux_loss: [0.01304531] align_loss: [0.12574661]
+INFO - main - Min total loss 0.22800813600420952-0.00432387918233873
+INFO - main - step 2800: total_loss: 0.24201098166406154, query_loss: 0.09559309342876077, aux_loss: [0.01251853] align_loss: [0.13458063]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 2900: total_loss: 0.23620884492993355, query_loss: 0.0960032199230045, aux_loss: [0.01316586] align_loss: [0.12836175]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 3000: total_loss: 0.26367953814566136, query_loss: 0.09810298340395093, aux_loss: [0.01166174] align_loss: [0.15365292]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - This is epoch "3" of "16" epochs.
+INFO - main - step 3100: total_loss: 0.23705182686448098, query_loss: 0.09682216607965528, aux_loss: [0.01152262] align_loss: [0.12855826]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 3200: total_loss: 0.2301029332354665, query_loss: 0.0850899887084961, aux_loss: [0.01285258] align_loss: [0.13338244]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 3300: total_loss: 0.242833779938519, query_loss: 0.0895433130580932, aux_loss: [0.01317555] align_loss: [0.14136644]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 3400: total_loss: 0.23628855176270008, query_loss: 0.08576029802672565, aux_loss: [0.0120852] align_loss: [0.13904876]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 3500: total_loss: 0.22719011411070825, query_loss: 0.08103727011475712, aux_loss: [0.01232943] align_loss: [0.13489099]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 3600: total_loss: 0.24122962083667518, query_loss: 0.0979153260216117, aux_loss: [0.01311111] align_loss: [0.13109392]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 3700: total_loss: 0.25780873782932756, query_loss: 0.09523946487344802, aux_loss: [0.01070023] align_loss: [0.15087757]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 3800: total_loss: 0.24891796074807643, query_loss: 0.10465906323865055, aux_loss: [0.01390684] align_loss: [0.1324686]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 3900: total_loss: 0.25149141661822794, query_loss: 0.09384988691657782, aux_loss: [0.01162457] align_loss: [0.14594737]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 4000: total_loss: 0.24979746144264936, query_loss: 0.08386987004429101, aux_loss: [0.01230925] align_loss: [0.15416461]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - ###### Taking snapshot, model is saved ######
+INFO - main - This is epoch "4" of "16" epochs.
+INFO - main - step 4100: total_loss: 0.24946848176419734, query_loss: 0.09212728979066015, aux_loss: [0.01215255] align_loss: [0.14613473]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 4200: total_loss: 0.23831697054207324, query_loss: 0.09520349314436316, aux_loss: [0.01075241] align_loss: [0.1322769]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 4300: total_loss: 0.22974235251545905, query_loss: 0.08007935170084238, aux_loss: [0.01051563] align_loss: [0.13819389]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 4400: total_loss: 0.26586540568619965, query_loss: 0.10262482882477343, aux_loss: [0.01295543] align_loss: [0.15174346]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 4500: total_loss: 0.23381104294210672, query_loss: 0.07952315538190305, aux_loss: [0.01100433] align_loss: [0.14325164]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 4600: total_loss: 0.24016739472746848, query_loss: 0.08660597730427981, aux_loss: [0.01324415] align_loss: [0.14249988]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 4700: total_loss: 0.24983886130154132, query_loss: 0.10228855507448316, aux_loss: [0.01027808] align_loss: [0.1365122]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 4800: total_loss: 0.2535370387136936, query_loss: 0.08592017910443246, aux_loss: [0.01239321] align_loss: [0.15640567]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 4900: total_loss: 0.24392476420849563, query_loss: 0.0896257003210485, aux_loss: [0.01070696] align_loss: [0.14362197]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 5000: total_loss: 0.2717445805668831, query_loss: 0.10802863718010486, aux_loss: [0.01583651] align_loss: [0.14998537]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - This is epoch "5" of "16" epochs.
+INFO - main - step 5100: total_loss: 0.2276345594972372, query_loss: 0.07962500215508043, aux_loss: [0.01078552] align_loss: [0.13574095]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 5200: total_loss: 0.2757821824029088, query_loss: 0.11249536303803324, aux_loss: [0.01298344] align_loss: [0.1510175]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 5300: total_loss: 0.2330795032158494, query_loss: 0.08601942566223443, aux_loss: [0.01077351] align_loss: [0.13521525]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 5400: total_loss: 0.24345894590020178, query_loss: 0.08688118043355644, aux_loss: [0.00941756] align_loss: [0.14544325]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 5500: total_loss: 0.25495778404176234, query_loss: 0.08931383171118795, aux_loss: [0.01049748] align_loss: [0.15479352]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 5600: total_loss: 0.24842747405171395, query_loss: 0.10063646120019257, aux_loss: [0.01278192] align_loss: [0.13671836]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 5700: total_loss: 0.229379207752645, query_loss: 0.08337819491047412, aux_loss: [0.00991562] align_loss: [0.13476038]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 5800: total_loss: 0.25015037834644316, query_loss: 0.09792642139829695, aux_loss: [0.01040384] align_loss: [0.14110117]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 5900: total_loss: 0.26247285567224027, query_loss: 0.09715194802265614, aux_loss: [0.00998619] align_loss: [0.15452318]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 6000: total_loss: 0.2374438202008605, query_loss: 0.08494695982895792, aux_loss: [0.01065373] align_loss: [0.14198416]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - ###### Taking snapshot, model is saved ######
+INFO - main - This is epoch "6" of "16" epochs.
+INFO - main - step 6100: total_loss: 0.25772245585918424, query_loss: 0.09307536385022104, aux_loss: [0.01184508] align_loss: [0.15348697]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 6200: total_loss: 0.23844749994575978, query_loss: 0.09023714507929981, aux_loss: [0.01160267] align_loss: [0.13751617]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 6300: total_loss: 0.2559907416254282, query_loss: 0.08826228036545217, aux_loss: [0.0094786] align_loss: [0.15693855]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 6400: total_loss: 0.23713616654276848, query_loss: 0.08815959786064922, aux_loss: [0.01217055] align_loss: [0.13818]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 6500: total_loss: 0.2472597759217024, query_loss: 0.08955487673170864, aux_loss: [0.01072344] align_loss: [0.14714348]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 6600: total_loss: 0.24718462705612182, query_loss: 0.08733020221814514, aux_loss: [0.01129153] align_loss: [0.14888084]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 6700: total_loss: 0.24550425697118045, query_loss: 0.09498250923119485, aux_loss: [0.01365539] align_loss: [0.13815033]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 6800: total_loss: 0.2531463220715523, query_loss: 0.08946995371952653, aux_loss: [0.01044264] align_loss: [0.15232548]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 6900: total_loss: 0.2432383330538869, query_loss: 0.08748485608026385, aux_loss: [0.01203233] align_loss: [0.14449857]
+INFO - main - Min total loss 0.2236842568218708
+INFO - main - step 7000: total_loss: 0.22072059907019137, query_loss: 0.08009212845005095, aux_loss: [0.00895369] align_loss: [0.12935819]
+INFO - main - Min total loss 0.2236842568218708-0.0029636577516794216
+INFO - main - This is epoch "7" of "16" epochs.
+INFO - main - step 7100: total_loss: 0.24217024069279433, query_loss: 0.08537425508722662, aux_loss: [0.01073724] align_loss: [0.14634717]
+INFO - main - Min total loss 0.22072059907019137
+INFO - main - step 7200: total_loss: 0.2409834187477827, query_loss: 0.0828906499221921, aux_loss: [0.01000217] align_loss: [0.14711407]
+INFO - main - Min total loss 0.22072059907019137
+INFO - main - step 7300: total_loss: 0.25360545713454485, query_loss: 0.09879976256750524, aux_loss: [0.01114547] align_loss: [0.14433418]
+INFO - main - Min total loss 0.22072059907019137
+INFO - main - step 7400: total_loss: 0.23705815859138965, query_loss: 0.08597785600461066, aux_loss: [0.01217663] align_loss: [0.14048941]
+INFO - main - Min total loss 0.22072059907019137
+INFO - main - step 7500: total_loss: 0.2388310857489705, query_loss: 0.08533840032760054, aux_loss: [0.01048273] align_loss: [0.14262897]
+INFO - main - Min total loss 0.22072059907019137
+INFO - main - step 7600: total_loss: 0.29149934113025666, query_loss: 0.11041779195889831, aux_loss: [0.01070061] align_loss: [0.17054579]
+INFO - main - Min total loss 0.22072059907019137
+INFO - main - step 7700: total_loss: 0.24146663770079613, query_loss: 0.09085056574083865, aux_loss: [0.01131666] align_loss: [0.13946635]
+INFO - main - Min total loss 0.22072059907019137
+INFO - main - step 7800: total_loss: 0.2652528942003846, query_loss: 0.09268093039281666, aux_loss: [0.01190943] align_loss: [0.16158111]
+INFO - main - Min total loss 0.22072059907019137
+INFO - main - step 7900: total_loss: 0.2445654620975256, query_loss: 0.0928817507158965, aux_loss: [0.00972068] align_loss: [0.14036572]
+INFO - main - Min total loss 0.22072059907019137
+INFO - main - step 8000: total_loss: 0.22544941995292903, query_loss: 0.07505896431393921, aux_loss: [0.01117519] align_loss: [0.13961725]
+INFO - main - Min total loss 0.22072059907019137
+INFO - main - ###### Taking snapshot, model is saved ######
+INFO - main - This is epoch "8" of "16" epochs.
+INFO - main - step 8100: total_loss: 0.25012207463383673, query_loss: 0.09453898292034864, aux_loss: [0.01055181] align_loss: [0.14498174]
+INFO - main - Min total loss 0.22072059907019137
+INFO - main - step 8200: total_loss: 0.20692484725266694, query_loss: 0.07542331956326961, aux_loss: [0.00972018] align_loss: [0.12079368]
+INFO - main - Min total loss 0.22072059907019137-0.013795751817524432
+INFO - main - step 8300: total_loss: 0.24015929635614156, query_loss: 0.08221305592916905, aux_loss: [0.01012293] align_loss: [0.14748044]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - step 8400: total_loss: 0.24182018730789423, query_loss: 0.08035518101416528, aux_loss: [0.00852567] align_loss: [0.15126544]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - step 8500: total_loss: 0.2408027605712414, query_loss: 0.08319672157987952, aux_loss: [0.00995806] align_loss: [0.14733289]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - step 8600: total_loss: 0.2253666751086712, query_loss: 0.06981899106875061, aux_loss: [0.00833058] align_loss: [0.14540923]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - step 8700: total_loss: 0.22978480234742166, query_loss: 0.08322161207906902, aux_loss: [0.01329571] align_loss: [0.13627031]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - step 8800: total_loss: 0.23838281814008952, query_loss: 0.09043035922572017, aux_loss: [0.00879768] align_loss: [0.13765827]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - step 8900: total_loss: 0.25030519515275956, query_loss: 0.0942775704525411, aux_loss: [0.0089038] align_loss: [0.1454249]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - step 9000: total_loss: 0.211716598495841, query_loss: 0.07600175542756915, aux_loss: [0.01154509] align_loss: [0.12521552]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - This is epoch "9" of "16" epochs.
+INFO - main - step 9100: total_loss: 0.2547513035684824, query_loss: 0.09418313167989253, aux_loss: [0.01037246] align_loss: [0.1501188]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - step 9200: total_loss: 0.21876996256411074, query_loss: 0.08012657593004406, aux_loss: [0.01157203] align_loss: [0.12813556]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - step 9300: total_loss: 0.22971203297376633, query_loss: 0.08687759396620094, aux_loss: [0.00957152] align_loss: [0.1324416]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - step 9400: total_loss: 0.2329782932251692, query_loss: 0.08444294347427786, aux_loss: [0.00994492] align_loss: [0.13816948]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - step 9500: total_loss: 0.2582778104767203, query_loss: 0.10620370765216648, aux_loss: [0.01304236] align_loss: [0.14091578]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - step 9600: total_loss: 0.23408818997442724, query_loss: 0.08655235891230405, aux_loss: [0.01023939] align_loss: [0.13452469]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - step 9700: total_loss: 0.2503723318874836, query_loss: 0.0872050222940743, aux_loss: [0.0113886] align_loss: [0.15172674]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - step 9800: total_loss: 0.22341761384159325, query_loss: 0.0767355805914849, aux_loss: [0.01128829] align_loss: [0.13580541]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - step 9900: total_loss: 0.2314951265603304, query_loss: 0.08556452687829733, aux_loss: [0.01126003] align_loss: [0.13505559]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - step 10000: total_loss: 0.23234508343040944, query_loss: 0.0835863865353167, aux_loss: [0.00969568] align_loss: [0.13841116]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - ###### Taking snapshot, model is saved ######
+INFO - main - This is epoch "10" of "16" epochs.
+INFO - main - step 10100: total_loss: 0.27051647767424586, query_loss: 0.09152758097276091, aux_loss: [0.01123932] align_loss: [0.16879973]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - step 10200: total_loss: 0.23606221552938222, query_loss: 0.08243098801001907, aux_loss: [0.0100005] align_loss: [0.14371847]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - step 10300: total_loss: 0.21337263967841863, query_loss: 0.07981576029676944, aux_loss: [0.01025251] align_loss: [0.12342043]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - step 10400: total_loss: 0.24725551918148994, query_loss: 0.09034682689234615, aux_loss: [0.00997147] align_loss: [0.14641403]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - step 10500: total_loss: 0.24009940423071385, query_loss: 0.09461094038560987, aux_loss: [0.00955659] align_loss: [0.13546002]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - step 10600: total_loss: 0.2188702190667391, query_loss: 0.08142564547248185, aux_loss: [0.01097563] align_loss: [0.12721458]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - step 10700: total_loss: 0.24919112607836724, query_loss: 0.08736636135727167, aux_loss: [0.00967783] align_loss: [0.15163307]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - step 10800: total_loss: 0.235252505838871, query_loss: 0.08283801486715675, aux_loss: [0.00850484] align_loss: [0.14237875]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - step 10900: total_loss: 0.23679815731942655, query_loss: 0.08923044793307781, aux_loss: [0.00983462] align_loss: [0.13727057]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - step 11000: total_loss: 0.22581344578415155, query_loss: 0.0742554654693231, aux_loss: [0.01052427] align_loss: [0.14155537]
+INFO - main - Min total loss 0.20692484725266694
+INFO - main - This is epoch "11" of "16" epochs.
+WARNING - GMRD - Aborted after 2:21:35!
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "1"
+INFO - main - Run "CHAOST2_cv1" with ID "1"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_10.nii.gz.
+INFO - main - Dice score: 0.7740488648414612
+INFO - main - 10 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_13.nii.gz.
+INFO - main - Dice score: 0.7106366157531738
+INFO - main - 13 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_15.nii.gz.
+INFO - main - Dice score: 0.6999613642692566
+INFO - main - 15 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_19.nii.gz.
+INFO - main - Dice score: 0.7836276888847351
+INFO - main - 19 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.5912972092628479
+INFO - main - Mean class Dice: 0.7420686483383179
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_10.nii.gz.
+INFO - main - Dice score: 0.8213928937911987
+INFO - main - 10 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_13.nii.gz.
+INFO - main - Dice score: 0.8230515122413635
+INFO - main - 13 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_15.nii.gz.
+INFO - main - Dice score: 0.9044924974441528
+INFO - main - 15 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_19.nii.gz.
+INFO - main - Dice score: 0.8765172958374023
+INFO - main - 19 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.7505112290382385
+INFO - main - Mean class Dice: 0.8563635349273682
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_10.nii.gz.
+INFO - main - Dice score: 0.7081500887870789
+INFO - main - 10 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_13.nii.gz.
+INFO - main - Dice score: 0.7904713749885559
+INFO - main - 13 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_15.nii.gz.
+INFO - main - Dice score: 0.7899376749992371
+INFO - main - 15 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_19.nii.gz.
+INFO - main - Dice score: 0.7171253561973572
+INFO - main - 19 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.603377640247345
+INFO - main - Mean class Dice: 0.7514211535453796
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_10.nii.gz.
+INFO - main - Dice score: 0.7524027824401855
+INFO - main - 10 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_13.nii.gz.
+INFO - main - Dice score: 0.6310536861419678
+INFO - main - 13 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_15.nii.gz.
+INFO - main - Dice score: 0.012116769328713417
+INFO - main - 15 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_19.nii.gz.
+INFO - main - Dice score: 0.7747358679771423
+INFO - main - 19 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.4256138801574707
+INFO - main - Mean class Dice: 0.5425772666931152
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.5912972092628479, 'RK': 0.7505112290382385, 'LK': 0.603377640247345, 'SPLEEN': 0.4256138801574707}
+INFO - main - Mean Dice: {'LIVER': 0.7420686483383179, 'RK': 0.8563635349273682, 'LK': 0.7514211535453796, 'SPLEEN': 0.5425772666931152}
+INFO - main - Total Mean Dice: 0.7231076508760452
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:42
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "2"
+INFO - main - Run "CHAOST2_cv1" with ID "2"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_10.nii.gz.
+INFO - main - Dice score: 0.7859017252922058
+INFO - main - 10 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_13.nii.gz.
+INFO - main - Dice score: 0.7740507125854492
+INFO - main - 13 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_15.nii.gz.
+INFO - main - Dice score: 0.705672562122345
+INFO - main - 15 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_19.nii.gz.
+INFO - main - Dice score: 0.8151787519454956
+INFO - main - 19 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.6279811263084412
+INFO - main - Mean class Dice: 0.7702009677886963
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_10.nii.gz.
+INFO - main - Dice score: 0.8609646558761597
+INFO - main - 10 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_13.nii.gz.
+INFO - main - Dice score: 0.8889767527580261
+INFO - main - 13 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_15.nii.gz.
+INFO - main - Dice score: 0.9311788082122803
+INFO - main - 15 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_19.nii.gz.
+INFO - main - Dice score: 0.9091024994850159
+INFO - main - 19 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.815146803855896
+INFO - main - Mean class Dice: 0.8975556492805481
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_10.nii.gz.
+INFO - main - Dice score: 0.7228085398674011
+INFO - main - 10 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_13.nii.gz.
+INFO - main - Dice score: 0.7690910696983337
+INFO - main - 13 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_15.nii.gz.
+INFO - main - Dice score: 0.8022191524505615
+INFO - main - 15 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_19.nii.gz.
+INFO - main - Dice score: 0.7797719836235046
+INFO - main - 19 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.6248859763145447
+INFO - main - Mean class Dice: 0.7684727311134338
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_10.nii.gz.
+INFO - main - Dice score: 0.8590369820594788
+INFO - main - 10 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_13.nii.gz.
+INFO - main - Dice score: 0.7446238994598389
+INFO - main - 13 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_15.nii.gz.
+INFO - main - Dice score: 0.003217011922970414
+INFO - main - 15 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_19.nii.gz.
+INFO - main - Dice score: 0.8561204075813293
+INFO - main - 19 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.524025022983551
+INFO - main - Mean class Dice: 0.6157495379447937
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.6279811263084412, 'RK': 0.815146803855896, 'LK': 0.6248859763145447, 'SPLEEN': 0.524025022983551}
+INFO - main - Mean Dice: {'LIVER': 0.7702009677886963, 'RK': 0.8975556492805481, 'LK': 0.7684727311134338, 'SPLEEN': 0.6157495379447937}
+INFO - main - Total Mean Dice: 0.762994721531868
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:41
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "47"
+INFO - main - Run "CHAOST2_cv0" with ID "7"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.8010402917861938
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.7410913109779358
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.7992541790008545
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.7327220439910889
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.6251518726348877
+INFO - main - Mean class Dice: 0.7685269713401794
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.8504349589347839
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.8922125101089478
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.8988872170448303
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.8488494157791138
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.7747313380241394
+INFO - main - Mean class Dice: 0.872596025466919
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.7541905045509338
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.748475968837738
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.8617076277732849
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.7731238007545471
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.6476519107818604
+INFO - main - Mean class Dice: 0.784374475479126
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.8517550826072693
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.831758975982666
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.8701813220977783
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.8372329473495483
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.7359986901283264
+INFO - main - Mean class Dice: 0.8477320671081543
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.6251518726348877, 'RK': 0.7747313380241394, 'LK': 0.6476519107818604, 'SPLEEN': 0.7359986901283264}
+INFO - main - Mean Dice: {'LIVER': 0.7685269713401794, 'RK': 0.872596025466919, 'LK': 0.784374475479126, 'SPLEEN': 0.8477320671081543}
+INFO - main - Total Mean Dice: 0.8183073848485947
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:47
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "3"
+INFO - main - Run "CHAOST2_cv1" with ID "3"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_10.nii.gz.
+INFO - main - Dice score: 0.7905431389808655
+INFO - main - 10 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_13.nii.gz.
+INFO - main - Dice score: 0.7570111751556396
+INFO - main - 13 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_15.nii.gz.
+INFO - main - Dice score: 0.6361586451530457
+INFO - main - 15 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_19.nii.gz.
+INFO - main - Dice score: 0.7977549433708191
+INFO - main - 19 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.5981650948524475
+INFO - main - Mean class Dice: 0.7453669905662537
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_10.nii.gz.
+INFO - main - Dice score: 0.8433172702789307
+INFO - main - 10 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_13.nii.gz.
+INFO - main - Dice score: 0.8418546319007874
+INFO - main - 13 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_15.nii.gz.
+INFO - main - Dice score: 0.9123116731643677
+INFO - main - 15 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_19.nii.gz.
+INFO - main - Dice score: 0.8827489614486694
+INFO - main - 19 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.7712128758430481
+INFO - main - Mean class Dice: 0.8700581789016724
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_10.nii.gz.
+INFO - main - Dice score: 0.8556759357452393
+INFO - main - 10 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_13.nii.gz.
+INFO - main - Dice score: 0.8661743402481079
+INFO - main - 13 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_15.nii.gz.
+INFO - main - Dice score: 0.8923311233520508
+INFO - main - 15 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_19.nii.gz.
+INFO - main - Dice score: 0.863220751285553
+INFO - main - 19 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.7691616415977478
+INFO - main - Mean class Dice: 0.8693505525588989
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_10.nii.gz.
+INFO - main - Dice score: 0.8070292472839355
+INFO - main - 10 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_13.nii.gz.
+INFO - main - Dice score: 0.7480239868164062
+INFO - main - 13 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_15.nii.gz.
+INFO - main - Dice score: 0.021432291716337204
+INFO - main - 15 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_19.nii.gz.
+INFO - main - Dice score: 0.859398365020752
+INFO - main - 19 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.5095636248588562
+INFO - main - Mean class Dice: 0.6089709997177124
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.5981650948524475, 'RK': 0.7712128758430481, 'LK': 0.7691616415977478, 'SPLEEN': 0.5095636248588562}
+INFO - main - Mean Dice: {'LIVER': 0.7453669905662537, 'RK': 0.8700581789016724, 'LK': 0.8693505525588989, 'SPLEEN': 0.6089709997177124}
+INFO - main - Total Mean Dice: 0.7734366804361343
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:41
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "1"
+INFO - main - Run "CHAOST2_cv2" with ID "1"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_20.nii.gz.
+INFO - main - Dice score: 0.801689624786377
+INFO - main - 20 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_21.nii.gz.
+INFO - main - Dice score: 0.7418548464775085
+INFO - main - 21 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_22.nii.gz.
+INFO - main - Dice score: 0.7392147183418274
+INFO - main - 22 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_31.nii.gz.
+INFO - main - Dice score: 0.7116314172744751
+INFO - main - 31 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.5993305444717407
+INFO - main - Mean class Dice: 0.7485976219177246
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_20.nii.gz.
+INFO - main - Dice score: 0.8543797135353088
+INFO - main - 20 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_21.nii.gz.
+INFO - main - Dice score: 0.8496749401092529
+INFO - main - 21 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_22.nii.gz.
+INFO - main - Dice score: 0.8847078084945679
+INFO - main - 22 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_31.nii.gz.
+INFO - main - Dice score: 0.8520293831825256
+INFO - main - 31 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.7549687623977661
+INFO - main - Mean class Dice: 0.860197901725769
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_20.nii.gz.
+INFO - main - Dice score: 0.7741805911064148
+INFO - main - 20 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_21.nii.gz.
+INFO - main - Dice score: 0.8269208669662476
+INFO - main - 21 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_22.nii.gz.
+INFO - main - Dice score: 0.8544710874557495
+INFO - main - 22 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_31.nii.gz.
+INFO - main - Dice score: 0.746094822883606
+INFO - main - 31 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.6693530082702637
+INFO - main - Mean class Dice: 0.8004168272018433
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_20.nii.gz.
+INFO - main - Dice score: 0.8436932563781738
+INFO - main - 20 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_21.nii.gz.
+INFO - main - Dice score: 0.8344202637672424
+INFO - main - 21 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_22.nii.gz.
+INFO - main - Dice score: 0.8572918176651001
+INFO - main - 22 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_31.nii.gz.
+INFO - main - Dice score: 0.6879810094833374
+INFO - main - 31 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.680031418800354
+INFO - main - Mean class Dice: 0.8058465719223022
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.5993305444717407, 'RK': 0.7549687623977661, 'LK': 0.6693530082702637, 'SPLEEN': 0.680031418800354}
+INFO - main - Mean Dice: {'LIVER': 0.7485976219177246, 'RK': 0.860197901725769, 'LK': 0.8004168272018433, 'SPLEEN': 0.8058465719223022}
+INFO - main - Total Mean Dice: 0.8037647306919098
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:39
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "1"
+INFO - main - Run "CHAOST2_cv3" with ID "1"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_32.nii.gz.
+INFO - main - Dice score: 0.7638450264930725
+INFO - main - 32 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_33.nii.gz.
+INFO - main - Dice score: 0.7265456318855286
+INFO - main - 33 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_34.nii.gz.
+INFO - main - Dice score: 0.7439482808113098
+INFO - main - 34 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.7503109574317932
+INFO - main - 36 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.595285177230835
+INFO - main - Mean class Dice: 0.746162474155426
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_32.nii.gz.
+INFO - main - Dice score: 0.9097731113433838
+INFO - main - 32 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_33.nii.gz.
+INFO - main - Dice score: 0.8959879875183105
+INFO - main - 33 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_34.nii.gz.
+INFO - main - Dice score: 0.8581956028938293
+INFO - main - 34 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.8712468147277832
+INFO - main - 36 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.7923837900161743
+INFO - main - Mean class Dice: 0.8838008642196655
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_32.nii.gz.
+INFO - main - Dice score: 0.8666593432426453
+INFO - main - 32 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_33.nii.gz.
+INFO - main - Dice score: 0.8521909713745117
+INFO - main - 33 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_34.nii.gz.
+INFO - main - Dice score: 0.7599127888679504
+INFO - main - 34 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.6876945495605469
+INFO - main - 36 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.6609925031661987
+INFO - main - Mean class Dice: 0.7916144132614136
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_32.nii.gz.
+INFO - main - Dice score: 0.822492778301239
+INFO - main - 32 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_33.nii.gz.
+INFO - main - Dice score: 0.7684568762779236
+INFO - main - 33 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_34.nii.gz.
+INFO - main - Dice score: 0.7402529716491699
+INFO - main - 34 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.8553321957588196
+INFO - main - 36 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.6643335819244385
+INFO - main - Mean class Dice: 0.7966336607933044
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.595285177230835, 'RK': 0.7923837900161743, 'LK': 0.6609925031661987, 'SPLEEN': 0.6643335819244385}
+INFO - main - Mean Dice: {'LIVER': 0.746162474155426, 'RK': 0.8838008642196655, 'LK': 0.7916144132614136, 'SPLEEN': 0.7966336607933044}
+INFO - main - Total Mean Dice: 0.8045528531074524
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:45
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "1"
+INFO - main - Run "CHAOST2_cv4" with ID "1"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.7898460030555725
+INFO - main - 36 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_37.nii.gz.
+INFO - main - Dice score: 0.7619805335998535
+INFO - main - 37 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_38.nii.gz.
+INFO - main - Dice score: 0.8051971197128296
+INFO - main - 38 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_39.nii.gz.
+INFO - main - Dice score: 0.7913381457328796
+INFO - main - 39 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.6492011547088623
+INFO - main - Mean class Dice: 0.7870904803276062
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.8273857831954956
+INFO - main - 36 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_37.nii.gz.
+INFO - main - Dice score: 0.8433923125267029
+INFO - main - 37 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_38.nii.gz.
+INFO - main - Dice score: 0.8234893679618835
+INFO - main - 38 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_39.nii.gz.
+INFO - main - Dice score: 0.8765735626220703
+INFO - main - 39 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.7287489175796509
+INFO - main - Mean class Dice: 0.8427102565765381
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.7003542184829712
+INFO - main - 36 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_37.nii.gz.
+INFO - main - Dice score: 0.8099273443222046
+INFO - main - 37 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_38.nii.gz.
+INFO - main - Dice score: 0.7096543908119202
+INFO - main - 38 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_39.nii.gz.
+INFO - main - Dice score: 0.7892460823059082
+INFO - main - 39 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.6053215265274048
+INFO - main - Mean class Dice: 0.7522954940795898
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.899138867855072
+INFO - main - 36 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_37.nii.gz.
+INFO - main - Dice score: 0.8159538507461548
+INFO - main - 37 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_38.nii.gz.
+INFO - main - Dice score: 0.6796407699584961
+INFO - main - 38 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_39.nii.gz.
+INFO - main - Dice score: 0.8629587888717651
+INFO - main - 39 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.6948933601379395
+INFO - main - Mean class Dice: 0.8144230842590332
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.6492011547088623, 'RK': 0.7287489175796509, 'LK': 0.6053215265274048, 'SPLEEN': 0.6948933601379395}
+INFO - main - Mean Dice: {'LIVER': 0.7870904803276062, 'RK': 0.8427102565765381, 'LK': 0.7522954940795898, 'SPLEEN': 0.8144230842590332}
+INFO - main - Total Mean Dice: 0.7991298288106918
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:41
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "48"
+INFO - main - Run "CHAOST2_cv0" with ID "8"
+INFO - main - Create model...
+ERROR - GMRD - Failed after 0:00:01!
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "49"
+INFO - main - Run "CHAOST2_cv0" with ID "9"
+INFO - main - Create model...
+ERROR - GMRD - Failed after 0:00:01!
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "50"
+INFO - main - Run "CHAOST2_cv0" with ID "0"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.7894086837768555
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.7352811694145203
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.8008060455322266
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.6884791254997253
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.6065496206283569
+INFO - main - Mean class Dice: 0.7534937858581543
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.9006871581077576
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.9193793535232544
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.9247624278068542
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.8734090924263
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.8263570070266724
+INFO - main - Mean class Dice: 0.9045594930648804
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.8291813731193542
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.8488292098045349
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.8917135000228882
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.8608946800231934
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.7514799237251282
+INFO - main - Mean class Dice: 0.8576546907424927
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.8774881958961487
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.7701770067214966
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.7993389368057251
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.9119352698326111
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.7279609441757202
+INFO - main - Mean class Dice: 0.8397349119186401
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.6065496206283569, 'RK': 0.8263570070266724, 'LK': 0.7514799237251282, 'SPLEEN': 0.7279609441757202}
+INFO - main - Mean Dice: {'LIVER': 0.7534937858581543, 'RK': 0.9045594930648804, 'LK': 0.8576546907424927, 'SPLEEN': 0.8397349119186401}
+INFO - main - Total Mean Dice: 0.8388607203960419
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:44
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "4"
+INFO - main - Run "CHAOST2_cv1" with ID "4"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_10.nii.gz.
+INFO - main - Dice score: 0.7824112772941589
+INFO - main - 10 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_13.nii.gz.
+INFO - main - Dice score: 0.7465396523475647
+INFO - main - 13 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_15.nii.gz.
+INFO - main - Dice score: 0.6421157717704773
+INFO - main - 15 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_19.nii.gz.
+INFO - main - Dice score: 0.7967760562896729
+INFO - main - 19 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.5933135747909546
+INFO - main - Mean class Dice: 0.7419607043266296
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_10.nii.gz.
+INFO - main - Dice score: 0.8709338307380676
+INFO - main - 10 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_13.nii.gz.
+INFO - main - Dice score: 0.8996819257736206
+INFO - main - 13 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_15.nii.gz.
+INFO - main - Dice score: 0.9315604567527771
+INFO - main - 15 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_19.nii.gz.
+INFO - main - Dice score: 0.9058396816253662
+INFO - main - 19 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.8222014904022217
+INFO - main - Mean class Dice: 0.9020040035247803
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_10.nii.gz.
+INFO - main - Dice score: 0.8816749453544617
+INFO - main - 10 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_13.nii.gz.
+INFO - main - Dice score: 0.8909459114074707
+INFO - main - 13 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_15.nii.gz.
+INFO - main - Dice score: 0.8873183131217957
+INFO - main - 15 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_19.nii.gz.
+INFO - main - Dice score: 0.8758789300918579
+INFO - main - 19 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.7920886874198914
+INFO - main - Mean class Dice: 0.8839545249938965
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_10.nii.gz.
+INFO - main - Dice score: 0.856404185295105
+INFO - main - 10 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_13.nii.gz.
+INFO - main - Dice score: 0.7208371162414551
+INFO - main - 13 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_15.nii.gz.
+INFO - main - Dice score: 0.00390374637208879
+INFO - main - 15 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_19.nii.gz.
+INFO - main - Dice score: 0.8551305532455444
+INFO - main - 19 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.515317976474762
+INFO - main - Mean class Dice: 0.6090688705444336
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.5933135747909546, 'RK': 0.8222014904022217, 'LK': 0.7920886874198914, 'SPLEEN': 0.515317976474762}
+INFO - main - Mean Dice: {'LIVER': 0.7419607043266296, 'RK': 0.9020040035247803, 'LK': 0.8839545249938965, 'SPLEEN': 0.6090688705444336}
+INFO - main - Total Mean Dice: 0.784247025847435
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:42
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "2"
+INFO - main - Run "CHAOST2_cv2" with ID "2"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_20.nii.gz.
+INFO - main - Dice score: 0.7918695211410522
+INFO - main - 20 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_21.nii.gz.
+INFO - main - Dice score: 0.75700443983078
+INFO - main - 21 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_22.nii.gz.
+INFO - main - Dice score: 0.7313921451568604
+INFO - main - 22 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_31.nii.gz.
+INFO - main - Dice score: 0.7307037115097046
+INFO - main - 31 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.6041685342788696
+INFO - main - Mean class Dice: 0.7527424097061157
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_20.nii.gz.
+INFO - main - Dice score: 0.8601862788200378
+INFO - main - 20 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_21.nii.gz.
+INFO - main - Dice score: 0.865028440952301
+INFO - main - 21 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_22.nii.gz.
+INFO - main - Dice score: 0.8732129335403442
+INFO - main - 22 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_31.nii.gz.
+INFO - main - Dice score: 0.8810880184173584
+INFO - main - 31 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.7698100805282593
+INFO - main - Mean class Dice: 0.8698789477348328
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_20.nii.gz.
+INFO - main - Dice score: 0.8244770765304565
+INFO - main - 20 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_21.nii.gz.
+INFO - main - Dice score: 0.8462547063827515
+INFO - main - 21 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_22.nii.gz.
+INFO - main - Dice score: 0.8804653882980347
+INFO - main - 22 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_31.nii.gz.
+INFO - main - Dice score: 0.7910064458847046
+INFO - main - 31 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.7188951373100281
+INFO - main - Mean class Dice: 0.8355509042739868
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_20.nii.gz.
+INFO - main - Dice score: 0.8763906359672546
+INFO - main - 20 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_21.nii.gz.
+INFO - main - Dice score: 0.8630169630050659
+INFO - main - 21 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_22.nii.gz.
+INFO - main - Dice score: 0.8934153914451599
+INFO - main - 22 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_31.nii.gz.
+INFO - main - Dice score: 0.739193320274353
+INFO - main - 31 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.7331671118736267
+INFO - main - Mean class Dice: 0.8430041074752808
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.6041685342788696, 'RK': 0.7698100805282593, 'LK': 0.7188951373100281, 'SPLEEN': 0.7331671118736267}
+INFO - main - Mean Dice: {'LIVER': 0.7527424097061157, 'RK': 0.8698789477348328, 'LK': 0.8355509042739868, 'SPLEEN': 0.8430041074752808}
+INFO - main - Total Mean Dice: 0.825294092297554
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:39
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "2"
+INFO - main - Run "CHAOST2_cv3" with ID "2"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_32.nii.gz.
+INFO - main - Dice score: 0.7320403456687927
+INFO - main - 32 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_33.nii.gz.
+INFO - main - Dice score: 0.7404988408088684
+INFO - main - 33 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_34.nii.gz.
+INFO - main - Dice score: 0.7601481080055237
+INFO - main - 34 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.7700361609458923
+INFO - main - 36 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.6011068820953369
+INFO - main - Mean class Dice: 0.7506808638572693
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_32.nii.gz.
+INFO - main - Dice score: 0.9267359972000122
+INFO - main - 32 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_33.nii.gz.
+INFO - main - Dice score: 0.9066047668457031
+INFO - main - 33 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_34.nii.gz.
+INFO - main - Dice score: 0.9029244184494019
+INFO - main - 34 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.8866050243377686
+INFO - main - 36 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.8279938101768494
+INFO - main - Mean class Dice: 0.9057175517082214
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_32.nii.gz.
+INFO - main - Dice score: 0.8858776092529297
+INFO - main - 32 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_33.nii.gz.
+INFO - main - Dice score: 0.8497154116630554
+INFO - main - 33 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_34.nii.gz.
+INFO - main - Dice score: 0.8042830228805542
+INFO - main - 34 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.8606241941452026
+INFO - main - 36 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.7404546737670898
+INFO - main - Mean class Dice: 0.8501250743865967
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_32.nii.gz.
+INFO - main - Dice score: 0.8310723304748535
+INFO - main - 32 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_33.nii.gz.
+INFO - main - Dice score: 0.7809513211250305
+INFO - main - 33 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_34.nii.gz.
+INFO - main - Dice score: 0.7751131653785706
+INFO - main - 34 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.8712432384490967
+INFO - main - 36 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.6890645623207092
+INFO - main - Mean class Dice: 0.8145949840545654
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.6011068820953369, 'RK': 0.8279938101768494, 'LK': 0.7404546737670898, 'SPLEEN': 0.6890645623207092}
+INFO - main - Mean Dice: {'LIVER': 0.7506808638572693, 'RK': 0.9057175517082214, 'LK': 0.8501250743865967, 'SPLEEN': 0.8145949840545654}
+INFO - main - Total Mean Dice: 0.8302796185016632
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:46
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "2"
+INFO - main - Run "CHAOST2_cv4" with ID "2"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.7865575551986694
+INFO - main - 36 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_37.nii.gz.
+INFO - main - Dice score: 0.7959071397781372
+INFO - main - 37 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_38.nii.gz.
+INFO - main - Dice score: 0.8159657716751099
+INFO - main - 38 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_39.nii.gz.
+INFO - main - Dice score: 0.7798224687576294
+INFO - main - 39 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.6593627333641052
+INFO - main - Mean class Dice: 0.7945631742477417
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.884100079536438
+INFO - main - 36 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_37.nii.gz.
+INFO - main - Dice score: 0.8879010677337646
+INFO - main - 37 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_38.nii.gz.
+INFO - main - Dice score: 0.8650000095367432
+INFO - main - 38 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_39.nii.gz.
+INFO - main - Dice score: 0.911832332611084
+INFO - main - 39 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.7976857423782349
+INFO - main - Mean class Dice: 0.8872083425521851
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.8703626394271851
+INFO - main - 36 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_37.nii.gz.
+INFO - main - Dice score: 0.8786967396736145
+INFO - main - 37 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_38.nii.gz.
+INFO - main - Dice score: 0.804363489151001
+INFO - main - 38 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_39.nii.gz.
+INFO - main - Dice score: 0.8727814555168152
+INFO - main - 39 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.7502866387367249
+INFO - main - Mean class Dice: 0.8565511107444763
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.917850911617279
+INFO - main - 36 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_37.nii.gz.
+INFO - main - Dice score: 0.8614438772201538
+INFO - main - 37 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_38.nii.gz.
+INFO - main - Dice score: 0.6915989518165588
+INFO - main - 38 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_39.nii.gz.
+INFO - main - Dice score: 0.8459808230400085
+INFO - main - 39 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.7166104316711426
+INFO - main - Mean class Dice: 0.8292186260223389
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.6593627333641052, 'RK': 0.7976857423782349, 'LK': 0.7502866387367249, 'SPLEEN': 0.7166104316711426}
+INFO - main - Mean Dice: {'LIVER': 0.7945631742477417, 'RK': 0.8872083425521851, 'LK': 0.8565511107444763, 'SPLEEN': 0.8292186260223389}
+INFO - main - Total Mean Dice: 0.8418853133916855
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:41
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "2"
+INFO - main - Run "SABS_cv0" with ID "2"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: SPLEEN
+ERROR - GMRD - Failed after 0:00:03!
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "3"
+INFO - main - Run "SABS_cv0" with ID "3"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: SPLEEN
+ERROR - GMRD - Failed after 0:05:19!
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "4"
+INFO - main - Run "SABS_cv0" with ID "4"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: SPLEEN
+ERROR - GMRD - Failed after 0:00:03!
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "5"
+INFO - main - Run "SABS_cv0" with ID "5"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: SPLEEN
+ERROR - GMRD - Failed after 0:00:02!
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "6"
+INFO - main - Run "SABS_cv0" with ID "6"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: SPLEEN
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "7"
+INFO - main - Run "SABS_cv0" with ID "7"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: SPLEEN
+ERROR - GMRD - Failed after 0:02:13!
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "8"
+INFO - main - Run "SABS_cv0" with ID "8"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: SPLEEN
+ERROR - GMRD - Failed after 0:00:14!
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "9"
+INFO - main - Run "SABS_cv0" with ID "9"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: SPLEEN
+ERROR - GMRD - Failed after 0:00:03!
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "1"
+INFO - main - Run "ABDOMEN_MR_cv0" with ID "1"
+INFO - main - Create model...
+INFO - main - Set optimizer...
+INFO - main - Load data...
+ERROR - GMRD - Failed after 0:00:01!
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "2"
+INFO - main - Run "ABDOMEN_MR_cv0" with ID "2"
+INFO - main - Create model...
+INFO - main - Set optimizer...
+INFO - main - Load data...
+ERROR - GMRD - Failed after 0:00:01!
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "10"
+INFO - main - Run "SABS_cv0" with ID "0"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: SPLEEN
+ERROR - GMRD - Failed after 0:00:04!
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "51"
+INFO - main - Run "CHAOST2_cv0" with ID "1"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.7894086837768555
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.7352811694145203
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.8008060455322266
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.6884791254997253
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.6065496206283569
+INFO - main - Mean class Dice: 0.7534937858581543
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.9006871581077576
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.9193793535232544
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.9247624278068542
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.8734090924263
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.8263570070266724
+INFO - main - Mean class Dice: 0.9045594930648804
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.8291813731193542
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.8488292098045349
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.8917135000228882
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.8608946800231934
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.7514799237251282
+INFO - main - Mean class Dice: 0.8576546907424927
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.8774881958961487
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.7701770067214966
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.7993389368057251
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.9119352698326111
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.7279609441757202
+INFO - main - Mean class Dice: 0.8397349119186401
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.6065496206283569, 'RK': 0.8263570070266724, 'LK': 0.7514799237251282, 'SPLEEN': 0.7279609441757202}
+INFO - main - Mean Dice: {'LIVER': 0.7534937858581543, 'RK': 0.9045594930648804, 'LK': 0.8576546907424927, 'SPLEEN': 0.8397349119186401}
+INFO - main - Total Mean Dice: 0.8388607203960419
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:50
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "5"
+INFO - main - Run "CHAOST2_cv1" with ID "5"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_10.nii.gz.
+INFO - main - Dice score: 0.7824112772941589
+INFO - main - 10 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_13.nii.gz.
+INFO - main - Dice score: 0.7465396523475647
+INFO - main - 13 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_15.nii.gz.
+INFO - main - Dice score: 0.6421157717704773
+INFO - main - 15 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_19.nii.gz.
+INFO - main - Dice score: 0.7967760562896729
+INFO - main - 19 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.5933135747909546
+INFO - main - Mean class Dice: 0.7419607043266296
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_10.nii.gz.
+INFO - main - Dice score: 0.8709338307380676
+INFO - main - 10 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_13.nii.gz.
+INFO - main - Dice score: 0.8996819257736206
+INFO - main - 13 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_15.nii.gz.
+INFO - main - Dice score: 0.9315604567527771
+INFO - main - 15 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_19.nii.gz.
+INFO - main - Dice score: 0.9058396816253662
+INFO - main - 19 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.8222014904022217
+INFO - main - Mean class Dice: 0.9020040035247803
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_10.nii.gz.
+INFO - main - Dice score: 0.8816749453544617
+INFO - main - 10 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_13.nii.gz.
+INFO - main - Dice score: 0.8909459114074707
+INFO - main - 13 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_15.nii.gz.
+INFO - main - Dice score: 0.8873183131217957
+INFO - main - 15 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_19.nii.gz.
+INFO - main - Dice score: 0.8758789300918579
+INFO - main - 19 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.7920886874198914
+INFO - main - Mean class Dice: 0.8839545249938965
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_10.nii.gz.
+INFO - main - Dice score: 0.856404185295105
+INFO - main - 10 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_13.nii.gz.
+INFO - main - Dice score: 0.7208371162414551
+INFO - main - 13 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_15.nii.gz.
+INFO - main - Dice score: 0.00390374637208879
+INFO - main - 15 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_19.nii.gz.
+INFO - main - Dice score: 0.8551305532455444
+INFO - main - 19 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.515317976474762
+INFO - main - Mean class Dice: 0.6090688705444336
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.5933135747909546, 'RK': 0.8222014904022217, 'LK': 0.7920886874198914, 'SPLEEN': 0.515317976474762}
+INFO - main - Mean Dice: {'LIVER': 0.7419607043266296, 'RK': 0.9020040035247803, 'LK': 0.8839545249938965, 'SPLEEN': 0.6090688705444336}
+INFO - main - Total Mean Dice: 0.784247025847435
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:48
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "3"
+INFO - main - Run "CHAOST2_cv2" with ID "3"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_20.nii.gz.
+INFO - main - Dice score: 0.7918670773506165
+INFO - main - 20 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_21.nii.gz.
+INFO - main - Dice score: 0.757011890411377
+INFO - main - 21 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_22.nii.gz.
+INFO - main - Dice score: 0.7313877940177917
+INFO - main - 22 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_31.nii.gz.
+INFO - main - Dice score: 0.7307153344154358
+INFO - main - 31 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.6041723489761353
+INFO - main - Mean class Dice: 0.752745509147644
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_20.nii.gz.
+INFO - main - Dice score: 0.8601862788200378
+INFO - main - 20 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_21.nii.gz.
+INFO - main - Dice score: 0.8651474118232727
+INFO - main - 21 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_22.nii.gz.
+INFO - main - Dice score: 0.8731635212898254
+INFO - main - 22 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_31.nii.gz.
+INFO - main - Dice score: 0.8811233639717102
+INFO - main - 31 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.7698508501052856
+INFO - main - Mean class Dice: 0.8699051141738892
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_20.nii.gz.
+INFO - main - Dice score: 0.8244948983192444
+INFO - main - 20 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_21.nii.gz.
+INFO - main - Dice score: 0.8462547063827515
+INFO - main - 21 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_22.nii.gz.
+INFO - main - Dice score: 0.8804591298103333
+INFO - main - 22 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_31.nii.gz.
+INFO - main - Dice score: 0.7910346388816833
+INFO - main - 31 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.7189087271690369
+INFO - main - Mean class Dice: 0.8355608582496643
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_20.nii.gz.
+INFO - main - Dice score: 0.8763906359672546
+INFO - main - 20 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_21.nii.gz.
+INFO - main - Dice score: 0.8630461096763611
+INFO - main - 21 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_22.nii.gz.
+INFO - main - Dice score: 0.8934293389320374
+INFO - main - 22 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_31.nii.gz.
+INFO - main - Dice score: 0.739193320274353
+INFO - main - 31 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.7331840395927429
+INFO - main - Mean class Dice: 0.8430148363113403
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.6041723489761353, 'RK': 0.7698508501052856, 'LK': 0.7189087271690369, 'SPLEEN': 0.7331840395927429}
+INFO - main - Mean Dice: {'LIVER': 0.752745509147644, 'RK': 0.8699051141738892, 'LK': 0.8355608582496643, 'SPLEEN': 0.8430148363113403}
+INFO - main - Total Mean Dice: 0.8253065794706345
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:44
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "3"
+INFO - main - Run "CHAOST2_cv3" with ID "3"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_32.nii.gz.
+INFO - main - Dice score: 0.732047975063324
+INFO - main - 32 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_33.nii.gz.
+INFO - main - Dice score: 0.7405016422271729
+INFO - main - 33 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_34.nii.gz.
+INFO - main - Dice score: 0.7601405382156372
+INFO - main - 34 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.7700492739677429
+INFO - main - 36 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.6011120080947876
+INFO - main - Mean class Dice: 0.750684916973114
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_32.nii.gz.
+INFO - main - Dice score: 0.9267359972000122
+INFO - main - 32 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_33.nii.gz.
+INFO - main - Dice score: 0.9066444039344788
+INFO - main - 33 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_34.nii.gz.
+INFO - main - Dice score: 0.9029244184494019
+INFO - main - 34 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.8866050243377686
+INFO - main - 36 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.8280104398727417
+INFO - main - Mean class Dice: 0.9057274460792542
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_32.nii.gz.
+INFO - main - Dice score: 0.885894238948822
+INFO - main - 32 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_33.nii.gz.
+INFO - main - Dice score: 0.8497154116630554
+INFO - main - 33 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_34.nii.gz.
+INFO - main - Dice score: 0.8042111396789551
+INFO - main - 34 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.8607662320137024
+INFO - main - 36 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.7404909729957581
+INFO - main - Mean class Dice: 0.8501467108726501
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_32.nii.gz.
+INFO - main - Dice score: 0.8311083316802979
+INFO - main - 32 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_33.nii.gz.
+INFO - main - Dice score: 0.7809070348739624
+INFO - main - 33 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_34.nii.gz.
+INFO - main - Dice score: 0.7751564979553223
+INFO - main - 34 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.8712432384490967
+INFO - main - 36 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.6890772581100464
+INFO - main - Mean class Dice: 0.8146037459373474
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.6011120080947876, 'RK': 0.8280104398727417, 'LK': 0.7404909729957581, 'SPLEEN': 0.6890772581100464}
+INFO - main - Mean Dice: {'LIVER': 0.750684916973114, 'RK': 0.9057274460792542, 'LK': 0.8501467108726501, 'SPLEEN': 0.8146037459373474}
+INFO - main - Total Mean Dice: 0.8302907049655914
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:51
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "3"
+INFO - main - Run "CHAOST2_cv4" with ID "3"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.7865575551986694
+INFO - main - 36 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_37.nii.gz.
+INFO - main - Dice score: 0.7959071397781372
+INFO - main - 37 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_38.nii.gz.
+INFO - main - Dice score: 0.8159657716751099
+INFO - main - 38 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_39.nii.gz.
+INFO - main - Dice score: 0.7798224687576294
+INFO - main - 39 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.6593627333641052
+INFO - main - Mean class Dice: 0.7945631742477417
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.884100079536438
+INFO - main - 36 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_37.nii.gz.
+INFO - main - Dice score: 0.8879010677337646
+INFO - main - 37 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_38.nii.gz.
+INFO - main - Dice score: 0.8650000095367432
+INFO - main - 38 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_39.nii.gz.
+INFO - main - Dice score: 0.911832332611084
+INFO - main - 39 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.7976857423782349
+INFO - main - Mean class Dice: 0.8872083425521851
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.8703626394271851
+INFO - main - 36 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_37.nii.gz.
+INFO - main - Dice score: 0.8786967396736145
+INFO - main - 37 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_38.nii.gz.
+INFO - main - Dice score: 0.804363489151001
+INFO - main - 38 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_39.nii.gz.
+INFO - main - Dice score: 0.8727814555168152
+INFO - main - 39 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.7502866387367249
+INFO - main - Mean class Dice: 0.8565511107444763
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.917850911617279
+INFO - main - 36 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_37.nii.gz.
+INFO - main - Dice score: 0.8614438772201538
+INFO - main - 37 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_38.nii.gz.
+INFO - main - Dice score: 0.6915989518165588
+INFO - main - 38 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_39.nii.gz.
+INFO - main - Dice score: 0.8459808230400085
+INFO - main - 39 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.7166104316711426
+INFO - main - Mean class Dice: 0.8292186260223389
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.6593627333641052, 'RK': 0.7976857423782349, 'LK': 0.7502866387367249, 'SPLEEN': 0.7166104316711426}
+INFO - main - Mean Dice: {'LIVER': 0.7945631742477417, 'RK': 0.8872083425521851, 'LK': 0.8565511107444763, 'SPLEEN': 0.8292186260223389}
+INFO - main - Total Mean Dice: 0.8418853133916855
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:46
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "52"
+INFO - main - Run "CHAOST2_cv0" with ID "2"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.7894097566604614
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.7352668046951294
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.800801157951355
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.6884791254997253
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.606543779373169
+INFO - main - Mean class Dice: 0.7534891963005066
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.9006871581077576
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.9193793535232544
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.9247260689735413
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.8734474778175354
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.8263564109802246
+INFO - main - Mean class Dice: 0.9045599699020386
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.8291813731193542
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.8488292098045349
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.8917135000228882
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.8609421253204346
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.7514981627464294
+INFO - main - Mean class Dice: 0.857666552066803
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.8774881958961487
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.7701813578605652
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.7993389368057251
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.9119352698326111
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.7279623746871948
+INFO - main - Mean class Dice: 0.8397359848022461
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.606543779373169, 'RK': 0.8263564109802246, 'LK': 0.7514981627464294, 'SPLEEN': 0.7279623746871948}
+INFO - main - Mean Dice: {'LIVER': 0.7534891963005066, 'RK': 0.9045599699020386, 'LK': 0.857666552066803, 'SPLEEN': 0.8397359848022461}
+INFO - main - Total Mean Dice: 0.8388629257678986
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:51
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "6"
+INFO - main - Run "CHAOST2_cv1" with ID "6"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_10.nii.gz.
+INFO - main - Dice score: 0.7824069857597351
+INFO - main - 10 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_13.nii.gz.
+INFO - main - Dice score: 0.7465481758117676
+INFO - main - 13 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_15.nii.gz.
+INFO - main - Dice score: 0.6421207189559937
+INFO - main - 15 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_19.nii.gz.
+INFO - main - Dice score: 0.7967423796653748
+INFO - main - 19 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.5933045148849487
+INFO - main - Mean class Dice: 0.7419545650482178
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_10.nii.gz.
+INFO - main - Dice score: 0.8709338307380676
+INFO - main - 10 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_13.nii.gz.
+INFO - main - Dice score: 0.8996503949165344
+INFO - main - 13 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_15.nii.gz.
+INFO - main - Dice score: 0.9315853118896484
+INFO - main - 15 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_19.nii.gz.
+INFO - main - Dice score: 0.9058687686920166
+INFO - main - 19 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.822211503982544
+INFO - main - Mean class Dice: 0.9020095467567444
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_10.nii.gz.
+INFO - main - Dice score: 0.8816749453544617
+INFO - main - 10 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_13.nii.gz.
+INFO - main - Dice score: 0.8909174799919128
+INFO - main - 13 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_15.nii.gz.
+INFO - main - Dice score: 0.887346088886261
+INFO - main - 15 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_19.nii.gz.
+INFO - main - Dice score: 0.8758436441421509
+INFO - main - 19 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.7920743227005005
+INFO - main - Mean class Dice: 0.8839455842971802
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_10.nii.gz.
+INFO - main - Dice score: 0.8563557267189026
+INFO - main - 10 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_13.nii.gz.
+INFO - main - Dice score: 0.7209662795066833
+INFO - main - 13 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_15.nii.gz.
+INFO - main - Dice score: 0.00390351889654994
+INFO - main - 15 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_19.nii.gz.
+INFO - main - Dice score: 0.8551458716392517
+INFO - main - 19 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.5153447389602661
+INFO - main - Mean class Dice: 0.6090928316116333
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.5933045148849487, 'RK': 0.822211503982544, 'LK': 0.7920743227005005, 'SPLEEN': 0.5153447389602661}
+INFO - main - Mean Dice: {'LIVER': 0.7419545650482178, 'RK': 0.9020095467567444, 'LK': 0.8839455842971802, 'SPLEEN': 0.6090928316116333}
+INFO - main - Total Mean Dice: 0.7842506319284439
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:48
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "4"
+INFO - main - Run "CHAOST2_cv2" with ID "4"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_20.nii.gz.
+INFO - main - Dice score: 0.7918670773506165
+INFO - main - 20 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_21.nii.gz.
+INFO - main - Dice score: 0.757011890411377
+INFO - main - 21 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_22.nii.gz.
+INFO - main - Dice score: 0.7313877940177917
+INFO - main - 22 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_31.nii.gz.
+INFO - main - Dice score: 0.7307153344154358
+INFO - main - 31 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.6041723489761353
+INFO - main - Mean class Dice: 0.752745509147644
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_20.nii.gz.
+INFO - main - Dice score: 0.8601862788200378
+INFO - main - 20 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_21.nii.gz.
+INFO - main - Dice score: 0.8651474118232727
+INFO - main - 21 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_22.nii.gz.
+INFO - main - Dice score: 0.8731635212898254
+INFO - main - 22 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_31.nii.gz.
+INFO - main - Dice score: 0.8810880184173584
+INFO - main - 31 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.7698367834091187
+INFO - main - Mean class Dice: 0.8698962926864624
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_20.nii.gz.
+INFO - main - Dice score: 0.8244948983192444
+INFO - main - 20 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_21.nii.gz.
+INFO - main - Dice score: 0.8462547063827515
+INFO - main - 21 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_22.nii.gz.
+INFO - main - Dice score: 0.8804591298103333
+INFO - main - 22 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_31.nii.gz.
+INFO - main - Dice score: 0.7910346388816833
+INFO - main - 31 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.7189087271690369
+INFO - main - Mean class Dice: 0.8355608582496643
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_20.nii.gz.
+INFO - main - Dice score: 0.8763906359672546
+INFO - main - 20 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_21.nii.gz.
+INFO - main - Dice score: 0.8630461096763611
+INFO - main - 21 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_22.nii.gz.
+INFO - main - Dice score: 0.8934293389320374
+INFO - main - 22 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_31.nii.gz.
+INFO - main - Dice score: 0.739193320274353
+INFO - main - 31 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.7331840395927429
+INFO - main - Mean class Dice: 0.8430148363113403
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.6041723489761353, 'RK': 0.7698367834091187, 'LK': 0.7189087271690369, 'SPLEEN': 0.7331840395927429}
+INFO - main - Mean Dice: {'LIVER': 0.752745509147644, 'RK': 0.8698962926864624, 'LK': 0.8355608582496643, 'SPLEEN': 0.8430148363113403}
+INFO - main - Total Mean Dice: 0.8253043740987778
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:44
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "4"
+INFO - main - Run "CHAOST2_cv3" with ID "4"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_32.nii.gz.
+INFO - main - Dice score: 0.732038140296936
+INFO - main - 32 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_33.nii.gz.
+INFO - main - Dice score: 0.740500807762146
+INFO - main - 33 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_34.nii.gz.
+INFO - main - Dice score: 0.7601433992385864
+INFO - main - 34 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.7700361609458923
+INFO - main - 36 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.601105272769928
+INFO - main - Mean class Dice: 0.750679612159729
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_32.nii.gz.
+INFO - main - Dice score: 0.9267359972000122
+INFO - main - 32 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_33.nii.gz.
+INFO - main - Dice score: 0.9066047668457031
+INFO - main - 33 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_34.nii.gz.
+INFO - main - Dice score: 0.9029244184494019
+INFO - main - 34 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.8866050243377686
+INFO - main - 36 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.8279938101768494
+INFO - main - Mean class Dice: 0.9057175517082214
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_32.nii.gz.
+INFO - main - Dice score: 0.8858776092529297
+INFO - main - 32 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_33.nii.gz.
+INFO - main - Dice score: 0.8497154116630554
+INFO - main - 33 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_34.nii.gz.
+INFO - main - Dice score: 0.8042830228805542
+INFO - main - 34 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.8606241941452026
+INFO - main - 36 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.7404546737670898
+INFO - main - Mean class Dice: 0.8501250743865967
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_32.nii.gz.
+INFO - main - Dice score: 0.8310723304748535
+INFO - main - 32 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_33.nii.gz.
+INFO - main - Dice score: 0.7809513211250305
+INFO - main - 33 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_34.nii.gz.
+INFO - main - Dice score: 0.7751131653785706
+INFO - main - 34 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.8712432384490967
+INFO - main - 36 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.6890645623207092
+INFO - main - Mean class Dice: 0.8145949840545654
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.601105272769928, 'RK': 0.8279938101768494, 'LK': 0.7404546737670898, 'SPLEEN': 0.6890645623207092}
+INFO - main - Mean Dice: {'LIVER': 0.750679612159729, 'RK': 0.9057175517082214, 'LK': 0.8501250743865967, 'SPLEEN': 0.8145949840545654}
+INFO - main - Total Mean Dice: 0.8302793055772781
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:51
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "4"
+INFO - main - Run "CHAOST2_cv4" with ID "4"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.7865477204322815
+INFO - main - 36 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_37.nii.gz.
+INFO - main - Dice score: 0.7958967089653015
+INFO - main - 37 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_38.nii.gz.
+INFO - main - Dice score: 0.8159614205360413
+INFO - main - 38 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_39.nii.gz.
+INFO - main - Dice score: 0.7798293828964233
+INFO - main - 39 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.6593565344810486
+INFO - main - Mean class Dice: 0.7945587635040283
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.884100079536438
+INFO - main - 36 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_37.nii.gz.
+INFO - main - Dice score: 0.8879010677337646
+INFO - main - 37 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_38.nii.gz.
+INFO - main - Dice score: 0.8650000095367432
+INFO - main - 38 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_39.nii.gz.
+INFO - main - Dice score: 0.911832332611084
+INFO - main - 39 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.7976857423782349
+INFO - main - Mean class Dice: 0.8872083425521851
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.8703905344009399
+INFO - main - 36 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_37.nii.gz.
+INFO - main - Dice score: 0.8786616325378418
+INFO - main - 37 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_38.nii.gz.
+INFO - main - Dice score: 0.804363489151001
+INFO - main - 38 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_39.nii.gz.
+INFO - main - Dice score: 0.8728208541870117
+INFO - main - 39 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.7502990961074829
+INFO - main - Mean class Dice: 0.856559157371521
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_36.nii.gz.
+INFO - main - Dice score: 0.917850911617279
+INFO - main - 36 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_37.nii.gz.
+INFO - main - Dice score: 0.8615143299102783
+INFO - main - 37 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_38.nii.gz.
+INFO - main - Dice score: 0.6915989518165588
+INFO - main - 38 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_39.nii.gz.
+INFO - main - Dice score: 0.8460447192192078
+INFO - main - 39 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.7166615724563599
+INFO - main - Mean class Dice: 0.8292522430419922
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.6593565344810486, 'RK': 0.7976857423782349, 'LK': 0.7502990961074829, 'SPLEEN': 0.7166615724563599}
+INFO - main - Mean Dice: {'LIVER': 0.7945587635040283, 'RK': 0.8872083425521851, 'LK': 0.856559157371521, 'SPLEEN': 0.8292522430419922}
+INFO - main - Total Mean Dice: 0.8418946266174316
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:46
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "16"
+INFO - main - Run "CHAOST2_cv0" with ID "6"
+INFO - main - Create model...
+INFO - main - Loaded model from runs/GMRD_CHAOST2_CV1_train/2/snapshots/10000.pth
+INFO - main - Set optimizer...
+INFO - main - Load data...
+INFO - main - Loading data completed...
+INFO - main - Start training...
+INFO - main - This is epoch "0" of "16" epochs.
+INFO - main - step 100: total_loss: 0.22174802679568528, query_loss: 0.07512819044291973, aux_loss: [0.00923988] align_loss: [0.13619256]
+INFO - main - Min total loss 10000000000.0-9999999999.778252
+WARNING - GMRD - Aborted after 0:01:39!
