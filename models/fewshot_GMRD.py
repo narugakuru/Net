@@ -12,7 +12,7 @@ import numpy as np
 import random
 import cv2
 from models.moudles import MLP, Decoder
-
+from models.FAMNet import FAM
 
 class FewShotSeg(nn.Module):
 
