@@ -358,361 +358,6 @@ class MSFM(nn.Module):  # 定义MSFM类（多尺度特征融合模块）
         return fused_features  # 返回融合后的特征
 
 
-class MSFM64(nn.Module):  # 定义MSFM类（多尺度特征融合模块）
-    def __init__(self, feature_dim):  # 初始化方法
-        super(MSFM, self).__init__()  # 调用父类的初始化方法
-        self.CA1 = CrossAttentionFusion(feature_dim)  # 实例化第一个交叉注意力融合模块
-        self.CA2 = CrossAttentionFusion(feature_dim)  # 实例化第二个交叉注意力融合模块
-        self.relu = nn.ReLU()  # ReLU激活函数
-
-    def forward(self, low, mid, high):  # 前向传播方法
-        low_new = self.CA1(mid, low)  # 低频特征的注意力融合
-        high_new = self.CA2(mid, high)  # 高频特征的注意力融合
-        fused_features = self.relu(
-            low_new + mid + high_new
-        )  # 融合低、中、高频特征并激活
-
-        return fused_features  # 返回融合后的特征
-
-
-class FewShotSeg(nn.Module):  # 定义FewShotSeg类（少量样本分割模型）
-
-    def __init__(self, args):  # 初始化方法
-        super().__init__()  # 调用父类的初始化方法
-
-        # 编码器
-        self.encoder = Res101Encoder(  # 实例化Res50编码器
-            replace_stride_with_dilation=[True, True, False], pretrained_weights="COCO"
-        )  # 或者使用"ImageNet"预训练权重
-        if torch.cuda.is_available():  # 检查CUDA是否可用
-            self.device = torch.device("cuda")  # 如果可用，设置为CUDA设备
-        else:
-            self.device = torch.device("cpu")  # 否则，设置为CPU设备
-
-        self.args = args  # 存储输入参数
-        self.scaler = 20.0  # 定义缩放因子
-        self.criterion = nn.NLLLoss(  # 定义负对数似然损失
-            ignore_index=255,
-            weight=torch.FloatTensor([0.1, 1.0]).cuda(),  # 设置分类权重
-        )
-
-        self.N = 900  # 定义N
-        self.FAM = FAM(feature_dim=512, N=self.N)  # 实例化特征注意力匹配模块
-        self.MSFM = MSFM(feature_dim=512)  # 实例化多尺度特征融合模块
-
-    def forward(
-        self, supp_imgs, supp_mask, qry_imgs, qry_mask, opt, train=False
-    ):  # 前向传播方法
-        """
-        参数:
-            supp_imgs: 支持图像
-                way x shot x [B x 3 x H x W], tensor列表的列表
-            fore_mask: 支持图像的前景掩码
-                way x shot x [B x H x W], tensor列表的列表
-            back_mask: 支持图像的背景掩码
-                way x shot x [B x H x W], tensor列表的列表
-            qry_imgs: 查询图像
-                N x [B x 3 x H x W], tensor列表 (1, 3, 257, 257)
-            qry_mask: 标签
-                N x 2 x H x W, tensor
-            text_fts: 支持图像类别对应的文本特征
-                标量（1）
-        """
-
-        self.n_ways = len(supp_imgs)  # 获取方式数量
-        self.n_shots = len(supp_imgs[0])  # 获取每种方式的样本数量
-        self.n_queries = len(qry_imgs)  # 获取查询图像数量
-        assert self.n_ways == 1  # 确保只有一种方式（暂时只考虑单一方式）
-        assert self.n_queries == 1  # 确保只有一个查询图像
-        # qry_imgs[0] torch.Size([1, 3, 70, 74])  # 获取查询图像的形状
-        qry_bs = qry_imgs[0].shape[0]  # 获取查询图像的批量大小
-        # supp_imgs[0][0] torch.Size([1, 3, 53, 74])  # 获取支持图像的形状
-        supp_bs = supp_imgs[0][0].shape[0]  # 获取支持图像的批量大小
-        # # img_size ([53, 74])  # 获取图像大小
-        img_size = supp_imgs[0][0].shape[-2:]  # 解包支持图像的最后两个维度，得到H和W
-
-        supp_mask = torch.stack(  # 堆叠支持掩码
-            [torch.stack(way, dim=0) for way in supp_mask], dim=0
-        ).view(  # 重塑形状
-            supp_bs, self.n_ways, self.n_shots, *img_size
-        )  # 形状: B x Wa x Sh x H x W
-
-        ## 使用ResNet骨干网络提取特征
-        # 提取特征 #
-        imgs_concat = torch.cat(  # 将所有支持图像和查询图像连接起来
-            [torch.cat(way, dim=0) for way in supp_imgs]
-            + [
-                torch.cat(qry_imgs, dim=0),
-            ],
-            dim=0,
-        )
-        # 假设输入 1,3,256,256
-        # feature 的最终输出形状为 (1, 512, 16, 16)。 tao是(1,1)
-        # img_fts(2,512,64,64) tao(1)
-        img_fts, tao = self.encoder(imgs_concat)  # 使用编码器提取特征和阈值
-
-        # supp_fts torch.Size([1, 1, 1, 512, 64, 64])
-        supp_fts = img_fts[  # 解析支持特征，形状为 B x Wa x Sh x C x H' x W'
-            : self.n_ways * self.n_shots * supp_bs
-        ].view(supp_bs, self.n_ways, self.n_shots, -1, *img_fts.shape[-2:])
-        # qry_fts torch.Size([1, 1, 512, 64, 64])
-        qry_fts = img_fts[  # 解析查询特征，形状为 B x N x C x H' x W'
-            self.n_ways * self.n_shots * supp_bs :
-        ].view(qry_bs, self.n_queries, -1, *img_fts.shape[-2:])
-
-        # 获取阈值 #
-        self.t = tao[self.n_ways * self.n_shots * supp_bs :]  # 获取查询特征的阈值
-        self.thresh_pred = [self.t for _ in range(self.n_ways)]  # 为每种方式设置阈值
-
-        self.t_ = tao[: self.n_ways * self.n_shots * supp_bs]  # 获取支持特征的阈值
-        self.thresh_pred_ = [self.t_ for _ in range(self.n_ways)]  # 为每种方式设置阈值
-
-        outputs_qry = []  # 初始化查询输出的列表
-        coarse_loss = torch.zeros(1).to(self.device)  # 初始化粗损失
-        for epi in range(supp_bs):  # 对于每个支持图像
-
-            """
-            supp_fts[[epi], way, shot]: (B, C, H, W)
-            """
-
-            if supp_mask[[0], 0, 0].max() > 0.0:  # 检查支持掩码中是否有前景
-                spt_fts_ = [  # 通过掩码获取支持特征
-                    [
-                        self.getFeatures(  # 获取每个样本的特征
-                            supp_fts[[epi], way, shot], supp_mask[[epi], way, shot]
-                        )
-                        for shot in range(self.n_shots)
-                    ]
-                    for way in range(self.n_ways)
-                ]
-                spt_fg_proto = self.getPrototype(spt_fts_)  # 获取前景原型
-
-                # CPG模块 *******************
-                qry_pred = torch.stack(  # 计算查询预测
-                    [
-                        self.getPred(  # 获取每个方式的预测
-                            qry_fts[way], spt_fg_proto[way], self.thresh_pred[way]
-                        )
-                        for way in range(self.n_ways)
-                    ],
-                    dim=1,
-                )  # N x Wa x H' x W'
-
-                qry_pred_coarse = F.interpolate(  # 上采样查询预测
-                    qry_pred, size=img_size, mode="bilinear", align_corners=True
-                )
-
-                if train:  # 如果在训练模式
-                    log_qry_pred_coarse = torch.cat(  # 计算对数预测
-                        [1 - qry_pred_coarse, qry_pred_coarse], dim=1
-                    ).log()
-
-                    coarse_loss = self.criterion(
-                        log_qry_pred_coarse, qry_mask
-                    )  # 计算损失
-
-                # ************************************************
-
-                spt_fg_fts = [  # 获取支持前景特征
-                    [
-                        self.get_fg(
-                            supp_fts[way][shot], supp_mask[[0], way, shot]
-                        )  # 获取每个样本的前景特征
-                        for shot in range(self.n_shots)
-                    ]
-                    for way in range(self.n_ways)
-                ]  # (1, 512, N)
-
-                qry_fg_fts = [  # 获取查询前景特征
-                    self.get_fg(qry_fts[way], qry_pred_coarse[epi])
-                    for way in range(self.n_ways)
-                ]  # (1, 512, N)
-                # spt_fg_fts torch.Size([1, 512, 5650]) qry_fg_fts torch.Size([1, 512, 65536])
-                # fused_fts_* torch.Size([1, 512, 1800])
-                fused_fts_low, fused_fts_mid, fused_fts_high = self.FAM(  # 融合特征
-                    spt_fg_fts, qry_fg_fts
-                )
-
-                fused_fg_fts = self.MSFM(
-                    fused_fts_low, fused_fts_mid, fused_fts_high
-                )  # 多尺度融合彩色特征
-
-                fg_proto = [self.get_proto_new(fused_fg_fts)]  # 获取新前景原型
-
-                pred = torch.stack(  # 计算最终预测
-                    [
-                        self.getPred(qry_fts[way], fg_proto[way], self.thresh_pred[way])
-                        for way in range(self.n_ways)
-                    ],
-                    dim=1,
-                )  # N x Wa x H' x W'
-
-                pred_up = F.interpolate(  # 上采样最终预测
-                    pred, size=img_size, mode="bilinear", align_corners=True
-                )
-                pred = torch.cat(
-                    (1.0 - pred_up, pred_up), dim=1
-                )  # 拼接前景和背景的预测
-                outputs_qry.append(pred)  # 将预测添加到输出列表
-
-            else:  # 如果没有前景
-                ######################## 默认原型网络 ################
-                supp_fts_ = [  # 获取支持特征
-                    [
-                        self.getFeatures(  # 获取每个样本的特征
-                            supp_fts[[epi], way, shot], supp_mask[[epi], way, shot]
-                        )
-                        for shot in range(self.n_shots)
-                    ]
-                    for way in range(self.n_ways)
-                ]
-                fg_prototypes = self.getPrototype(supp_fts_)  # 获取前景原型
-
-                qry_pred = torch.stack(  # 计算查询预测
-                    [
-                        self.getPred(  # 获取每个方式的预测
-                            qry_fts[epi], fg_prototypes[way], self.thresh_pred[way]
-                        )
-                        for way in range(self.n_ways)
-                    ],
-                    dim=1,
-                )  # N x Wa x H' x W'
-                ########################################################################
-
-                # Combine predictions of different feature maps #
-                qry_pred_up = F.interpolate(  # 上采样最终预测
-                    qry_pred, size=img_size, mode="bilinear", align_corners=True
-                )
-                preds = torch.cat(
-                    (1.0 - qry_pred_up, qry_pred_up), dim=1
-                )  # 拼接前景和背景的预测
-
-                outputs_qry.append(preds)  # 将预测添加到输出列表
-
-        output_qry = torch.stack(outputs_qry, dim=1)  # 堆叠查询输出
-        output_qry = output_qry.view(-1, *output_qry.shape[2:])  # 重塑输出形状
-
-        return output_qry, coarse_loss  # 返回输出和粗损失
-
-    def getPred(self, fts, prototype, thresh):  # 计算预测的方法
-        """
-        计算特征和原型之间的距离
-
-        参数:
-            fts: 输入特征
-                期望形状: N x C x H x W
-            prototype: 一个语义类别的原型
-                期望形状: 1 x C
-        """
-
-        sim = (
-            -F.cosine_similarity(fts, prototype[..., None, None], dim=1) * self.scaler
-        )  # 计算余弦相似度
-        pred = 1.0 - torch.sigmoid(0.5 * (sim - thresh))  # 计算预测概率
-
-        return pred  # 返回预测结果
-
-    def getFeatures(self, fts, mask):  # 通过掩码平均池化提取特征
-        """
-        通过掩码平均池化提取前景和背景特征
-
-        参数:
-            fts: 输入特征，期望形状: 1 x C x H' x W'
-            mask: 二进制掩码，期望形状: 1 x H x W
-        """
-
-        fts = F.interpolate(fts, size=mask.shape[-2:], mode="bilinear")  # 进行上采样
-
-        # 掩码前景特征
-        masked_fts = torch.sum(fts * mask[None, ...], dim=(-2, -1)) / (  # 计算加权平均
-            mask[None, ...].sum(dim=(-2, -1)) + 1e-5
-        )  # 1 x C
-
-        return masked_fts  # 返回掩码后的特征
-
-    def getPrototype(self, fg_fts):  # 计算原型的方法
-        """
-        平均特征以获得原型
-
-        参数:
-            fg_fts: 每种方式/样本的前景特征的列表
-                期望形状: Wa x Sh x [1 x C]
-            bg_fts: 每种方式/样本的背景特征的列表
-                期望形状: Wa x Sh x [1 x C]
-        """
-
-        n_ways, n_shots = len(fg_fts), len(fg_fts[0])  # 获取方式和样本的数量
-        fg_prototypes = [  # 计算前景原型
-            torch.sum(torch.cat([tr for tr in way], dim=0), dim=0, keepdim=True)
-            / n_shots
-            for way in fg_fts
-        ]  ## 将所有前景特征连接在一起
-
-        return fg_prototypes  # 返回前景原型
-
-    def get_fg(self, fts, mask):  # 获取前景特征的方法
-        """
-        :param fts: (1, C, H', W')
-        :param mask: (1, H, W)
-        :return:
-        """
-
-        mask = torch.round(mask)  # 对掩码进行四舍五入
-        fts = F.interpolate(fts, size=mask.shape[-2:], mode="bilinear")  # 进行上采样
-
-        mask = mask.unsqueeze(1).bool()  # 扩展掩码维度
-        result_list = []  # 初始化结果列表
-
-        for batch_id in range(fts.shape[0]):  # 遍历批次
-            tmp_tensor = fts[batch_id]  # 获取当前批次的特征
-            tmp_mask = mask[batch_id]  # 获取当前批次的掩码
-
-            foreground_features = tmp_tensor[:, tmp_mask[0]]  # 提取前景特征
-
-            if foreground_features.shape[1] == 1:  # 如果前景特征的通道数为1
-                foreground_features = torch.cat(  # 将前景特征复制一次
-                    (foreground_features, foreground_features), dim=1
-                )
-
-            result_list.append(foreground_features)  # 将前景特征添加到结果列表
-
-        foreground_features = torch.stack(result_list)  # 将结果列表堆叠为张量
-
-        return foreground_features  # 返回前景特征
-
-    def get_proto_new(self, fts):  # 获取新原型的方法
-        """
-        :param fts:  (1, 512, N)
-        :return: 1, 512, 1
-        """
-        N = fts.size(2)  # 获取特征的数量
-        proto = torch.sum(fts, dim=2) / (N + 1e-5)  # 计算新的原型
-
-        return proto  # 返回新原型
-
-
-class FAM2(nn.Module):
-
-    def __init__(self, feature_dim=512, N=900):
-        super(FAM, self).__init__()
-        self.attention_matching = AttentionMacthcing(feature_dim, N)
-        self.adapt_pooling = nn.AdaptiveAvgPool2d((64, 64))  # 改为2D池化层
-
-    def forward(self, spt_fg_fts, qry_fg_fts):
-        # 原始特征操作...
-        spt_fg_fts, qry_fg_fts = self.preprocess_features(spt_fg_fts, qry_fg_fts)
-
-        # 融合高中低频特征
-        fused_low, fused_mid, fused_high = self.FAM(spt_fg_fts, qry_fg_fts)
-        # 输出直接进行自适应池化
-        fused_low = self.adapt_pooling(fused_low)
-        fused_mid = self.adapt_pooling(fused_mid)
-        fused_high = self.adapt_pooling(fused_high)
-
-        outputs = self.MSFM(fused_low, fused_mid, fused_high)  # 融合最终特征
-        return outputs  # n, 512, 64, 64
-
-
 """
 class FADAM(nn.Module):
     def __init__(self, feature_dim=512, N=900):
@@ -753,16 +398,34 @@ class FADAM(nn.Module):
         # n, 512, 900 -> n, 512, 1800
         # n, 512, 1024 -> n, 512, 2048
         fused_fts_low, fused_fts_mid, fused_fts_high = self.FAM(sp_fts, qry_fts)
+        print("FAM: ", fused_fts_low.shape)
         fused_fts = self.MSFM(fused_fts_low, fused_fts_mid, fused_fts_high)
-
+        print("MSFM: ", fused_fts.shape)
+        # ([1, 512, 2304])
         # 将1D特征转换为2D形状
         # torch.Size([1, 512, 2048]) -> [1, 512, 32, 32]
-        fused_fts_square = fused_fts.view(
-            fused_fts.shape[0], fused_fts.shape[1], int(2048**0.5), int(2048**0.5)
-        )
+        # 动态重塑特征为二维
+        B, C, N = fused_fts.shape  # B: Batch, C: Channels, N: 第三维
+        side_length = int(np.ceil(np.sqrt(N)))  # 计算正方形边长
+        if side_length**2 != N:
+            # 补齐到正方形
+            padded_fts = torch.zeros((B, C, side_length**2), device=fused_fts.device)
+            padded_fts[:, :, :N] = fused_fts
+            fused_fts = padded_fts
+        fused_fts_square = fused_fts.view(B, C, side_length, side_length)
+
+        print("1D to 2D: ", fused_fts_square.shape)
+        # fused_fts_square = fused_fts.view(
+        #     fused_fts.shape[0], fused_fts.shape[1], int(2048**0.5), int(2048**0.5)
+        # )
         # 使用卷积处理维度
         fused_fts_reshaped = F.interpolate(
             fused_fts_square, size=(64, 64), mode="bilinear", align_corners=True
         )
         output = self.reshape_conv(fused_fts_reshaped)
+
+        # 在这里调整 output 的维度到 [1, 1, 1, 512, 64, 64]
+        output = output.unsqueeze(0).unsqueeze(0)  # 在第1和第2维度插入两层
+        print("FADAM output reshaped: ", output.shape)
+
         return output

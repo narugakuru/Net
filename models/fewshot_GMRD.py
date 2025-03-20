@@ -30,7 +30,7 @@ class FewShotSeg(nn.Module):
         self.criterion_MSE = nn.MSELoss()  # 均方误差损失
         self.fg_num = 100  # 前景原型数量
         self.bg_num = 600  # 背景原型数量
-        self.FADAM = FADAM(feature_dim=512, N=900)
+        self.FADAM = FADAM(feature_dim=512, N=1152)
         self.mlp1 = MLP(256, self.fg_num)  # 多层感知机，用于前景
         self.mlp2 = MLP(256, self.bg_num)  # 多层感知机，用于背景
         self.decoder1 = Decoder(self.fg_num)  # 前景解码器
