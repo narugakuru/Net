@@ -5,7 +5,9 @@ import numpy as np  # 导入NumPy库
 
 # from .encoder import Res101Encoder  # 从当前包导入Res50Encoder类（被注释掉）
 from models.encoder import Res101Encoder  # 从models.encoder模块导入Res101Encoder类
+from utils import set_logger
 
+logger = set_logger()
 
 class AttentionMacthcing(nn.Module):  # 定义AttentionMacthcing类，继承自nn.Module
     def __init__(self, feature_dim=512, seq_len=5000):  # 初始化方法
@@ -398,9 +400,9 @@ class FADAM(nn.Module):
         # n, 512, 900 -> n, 512, 1800
         # n, 512, 1024 -> n, 512, 2048
         fused_fts_low, fused_fts_mid, fused_fts_high = self.FAM(sp_fts, qry_fts)
-        print("FAM: ", fused_fts_low.shape)
+        logger.debug("FAM: ", fused_fts_low.shape)
         fused_fts = self.MSFM(fused_fts_low, fused_fts_mid, fused_fts_high)
-        print("MSFM: ", fused_fts.shape)
+        logger.debug("MSFM: ", fused_fts.shape)
         # ([1, 512, 2304])
         # 将1D特征转换为2D形状
         # torch.Size([1, 512, 2048]) -> [1, 512, 32, 32]
@@ -414,7 +416,7 @@ class FADAM(nn.Module):
             fused_fts = padded_fts
         fused_fts_square = fused_fts.view(B, C, side_length, side_length)
 
-        print("1D to 2D: ", fused_fts_square.shape)
+        logger.debug("1D to 2D: ", fused_fts_square.shape)
         # fused_fts_square = fused_fts.view(
         #     fused_fts.shape[0], fused_fts.shape[1], int(2048**0.5), int(2048**0.5)
         # )
@@ -426,6 +428,6 @@ class FADAM(nn.Module):
 
         # 在这里调整 output 的维度到 [1, 1, 1, 512, 64, 64]
         output = output.unsqueeze(0).unsqueeze(0)  # 在第1和第2维度插入两层
-        print("FADAM output reshaped: ", output.shape)
+        logger.debug("FADAM output reshaped: ", output.shape)
 
         return output

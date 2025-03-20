@@ -117,6 +117,7 @@ class FewShotSeg(nn.Module):
         # 初始化损失值为0
         align_loss = torch.zeros(1).to(self.device)
         aux_loss = torch.zeros(1).to(self.device)
+        coarse_loss = torch.zeros(1).to(self.device)
         outputs = []
 
         # supp_bs支持集的批量大小。
@@ -198,7 +199,7 @@ class FewShotSeg(nn.Module):
                         [1 - qry_pred_coarse, qry_pred_coarse], dim=1
                     ).log()
 
-                    coarse_loss = self.criterion(
+                    coarse_loss += self.criterion(
                         log_qry_pred_coarse, qry_mask
                     )  # 计算损失
 
@@ -293,7 +294,12 @@ class FewShotSeg(nn.Module):
         output = torch.stack(outputs, dim=1)  # N x B x (1 + Wa) x H x W
         output = output.view(-1, *output.shape[2:])  # 重塑输出形状
 
-        return output, align_loss / supp_bs, aux_loss / supp_bs  # 返回输出和损失
+        return (
+            output,
+            align_loss / supp_bs,
+            aux_loss / supp_bs,
+            coarse_loss / supp_bs,
+        )  # 返回输出和损失
 
     def getPred(self, fts, prototype, thresh):
         """

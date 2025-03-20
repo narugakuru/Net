@@ -118,7 +118,13 @@ def main(_run, _config, _log):
     n_sub_epochs = (
         _config["n_steps"] // _config["max_iters_per_load"]
     )  # number of times for reloading
-    log_loss = {"total_loss": 0, "query_loss": 0, "align_loss": 0, "aux_loss": 0}
+    log_loss = {
+        "total_loss": 0,
+        "query_loss": 0,
+        "align_loss": 0,
+        "aux_loss": 0,
+        "coarse_loss": 0,
+    }
 
     i_iter = 0
     _log.info(f"Start training...")
@@ -150,7 +156,7 @@ def main(_run, _config, _log):
             )
 
             # Compute outputs and losses.
-            query_pred, align_loss, aux_loss = model(
+            query_pred, align_loss, aux_loss, coarse_loss = model(
                 support_images, support_fg_mask, query_images, query_labels, train=True
             )
             aux_loss = 0.5 * aux_loss
@@ -166,7 +172,7 @@ def main(_run, _config, _log):
                 query_labels,
             )
 
-            loss = query_loss + align_loss + aux_loss
+            loss = query_loss + align_loss + aux_loss + coarse_loss
 
             # Compute gradient and do SGD step.
             for param in model.parameters():
@@ -180,16 +186,19 @@ def main(_run, _config, _log):
             query_loss = query_loss.detach().data.cpu().numpy()
             aux_loss = aux_loss.detach().data.cpu().numpy()
             align_loss = align_loss.detach().data.cpu().numpy()
+            # coarse_loss = coarse_loss.detach().data.cpu().numpy()
 
             _run.log_scalar("total_loss", loss.item())
             _run.log_scalar("query_loss", query_loss)
             _run.log_scalar("aux_loss", aux_loss)
             _run.log_scalar("align_loss", align_loss)
+            # _run.log_scalar("coarse_loss", coarse_loss)
 
             log_loss["total_loss"] += loss.item()
             log_loss["query_loss"] += query_loss
             log_loss["align_loss"] += align_loss
             log_loss["aux_loss"] += aux_loss
+            # log_loss["coarse_loss"] += coarse_loss
 
             # Print loss and take snapshots.
             if (i_iter + 1) % _config["print_interval"] == 0:
@@ -201,6 +210,7 @@ def main(_run, _config, _log):
                 log_loss["query_loss"] = 0
                 log_loss["align_loss"] = 0
                 log_loss["aux_loss"] = 0
+                # log_loss["coarse_loss"] = 0
 
                 _log.info(
                     f"step {i_iter + 1}: total_loss: {total_loss}, query_loss: {query_loss}, aux_loss: {aux_loss}"
