@@ -223,6 +223,7 @@ class FewShotSeg(nn.Module):
                 # 使用FADAM清洗域信息
                 # FAM要求输入是b,512,n，FAM转为b,512,900。
                 # 最终MSFM输出是torch.Size([1, 512, 1800])
+                # 输出 1,1,1,512,64,64
                 supp_fts = self.FADAM(spt_fg_fts, qry_fg_fts)
 
                 # GMRD 生成多个原型

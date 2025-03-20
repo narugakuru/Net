@@ -123,7 +123,7 @@ def main(_run, _config, _log):
         "query_loss": 0,
         "align_loss": 0,
         "aux_loss": 0,
-        "coarse_loss": 0,
+        # "coarse_loss": 0,
     }
 
     i_iter = 0

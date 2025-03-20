@@ -112,7 +112,8 @@ class Scores():
 def set_logger(path="./log.txt"):
     logger = logging.getLogger()
     logger.handlers = []
-    formatter = logging.Formatter('[%(levelname)] - %(name)s - %(message)s')
+    formatter = logging.Formatter("%(levelname)s - %(name)s - %(message)s")
+
     logger.setLevel("INFO")
 
     # log to .txt
