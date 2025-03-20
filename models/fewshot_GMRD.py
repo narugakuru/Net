@@ -12,7 +12,7 @@ import numpy as np
 import random
 import cv2
 from models.moudles import MLP, Decoder
-from models.FAMNet import FADAM
+from models.FAMMoudles import FADAM
 
 class FewShotSeg(nn.Module):
 
@@ -96,7 +96,7 @@ class FewShotSeg(nn.Module):
                 supp_bs, self.n_ways, self.n_shots, -1, *img_fts[dic].shape[-2:]
             )  # -1：自动推断特征通道数（C）
             for _, dic in enumerate(img_fts)
-        ]
+        ]  # torch.Size([1, 1, 1, 512, 64, 64])
         supp_fts = supp_fts[0]
 
         qry_fts = [
@@ -106,11 +106,8 @@ class FewShotSeg(nn.Module):
                 qry_bs, self.n_queries, -1, *img_fts[dic].shape[-2:]
             )
             for _, dic in enumerate(img_fts)
-        ]
+        ]  # [1, 1, 512, 64, 64] 和 [1, 1, 512, 32, 32]
         qry_fts = qry_fts[0]
-
-        # 使用FADAM清洗域信息
-        supp_fts = self.FADAM(supp_fts, qry_fts)
 
         ##### 获取阈值 #######
         self.t = tao[self.n_ways * self.n_shots * supp_bs :]  # 获取查询图像的阈值
@@ -159,6 +156,67 @@ class FewShotSeg(nn.Module):
                     )
                     align_loss += align_loss_epi  # 计算对齐损失
             else:
+                # supp_fts torch.Size([1, 1, 1, 512, 64, 64]) batch*way*shot*512*H*W
+                # qry_fts  torch.Size([1, 1, 512, 64, 64]) batch*shot*512*H*W
+                # 使用FADAM清洗域信息
+                # FAM要求输入是b,512,n，FAM转为b,512,900。
+                # 最终MSFM输出是torch.Size([1, 512, 1800])
+                # supp_fts = self.FADAM(supp_fts, qry_fts)
+
+                spt_fts_ = [  # 通过掩码获取支持特征 torch.Size([1, 512])
+                    [
+                        self.getFeatures(  # 获取每个样本的特征
+                            # supp_fts torch.Size([1, 1, 1, 512, 64, 64])
+                            supp_fts[[epi], way, shot],
+                            supp_mask[[epi], way, shot],
+                        )
+                        for shot in range(self.n_shots)
+                    ]
+                    for way in range(self.n_ways)
+                ]
+                spt_fg_proto = self.getPrototype(
+                    spt_fts_
+                )  # 获取前景原型 torch.Size([1, 512])
+
+                # CPG模块 ####################################
+                qry_pred = torch.stack(  # 计算查询预测 torch.Size([1, 1, 64, 64])
+                    [
+                        # qry_fts torch.Size([1, 1, 512, 64, 64])
+                        self.getPred(  # 获取每个方式的预测
+                            qry_fts[way], spt_fg_proto[way], self.thresh_pred[way]
+                        )
+                        for way in range(self.n_ways)
+                    ],
+                    dim=1,
+                )  # N x Wa x H' x W'
+
+                qry_pred_coarse = (
+                    F.interpolate(  # 上采样查询预测 torch.Size([1, 1, 256, 256])
+                        qry_pred, size=img_size, mode="bilinear", align_corners=True
+                    )
+                )
+
+                ####################################
+
+                spt_fg_fts = [  # 获取支持前景特征 torch.Size([1, 512, 44])
+                    [
+                        self.get_fg(
+                            supp_fts[way][shot], supp_mask[[0], way, shot]
+                        )  # 获取每个样本的前景特征
+                        for shot in range(self.n_shots)
+                    ]
+                    for way in range(self.n_ways)
+                ]  # (1, 512, N)
+
+                qry_fg_fts = [  # 获取查询前景特征 torch.Size([1, 512, 65536])
+                    self.get_fg(qry_fts[way], qry_pred_coarse[epi])
+                    for way in range(self.n_ways)
+                ]  # (1, 512, N)
+
+                ####################################################
+
+                # supp_fts[[epi], way, shot] -> torch.Size([1, 512, 64, 64])
+                # supp_mask[[epi], way, shot] -> torch.Size([1, 256, 256])
                 fg_pts = [
                     [
                         self.get_fg_pts(

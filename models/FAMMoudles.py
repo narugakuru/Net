@@ -675,8 +675,9 @@ class FewShotSeg(nn.Module):  # 定义FewShotSeg类（少量样本分割模型�
 
 
 class FADAM(nn.Module):
-    def __init__(self, featrue_dim=512, N=900):
+    def __init__(self, feature_dim=512, N=900):
         # Frequency-Aware Domain Adaptation Module (FADAM)
+        super(FADAM, self).__init__()
         self.FAM = FAM(feature_dim=512, N=N)  # 实例化特征注意力匹配模块
         self.MSFM = MSFM(feature_dim=512)  # 实例化多尺度特征融合模块
 

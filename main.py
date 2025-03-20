@@ -14,11 +14,11 @@ if __name__ == "__main__":
         # 配置参数保持不变
         train_config_updates = {
             # "reload_model_path": f"{prepath}/2/snapshots/6000.pth",
-            "n_steps": 30000,
+            "n_steps": 20000,
             "mode": "train",
             "eval_fold": eval_fold,
             "dataset": dataset,
-            "save_snapshot_every": 2000,
+            "save_snapshot_every": 1000,
         }
         # 运行脚本
         print("Running training...")

@@ -34,7 +34,7 @@ def cfg():
     """Default configurations"""
     seed = 2025
     gpu_id = 0
-    num_workers = 4  # 0 for debugging.
+    num_workers = 0  # 0 for debugging.
     mode = "train"
     # RUNS = 1
 
