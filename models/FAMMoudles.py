@@ -1,4 +1,3 @@
-from turtle import forward
 import torch  # 导入PyTorch库
 import torch.nn as nn  # 导入PyTorch的神经网络模块
 import torch.nn.functional as F  # 导入PyTorch的函数式API模块
@@ -95,7 +94,8 @@ class AttentionMacthcing(nn.Module):  # 定义AttentionMacthcing类，继承自n
 
 
 class FAM(nn.Module):  # 定义FAM类（特征注意力匹配模块）
-    def __init__(self, feature_dim=512, N=900):  # 初始化方法
+
+    def __init__(self, feature_dim=512, N=1024):  # 初始化方法
         """
         参数:
             feature_dim 在这里没有使用到，只是为了保持一致
@@ -342,6 +342,23 @@ class CrossAttentionFusion(nn.Module):  # 定义CrossAttentionFusion类
 
 
 class MSFM(nn.Module):  # 定义MSFM类（多尺度特征融合模块）
+    def __init__(self, feature_dim):  # 初始化方法
+        super(MSFM, self).__init__()  # 调用父类的初始化方法
+        self.CA1 = CrossAttentionFusion(feature_dim)  # 实例化第一个交叉注意力融合模块
+        self.CA2 = CrossAttentionFusion(feature_dim)  # 实例化第二个交叉注意力融合模块
+        self.relu = nn.ReLU()  # ReLU激活函数
+
+    def forward(self, low, mid, high):  # 前向传播方法
+        low_new = self.CA1(mid, low)  # 低频特征的注意力融合
+        high_new = self.CA2(mid, high)  # 高频特征的注意力融合
+        fused_features = self.relu(
+            low_new + mid + high_new
+        )  # 融合低、中、高频特征并激活
+
+        return fused_features  # 返回融合后的特征
+
+
+class MSFM64(nn.Module):  # 定义MSFM类（多尺度特征融合模块）
     def __init__(self, feature_dim):  # 初始化方法
         super(MSFM, self).__init__()  # 调用父类的初始化方法
         self.CA1 = CrossAttentionFusion(feature_dim)  # 实例化第一个交叉注意力融合模块
@@ -674,6 +691,29 @@ class FewShotSeg(nn.Module):  # 定义FewShotSeg类（少量样本分割模型�
         return proto  # 返回新原型
 
 
+class FAM2(nn.Module):
+
+    def __init__(self, feature_dim=512, N=900):
+        super(FAM, self).__init__()
+        self.attention_matching = AttentionMacthcing(feature_dim, N)
+        self.adapt_pooling = nn.AdaptiveAvgPool2d((64, 64))  # 改为2D池化层
+
+    def forward(self, spt_fg_fts, qry_fg_fts):
+        # 原始特征操作...
+        spt_fg_fts, qry_fg_fts = self.preprocess_features(spt_fg_fts, qry_fg_fts)
+
+        # 融合高中低频特征
+        fused_low, fused_mid, fused_high = self.FAM(spt_fg_fts, qry_fg_fts)
+        # 输出直接进行自适应池化
+        fused_low = self.adapt_pooling(fused_low)
+        fused_mid = self.adapt_pooling(fused_mid)
+        fused_high = self.adapt_pooling(fused_high)
+
+        outputs = self.MSFM(fused_low, fused_mid, fused_high)  # 融合最终特征
+        return outputs  # n, 512, 64, 64
+
+
+"""
 class FADAM(nn.Module):
     def __init__(self, feature_dim=512, N=900):
         # Frequency-Aware Domain Adaptation Module (FADAM)
@@ -682,8 +722,47 @@ class FADAM(nn.Module):
         self.MSFM = MSFM(feature_dim=512)  # 实例化多尺度特征融合模块
 
     def forward(self, sp_fts, qry_fts):
+        # n,512,900
         fused_fts_low, fused_fts_mid, fused_fts_high = self.FAM(  # 融合特征
             sp_fts, qry_fts
         )
+        # n,512,1800
         fused_fts = self.MSFM(fused_fts_low, fused_fts_mid, fused_fts_high)
-        return fused_fts
+        return fused_fts 
+"""
+
+
+class FADAM(nn.Module):
+
+    def __init__(self, feature_dim=512, N=1024):
+        super(FADAM, self).__init__()
+        self.FAM = FAM(feature_dim=512, N=N)  # 实例化特征注意力匹配模块
+        self.MSFM = MSFM(feature_dim=512)  # 实例化多尺度特征融合模块
+        # 额外的卷积层用于特征形状转换
+        self.reshape_conv = nn.Conv2d(feature_dim, feature_dim, kernel_size=1)
+
+    def forward(self, sp_fts, qry_fts):
+        """
+        用于清洗域相关信息
+
+        输入特征要求 b,512,n
+        n可以为任意值?
+        为了保留信息, 这里可能不使用掩码, 直接把所有特征塞进来比较好?
+
+        """
+        # n, 512, 900 -> n, 512, 1800
+        # n, 512, 1024 -> n, 512, 2048
+        fused_fts_low, fused_fts_mid, fused_fts_high = self.FAM(sp_fts, qry_fts)
+        fused_fts = self.MSFM(fused_fts_low, fused_fts_mid, fused_fts_high)
+
+        # 将1D特征转换为2D形状
+        # torch.Size([1, 512, 2048]) -> [1, 512, 32, 32]
+        fused_fts_square = fused_fts.view(
+            fused_fts.shape[0], fused_fts.shape[1], int(2048**0.5), int(2048**0.5)
+        )
+        # 使用卷积处理维度
+        fused_fts_reshaped = F.interpolate(
+            fused_fts_square, size=(64, 64), mode="bilinear", align_corners=True
+        )
+        output = self.reshape_conv(fused_fts_reshaped)
+        return output

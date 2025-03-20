@@ -151,7 +151,7 @@ def main(_run, _config, _log):
 
             # Compute outputs and losses.
             query_pred, align_loss, aux_loss = model(
-                support_images, support_fg_mask, query_images, train=True
+                support_images, support_fg_mask, query_images, query_labels, train=True
             )
             aux_loss = 0.5 * aux_loss
 

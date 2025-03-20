@@ -36,7 +36,7 @@ class FewShotSeg(nn.Module):
         self.decoder1 = Decoder(self.fg_num)  # 前景解码器
         self.decoder2 = Decoder(self.bg_num)  # 背景解码器
 
-    def forward(self, supp_imgs, supp_mask, qry_imgs, train=False):
+    def forward(self, supp_imgs, supp_mask, qry_imgs, qry_mask, train=False):
         """
         前向传播函数，用于执行模型的前向推理
 
@@ -158,12 +158,10 @@ class FewShotSeg(nn.Module):
             else:
                 # supp_fts torch.Size([1, 1, 1, 512, 64, 64]) batch*way*shot*512*H*W
                 # qry_fts  torch.Size([1, 1, 512, 64, 64]) batch*shot*512*H*W
-                # 使用FADAM清洗域信息
-                # FAM要求输入是b,512,n，FAM转为b,512,900。
-                # 最终MSFM输出是torch.Size([1, 512, 1800])
-                # supp_fts = self.FADAM(supp_fts, qry_fts)
 
-                spt_fts_ = [  # 通过掩码获取支持特征 torch.Size([1, 512])
+                # CPG模块 ############################################################
+
+                spt_fts_ = [  # 通过掩码获取支持特征 torch.Size([1, 512, 64, 64])
                     [
                         self.getFeatures(  # 获取每个样本的特征
                             # supp_fts torch.Size([1, 1, 1, 512, 64, 64])
@@ -174,11 +172,11 @@ class FewShotSeg(nn.Module):
                     ]
                     for way in range(self.n_ways)
                 ]
+
                 spt_fg_proto = self.getPrototype(
                     spt_fts_
                 )  # 获取前景原型 torch.Size([1, 512])
 
-                # CPG模块 ####################################
                 qry_pred = torch.stack(  # 计算查询预测 torch.Size([1, 1, 64, 64])
                     [
                         # qry_fts torch.Size([1, 1, 512, 64, 64])
@@ -195,8 +193,16 @@ class FewShotSeg(nn.Module):
                         qry_pred, size=img_size, mode="bilinear", align_corners=True
                     )
                 )
+                if train:  # 如果在训练模式
+                    log_qry_pred_coarse = torch.cat(  # 计算对数预测
+                        [1 - qry_pred_coarse, qry_pred_coarse], dim=1
+                    ).log()
 
-                ####################################
+                    coarse_loss = self.criterion(
+                        log_qry_pred_coarse, qry_mask
+                    )  # 计算损失
+
+                ####################################################################
 
                 spt_fg_fts = [  # 获取支持前景特征 torch.Size([1, 512, 44])
                     [
@@ -213,7 +219,13 @@ class FewShotSeg(nn.Module):
                     for way in range(self.n_ways)
                 ]  # (1, 512, N)
 
-                ####################################################
+                # 使用FADAM清洗域信息
+                # FAM要求输入是b,512,n，FAM转为b,512,900。
+                # 最终MSFM输出是torch.Size([1, 512, 1800])
+                supp_fts = self.FADAM(spt_fg_fts, qry_fg_fts)
+
+                # GMRD 生成多个原型
+                ####################################################################
 
                 # supp_fts[[epi], way, shot] -> torch.Size([1, 512, 64, 64])
                 # supp_mask[[epi], way, shot] -> torch.Size([1, 256, 256])
@@ -508,6 +520,36 @@ class FewShotSeg(nn.Module):
                 )  # 累加损失
 
         return loss, loss_aux  # 返回损失和辅助损失
+
+    def get_fg(self, fts, mask):  # 获取前景特征的方法
+        """
+        :param fts: (1, C, H', W')
+        :param mask: (1, H, W)
+        :return:
+        """
+
+        mask = torch.round(mask)  # 对掩码进行四舍五入
+        fts = F.interpolate(fts, size=mask.shape[-2:], mode="bilinear")  # 进行上采样
+
+        mask = mask.unsqueeze(1).bool()  # 扩展掩码维度
+        result_list = []  # 初始化结果列表
+
+        for batch_id in range(fts.shape[0]):  # 遍历批次
+            tmp_tensor = fts[batch_id]  # 获取当前批次的特征
+            tmp_mask = mask[batch_id]  # 获取当前批次的掩码
+
+            foreground_features = tmp_tensor[:, tmp_mask[0]]  # 提取前景特征
+
+            if foreground_features.shape[1] == 1:  # 如果前景特征的通道数为1
+                foreground_features = torch.cat(  # 将前景特征复制一次
+                    (foreground_features, foreground_features), dim=1
+                )
+
+            result_list.append(foreground_features)  # 将前景特征添加到结果列表
+
+        foreground_features = torch.stack(result_list)  # 将结果列表堆叠为张量
+
+        return foreground_features  # 返回前景特征
 
     def get_fg_pts(self, features, mask):
         """
