@@ -3,8 +3,8 @@ from main_utils import *
 
 if __name__ == "__main__":
 
-    # eval_fold_list = [0, 1, 2, 3, 4]
-    eval_fold_list = [0]
+    eval_fold_list = [0, 1, 2, 3, 4]
+    # eval_fold_list = [1]
     dataset = "CHAOST2"  # CMR CHAOST2 SABS
 
     for eval_fold in eval_fold_list:
@@ -13,7 +13,9 @@ if __name__ == "__main__":
 
         # 配置参数保持不变
         train_config_updates = {
-            "reload_model_path": f"{prepath}/14/snapshots/14000.pth",
+            # "reload_model_path": f"{prepath}/15/snapshots/6000.pth",
+            # "reload_model_path": "runs/GMRD_CHAOST2_CV0_train/15/snapshots/6000.pth",
+            "reload_model_path": "runs/GMRD_CHAOST2_CV1_train/2/snapshots/10000.pth",
             "n_steps": 16000,
             "mode": "train",
             "eval_fold": eval_fold,
@@ -22,16 +24,17 @@ if __name__ == "__main__":
         }
         # 运行脚本
         print("Running training...")
-        run_train(train_config_updates)
+        # run_train(train_config_updates)
 
         #### 验证模型测试 #####
         # 获取最新实验的所有模型文件
-        snapshot_files = get_latest_snapshot_files(prepath)[-2:]
-        # files = [
-        #     "./runs/GMRD_CMR_CV0_train/1/snapshots/3000.pth",
-        #     "./runs/GMRD_CMR_CV0_train/1/snapshots/6000.pth",
-        #     "./runs/GMRD_CMR_CV0_train/1/snapshots/9000.pth",
-        # ]
+        # snapshot_files = get_latest_snapshot_files(prepath)[-1:]
+
+        dataset = "SABS"
+        snapshot_files = [
+            "./runs/GMRD_CHAOST2_CV1_train/2/snapshots/10000.pth",
+            # "./runs/GMRD_CHAOST2_CV0_train/15/snapshots/6000.pth",
+        ]
         for snapshot in snapshot_files:
             test_config_updates = {
                 "reload_model_path": snapshot,

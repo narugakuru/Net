@@ -10,3 +10,5 @@ runs
 */source/*
 output.log
 .idea
+*.csv
+*.log

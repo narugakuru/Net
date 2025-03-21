@@ -227,7 +227,7 @@ def main(_run, _config, _log):
                     _log.info(f"Min total loss {min_total_loss}")
 
             if (i_iter + 1) % _config["save_snapshot_every"] == 0:
-                _log.info("###### Taking snapshot ######")
+                _log.info("###### Taking snapshot, model is saved ######")
                 torch.save(
                     model.state_dict(),
                     os.path.join(

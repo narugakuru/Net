@@ -109,7 +109,7 @@ class Scores():
         return self.TP / (self.TP + self.FP + self.FN)
 
 
-def set_logger(path="./log.txt"):
+def set_logger(path="./model.log"):
     logger = logging.getLogger()
     logger.handlers = []
     formatter = logging.Formatter("%(levelname)s - %(name)s - %(message)s")

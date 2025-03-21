@@ -1966,3 +1966,145 @@ INFO - main - Total Mean Dice: 0.7929723858833313
 INFO - main - End of validation.
 INFO - GMRD - Result: 1
 INFO - GMRD - Completed after 0:00:45
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "15"
+INFO - main - Run "CHAOST2_cv0" with ID "5"
+INFO - main - Create model...
+INFO - main - Loaded model from ./runs/GMRD_CHAOST2_CV0_train/14/snapshots/14000.pth
+INFO - main - Set optimizer...
+INFO - main - Load data...
+INFO - main - Loading data completed...
+INFO - main - Start training...
+INFO - main - This is epoch "0" of "16" epochs.
+INFO - main - step 100: total_loss: 0.24071504324674606, query_loss: 0.09478769959881901, aux_loss: [0.01376122] align_loss: [0.13143753]
+INFO - main - Min total loss 10000000000.0-9999999999.759285
+INFO - main - step 200: total_loss: 0.27098051726818084, query_loss: 0.11050422740168869, aux_loss: [0.01845586] align_loss: [0.14580908]
+INFO - main - Min total loss 0.24071504324674606
+INFO - main - step 300: total_loss: 0.2544353777915239, query_loss: 0.0962812926992774, aux_loss: [0.01257861] align_loss: [0.14426386]
+INFO - main - Min total loss 0.24071504324674606
+INFO - main - step 400: total_loss: 0.24782050140202044, query_loss: 0.0924044297914952, aux_loss: [0.01300192] align_loss: [0.14183237]
+INFO - main - Min total loss 0.24071504324674606
+INFO - main - step 500: total_loss: 0.25165730595588687, query_loss: 0.08838862685486674, aux_loss: [0.01278743] align_loss: [0.14971732]
+INFO - main - Min total loss 0.24071504324674606
+INFO - main - step 600: total_loss: 0.27096105642616747, query_loss: 0.09875035868957639, aux_loss: [0.01534092] align_loss: [0.15835]
+INFO - main - Min total loss 0.24071504324674606
+INFO - main - step 700: total_loss: 0.269993140809238, query_loss: 0.10567517896182835, aux_loss: [0.01250303] align_loss: [0.14951342]
+INFO - main - Min total loss 0.24071504324674606
+INFO - main - step 800: total_loss: 0.26071528874337674, query_loss: 0.09345091318711639, aux_loss: [0.01417059] align_loss: [0.15333931]
+INFO - main - Min total loss 0.24071504324674606
+INFO - main - step 900: total_loss: 0.27409377045929434, query_loss: 0.11021680252626538, aux_loss: [0.01649651] align_loss: [0.14944328]
+INFO - main - Min total loss 0.24071504324674606
+INFO - main - step 1000: total_loss: 0.2833419715613127, query_loss: 0.11153827510774135, aux_loss: [0.01817486] align_loss: [0.15636426]
+INFO - main - Min total loss 0.24071504324674606
+INFO - main - This is epoch "1" of "16" epochs.
+INFO - main - step 1100: total_loss: 0.2588672821596265, query_loss: 0.10380324454046785, aux_loss: [0.01397765] align_loss: [0.14097673]
+INFO - main - Min total loss 0.24071504324674606
+INFO - main - step 1200: total_loss: 0.26361238934099673, query_loss: 0.09779378398321568, aux_loss: [0.01237512] align_loss: [0.15213102]
+INFO - main - Min total loss 0.24071504324674606
+INFO - main - step 1300: total_loss: 0.24973357565701007, query_loss: 0.09214810514822602, aux_loss: [0.01293409] align_loss: [0.14287235]
+INFO - main - Min total loss 0.24071504324674606
+INFO - main - step 1400: total_loss: 0.2604885011166334, query_loss: 0.09779605355113745, aux_loss: [0.01402238] align_loss: [0.14826217]
+INFO - main - Min total loss 0.24071504324674606
+INFO - main - step 1500: total_loss: 0.24364617336541414, query_loss: 0.10100006562657654, aux_loss: [0.01760513] align_loss: [0.12831587]
+INFO - main - Min total loss 0.24071504324674606
+INFO - main - step 1600: total_loss: 0.24290766533464192, query_loss: 0.09106705794576556, aux_loss: [0.01879275] align_loss: [0.13647375]
+INFO - main - Min total loss 0.24071504324674606
+INFO - main - step 1700: total_loss: 0.26032133668661117, query_loss: 0.09828027630224824, aux_loss: [0.01376891] align_loss: [0.1476806]
+INFO - main - Min total loss 0.24071504324674606
+INFO - main - step 1800: total_loss: 0.23374680779874324, query_loss: 0.09129071826115251, aux_loss: [0.01376718] align_loss: [0.12892163]
+INFO - main - Min total loss 0.24071504324674606-0.006968235448002819
+INFO - main - step 1900: total_loss: 0.2416394204646349, query_loss: 0.08707923053763807, aux_loss: [0.01470706] align_loss: [0.14113872]
+INFO - main - Min total loss 0.23374680779874324
+INFO - main - step 2000: total_loss: 0.254120315015316, query_loss: 0.10114538223482668, aux_loss: [0.01655975] align_loss: [0.13842025]
+INFO - main - Min total loss 0.23374680779874324
+INFO - main - ###### Taking snapshot ######
+INFO - main - This is epoch "2" of "16" epochs.
+INFO - main - step 2100: total_loss: 0.25844992890954016, query_loss: 0.09956289561465383, aux_loss: [0.01264161] align_loss: [0.14587852]
+INFO - main - Min total loss 0.23374680779874324
+INFO - main - step 2200: total_loss: 0.2596341298148036, query_loss: 0.10711758861318231, aux_loss: [0.0124335] align_loss: [0.1396603]
+INFO - main - Min total loss 0.23374680779874324
+INFO - main - step 2300: total_loss: 0.26969532113522293, query_loss: 0.11518920626491308, aux_loss: [0.0145736] align_loss: [0.14111632]
+INFO - main - Min total loss 0.23374680779874324
+INFO - main - step 2400: total_loss: 0.2602310656011105, query_loss: 0.1035101215634495, aux_loss: [0.01327044] align_loss: [0.14079905]
+INFO - main - Min total loss 0.23374680779874324
+INFO - main - step 2500: total_loss: 0.2443076243251562, query_loss: 0.09861166181042791, aux_loss: [0.01565826] align_loss: [0.13120502]
+INFO - main - Min total loss 0.23374680779874324
+INFO - main - step 2600: total_loss: 0.26617723114788533, query_loss: 0.10142300145700574, aux_loss: [0.0142169] align_loss: [0.15148692]
+INFO - main - Min total loss 0.23374680779874324
+INFO - main - step 2700: total_loss: 0.26133380938321354, query_loss: 0.09439949264749885, aux_loss: [0.01100731] align_loss: [0.15365374]
+INFO - main - Min total loss 0.23374680779874324
+INFO - main - step 2800: total_loss: 0.24642463322728872, query_loss: 0.09395319955423474, aux_loss: [0.0119732] align_loss: [0.13927433]
+INFO - main - Min total loss 0.23374680779874324
+INFO - main - step 2900: total_loss: 0.2864423198252916, query_loss: 0.11106247242540121, aux_loss: [0.01193091] align_loss: [0.16177772]
+INFO - main - Min total loss 0.23374680779874324
+INFO - main - step 3000: total_loss: 0.24576794676482677, query_loss: 0.09858127412386239, aux_loss: [0.01321676] align_loss: [0.13348106]
+INFO - main - Min total loss 0.23374680779874324
+INFO - main - This is epoch "3" of "16" epochs.
+INFO - main - step 3100: total_loss: 0.24131459672003985, query_loss: 0.08994783414527774, aux_loss: [0.0130108] align_loss: [0.13797016]
+INFO - main - Min total loss 0.23374680779874324
+INFO - main - step 3200: total_loss: 0.24822193175554275, query_loss: 0.08724133743904532, aux_loss: [0.01194352] align_loss: [0.14783272]
+INFO - main - Min total loss 0.23374680779874324
+INFO - main - step 3300: total_loss: 0.23002250157296658, query_loss: 0.07954871981404722, aux_loss: [0.01167062] align_loss: [0.13748802]
+INFO - main - Min total loss 0.23374680779874324-0.003724306225776658
+INFO - main - step 3400: total_loss: 0.24538864977657796, query_loss: 0.08141693130135536, aux_loss: [0.01354882] align_loss: [0.15129484]
+INFO - main - Min total loss 0.23002250157296658
+INFO - main - step 3500: total_loss: 0.257240931764245, query_loss: 0.09702997100539505, aux_loss: [0.01367846] align_loss: [0.14676695]
+INFO - main - Min total loss 0.23002250157296658
+INFO - main - step 3600: total_loss: 0.27458371706306933, query_loss: 0.1079876259341836, aux_loss: [0.01161695] align_loss: [0.15318477]
+INFO - main - Min total loss 0.23002250157296658
+INFO - main - step 3700: total_loss: 0.27039812069386243, query_loss: 0.09549527250230312, aux_loss: [0.01361695] align_loss: [0.16197349]
+INFO - main - Min total loss 0.23002250157296658
+INFO - main - step 3800: total_loss: 0.2499650778621435, query_loss: 0.09533659217879176, aux_loss: [0.0137659] align_loss: [0.1417754]
+INFO - main - Min total loss 0.23002250157296658
+INFO - main - step 3900: total_loss: 0.24112946093082427, query_loss: 0.08751926280558109, aux_loss: [0.01259345] align_loss: [0.14108703]
+INFO - main - Min total loss 0.23002250157296658
+INFO - main - step 4000: total_loss: 0.24259701155126095, query_loss: 0.09196965030394494, aux_loss: [0.01224259] align_loss: [0.13836607]
+INFO - main - Min total loss 0.23002250157296658
+INFO - main - ###### Taking snapshot ######
+INFO - main - This is epoch "4" of "16" epochs.
+INFO - main - step 4100: total_loss: 0.22180200301110745, query_loss: 0.09181604222394527, aux_loss: [0.01265377] align_loss: [0.11793453]
+INFO - main - Min total loss 0.23002250157296658-0.008220498561859135
+INFO - main - step 4200: total_loss: 0.2266220746934414, query_loss: 0.08990509518422186, aux_loss: [0.01030362] align_loss: [0.12437144]
+INFO - main - Min total loss 0.22180200301110745
+INFO - main - step 4300: total_loss: 0.22831592161208392, query_loss: 0.08557397758588195, aux_loss: [0.01243713] align_loss: [0.12986964]
+INFO - main - Min total loss 0.22180200301110745
+INFO - main - step 4400: total_loss: 0.21509526066482068, query_loss: 0.07628693797625602, aux_loss: [0.01430368] align_loss: [0.1267116]
+INFO - main - Min total loss 0.22180200301110745-0.006706742346286765
+INFO - main - step 4500: total_loss: 0.2419021414592862, query_loss: 0.09094022021628917, aux_loss: [0.01231045] align_loss: [0.13905166]
+INFO - main - Min total loss 0.21509526066482068
+INFO - main - step 4600: total_loss: 0.2524333331361413, query_loss: 0.09750169736333192, aux_loss: [0.01200452] align_loss: [0.14115444]
+INFO - main - Min total loss 0.21509526066482068
+INFO - main - step 4700: total_loss: 0.24069389447569847, query_loss: 0.08747757631354033, aux_loss: [0.01401567] align_loss: [0.14057404]
+INFO - main - Min total loss 0.21509526066482068
+INFO - main - step 4800: total_loss: 0.2697378890961409, query_loss: 0.09283417969942093, aux_loss: [0.0134384] align_loss: [0.16396414]
+INFO - main - Min total loss 0.21509526066482068
+INFO - main - step 4900: total_loss: 0.2468155026435852, query_loss: 0.08187725060619414, aux_loss: [0.01300469] align_loss: [0.15197797]
+INFO - main - Min total loss 0.21509526066482068
+INFO - main - step 5000: total_loss: 0.26302076257765294, query_loss: 0.0969828958902508, aux_loss: [0.01250672] align_loss: [0.15356447]
+INFO - main - Min total loss 0.21509526066482068
+INFO - main - This is epoch "5" of "16" epochs.
+INFO - main - step 5100: total_loss: 0.24947878558188677, query_loss: 0.08927054727450014, aux_loss: [0.01110914] align_loss: [0.14787804]
+INFO - main - Min total loss 0.21509526066482068
+INFO - main - step 5200: total_loss: 0.24090990006923677, query_loss: 0.08665890685282647, aux_loss: [0.01386723] align_loss: [0.14171568]
+INFO - main - Min total loss 0.21509526066482068
+INFO - main - step 5300: total_loss: 0.2420398224890232, query_loss: 0.08396987104788423, aux_loss: [0.01227385] align_loss: [0.14589502]
+INFO - main - Min total loss 0.21509526066482068
+INFO - main - step 5400: total_loss: 0.2632059048861265, query_loss: 0.09433890948072075, aux_loss: [0.01101762] align_loss: [0.15643834]
+INFO - main - Min total loss 0.21509526066482068
+INFO - main - step 5500: total_loss: 0.23495224196463824, query_loss: 0.08806323732249438, aux_loss: [0.01408714] align_loss: [0.13276388]
+INFO - main - Min total loss 0.21509526066482068
+INFO - main - step 5600: total_loss: 0.25540136665105817, query_loss: 0.08978914542123675, aux_loss: [0.01347759] align_loss: [0.1526359]
+INFO - main - Min total loss 0.21509526066482068
+INFO - main - step 5700: total_loss: 0.26250104010105135, query_loss: 0.10027926703915, aux_loss: [0.01186827] align_loss: [0.14896695]
+INFO - main - Min total loss 0.21509526066482068
+INFO - main - step 5800: total_loss: 0.25491325475275517, query_loss: 0.1045223739463836, aux_loss: [0.01491573] align_loss: [0.13718607]
+INFO - main - Min total loss 0.21509526066482068
+INFO - main - step 5900: total_loss: 0.2539078399538994, query_loss: 0.09146836331114173, aux_loss: [0.01239249] align_loss: [0.1496198]
+INFO - main - Min total loss 0.21509526066482068
+INFO - main - step 6000: total_loss: 0.24595535337924956, query_loss: 0.08451545710675418, aux_loss: [0.01334938] align_loss: [0.1488474]
+INFO - main - Min total loss 0.21509526066482068
+INFO - main - ###### Taking snapshot ######
+INFO - main - This is epoch "6" of "16" epochs.
+INFO - main - step 6100: total_loss: 0.25409180410206317, query_loss: 0.08967068469151855, aux_loss: [0.01226872] align_loss: [0.15237287]
+INFO - main - Min total loss 0.21509526066482068
+WARNING - GMRD - Aborted after 1:19:57!

@@ -44,11 +44,13 @@ def extract_logger_data(base_dir, output_csv):
                             row = {"exp": os.path.basename(subdir)}  # 子文件夹名称
                             values = []
                             for key, value in dict_data.items():
-                                row[key] = round(float(value), 4)  # 保留小数点后4位
+                                value *= 100
+                                row[key] = round(float(value), 2)  # 保留小数点后2位
                                 values.append(float(value))
                             # 计算均值
+                            value *= 100
                             row["mean"] = (
-                                round(sum(values) / len(values), 4) if values else 0
+                                round(sum(values) / len(values), 2) if values else 0
                             )
                             data_to_write.append(row)
                         except:
@@ -75,6 +77,6 @@ def extract_logger_data(base_dir, output_csv):
 
 
 # 示例调用
-base_dir = r"E:\CodeAchieve\PaperCode\GMRD\runs\GMRD_CMR_CV0_val"
+base_dir = r"E:\CodeAchieve\PaperCode\GMRD\runs\GMRD_CHAOST2_CV1_train"
 output_csv = "output.csv"
 extract_logger_data(base_dir, output_csv)
