@@ -13,8 +13,8 @@ if __name__ == "__main__":
 
         # 配置参数保持不变
         train_config_updates = {
-            "reload_model_path": f"{prepath}/10/snapshots/1000.pth",
-            "n_steps": 30000,
+            "reload_model_path": f"{prepath}/14/snapshots/14000.pth",
+            "n_steps": 16000,
             "mode": "train",
             "eval_fold": eval_fold,
             "dataset": dataset,
@@ -22,11 +22,11 @@ if __name__ == "__main__":
         }
         # 运行脚本
         print("Running training...")
-        # run_train(train_config_updates)
+        run_train(train_config_updates)
 
         #### 验证模型测试 #####
         # 获取最新实验的所有模型文件
-        snapshot_files = get_latest_snapshot_files(prepath)
+        snapshot_files = get_latest_snapshot_files(prepath)[-2:]
         # files = [
         #     "./runs/GMRD_CMR_CV0_train/1/snapshots/3000.pth",
         #     "./runs/GMRD_CMR_CV0_train/1/snapshots/6000.pth",

@@ -162,46 +162,46 @@ class FewShotSeg(nn.Module):
 
                 # CPG模块 ############################################################
 
-                spt_fts_ = [  # 通过掩码获取支持特征 torch.Size([1, 512, 64, 64])
-                    [
-                        self.getFeatures(  # 获取每个样本的特征
-                            # supp_fts torch.Size([1, 1, 1, 512, 64, 64])
-                            supp_fts[[epi], way, shot],
-                            supp_mask[[epi], way, shot],
-                        )
-                        for shot in range(self.n_shots)
-                    ]
-                    for way in range(self.n_ways)
-                ]
+                # spt_fts_ = [  # 通过掩码获取支持特征 torch.Size([1, 512, 64, 64])
+                #     [
+                #         self.getFeatures(  # 获取每个样本的特征
+                #             # supp_fts torch.Size([1, 1, 1, 512, 64, 64])
+                #             supp_fts[[epi], way, shot],
+                #             supp_mask[[epi], way, shot],
+                #         )
+                #         for shot in range(self.n_shots)
+                #     ]
+                #     for way in range(self.n_ways)
+                # ]
 
-                spt_fg_proto = self.getPrototype(
-                    spt_fts_
-                )  # 获取前景原型 torch.Size([1, 512])
+                # spt_fg_proto = self.getPrototype(
+                #     spt_fts_
+                # )  # 获取前景原型 torch.Size([1, 512])
 
-                qry_pred = torch.stack(  # 计算查询预测 torch.Size([1, 1, 64, 64])
-                    [
-                        # qry_fts torch.Size([1, 1, 512, 64, 64])
-                        self.getPred(  # 获取每个方式的预测
-                            qry_fts[way], spt_fg_proto[way], self.thresh_pred[way]
-                        )
-                        for way in range(self.n_ways)
-                    ],
-                    dim=1,
-                )  # N x Wa x H' x W'
+                # qry_pred = torch.stack(  # 计算查询预测 torch.Size([1, 1, 64, 64])
+                #     [
+                #         # qry_fts torch.Size([1, 1, 512, 64, 64])
+                #         self.getPred(  # 获取每个方式的预测
+                #             qry_fts[way], spt_fg_proto[way], self.thresh_pred[way]
+                #         )
+                #         for way in range(self.n_ways)
+                #     ],
+                #     dim=1,
+                # )  # N x Wa x H' x W'
 
-                qry_pred_coarse = (
-                    F.interpolate(  # 上采样查询预测 torch.Size([1, 1, 256, 256])
-                        qry_pred, size=img_size, mode="bilinear", align_corners=True
-                    )
-                )
-                if train:  # 如果在训练模式
-                    log_qry_pred_coarse = torch.cat(  # 计算对数预测
-                        [1 - qry_pred_coarse, qry_pred_coarse], dim=1
-                    ).log()
+                # qry_pred_coarse = (
+                #     F.interpolate(  # 上采样查询预测 torch.Size([1, 1, 256, 256])
+                #         qry_pred, size=img_size, mode="bilinear", align_corners=True
+                #     )
+                # )
+                # if train:  # 如果在训练模式
+                #     log_qry_pred_coarse = torch.cat(  # 计算对数预测
+                #         [1 - qry_pred_coarse, qry_pred_coarse], dim=1
+                #     ).log()
 
-                    coarse_loss += self.criterion(
-                        log_qry_pred_coarse, qry_mask
-                    )  # 计算损失
+                #     coarse_loss += self.criterion(
+                #         log_qry_pred_coarse, qry_mask
+                #     )  # 计算损失
 
                 ####################################################################
 
@@ -215,16 +215,16 @@ class FewShotSeg(nn.Module):
                     for way in range(self.n_ways)
                 ]  # (1, 512, N)
 
-                qry_fg_fts = [  # 获取查询前景特征 torch.Size([1, 512, 65536])
-                    self.get_fg(qry_fts[way], qry_pred_coarse[epi])
-                    for way in range(self.n_ways)
-                ]  # (1, 512, N)
+                # qry_fg_fts = [  # 获取查询前景特征 torch.Size([1, 512, 65536])
+                #     self.get_fg(qry_fts[way], qry_pred_coarse[epi])
+                #     for way in range(self.n_ways)
+                # ]  # (1, 512, N)
 
                 # 使用FADAM清洗域信息
                 # FAM要求输入是b,512,n，FAM转为b,512,900。
                 # 最终MSFM输出是torch.Size([1, 512, 1800])
                 # 输出 1,1,1,512,64,64
-                supp_fts = self.FADAM(spt_fg_fts, qry_fg_fts)
+                supp_fts = self.FADAM(spt_fg_fts)
 
                 # GMRD 生成多个原型
                 ####################################################################
@@ -299,7 +299,7 @@ class FewShotSeg(nn.Module):
             output,
             align_loss / supp_bs,
             aux_loss / supp_bs,
-            coarse_loss / supp_bs,
+            # coarse_loss / supp_bs,
         )  # 返回输出和损失
 
     def getPred(self, fts, prototype, thresh):

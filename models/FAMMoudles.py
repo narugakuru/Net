@@ -111,12 +111,12 @@ class FAM(nn.Module):  # 定义FAM类（特征注意力匹配模块）
         else:
             self.device = torch.device("cpu")  # 否则，设置为CPU设备
 
-        self.attention_matching = AttentionMacthcing(
-            feature_dim, N
-        )  # 实例化特征注意力匹配模块
+        # self.attention_matching = AttentionMacthcing(
+        #     feature_dim, N
+        # )  # 实例化特征注意力匹配模块
         self.adapt_pooling = nn.AdaptiveAvgPool1d(N)  # 定义自适应平均池化层
 
-    def forward(self, spt_fg_fts, qry_fg_fts):  # 前向传播方法
+    def forward(self, spt_fg_fts):  # 前向传播方法
         """
         前向传播FAM模块。
 
@@ -129,15 +129,10 @@ class FAM(nn.Module):  # 定义FAM类（特征注意力匹配模块）
         返回:
             tuple: 由融合后的低频、中频和高频特征组成的元组。
         """
-        if qry_fg_fts[0].shape[2] == 0:  # 检查查询前景特征的形状
-            qry_fg_fts[0] = F.pad(qry_fg_fts[0], (0, 1))  # 填充特征以避免尺寸为零
 
         spt_fg_fts = [
             [self.adapt_pooling(fts) for fts in way] for way in spt_fg_fts
         ]  # 自适应池化空间前景特征
-        qry_fg_fts = [
-            self.adapt_pooling(fts) for fts in qry_fg_fts
-        ]  # 自适应池化查询前景特征
 
         # 获取高中低频 全部都是torch.Size([1, 512, 900])
         spt_fg_fts_low, spt_fg_fts_mid, spt_fg_fts_high = (
@@ -145,31 +140,11 @@ class FAM(nn.Module):  # 定义FAM类（特征注意力匹配模块）
                 spt_fg_fts[0][0], cutoff=0.30
             )
         )
-        qry_fg_fts_low, qry_fg_fts_mid, qry_fg_fts_high = (
-            self.filter_frequency_bands(  # 过滤查询前景特征的频带
-                qry_fg_fts[0], cutoff=0.30
-            )
-        )
-
-        # torch.Size([1, 512, 1800])
-        fused_fts_low = self.attention_matching(
-            spt_fg_fts_low, qry_fg_fts_low, "low"
-        )  # 低频特征的融合
-        fused_fts_mid = self.attention_matching(
-            spt_fg_fts_mid, qry_fg_fts_mid, "mid"
-        )  # 中频特征的融合
-        fused_fts_high = self.attention_matching(  # 高频特征的融合
-            spt_fg_fts_high, qry_fg_fts_high, "high"
-        )
-
-        # 和clip文本特征做对齐
-        # spt_fg_fts torch.Size([1, 512, 900])
-        # fused_fts torch.Size([1, 512, 1800])
 
         return (
-            fused_fts_low,
-            fused_fts_mid,
-            fused_fts_high,
+            spt_fg_fts_low,
+            spt_fg_fts_mid,
+            spt_fg_fts_high,
         )  # 返回融合后的低、中、高频特征
 
     def reshape_to_square(self, tensor):  # 将张量重塑为方形的方法
@@ -378,7 +353,7 @@ class FADAM(nn.Module):
         return fused_fts 
 """
 
-
+# Frequency-Aware Domain Adaptation Module (FADAM)
 class FADAM(nn.Module):
 
     def __init__(self, feature_dim=512, N=1024):
@@ -388,24 +363,20 @@ class FADAM(nn.Module):
         # 额外的卷积层用于特征形状转换
         self.reshape_conv = nn.Conv2d(feature_dim, feature_dim, kernel_size=1)
 
-    def forward(self, sp_fts, qry_fts):
+    def forward(self, sp_fts):
         """
         用于清洗域相关信息
 
-        输入特征要求 b,512,n
-        n可以为任意值?
-        为了保留信息, 这里可能不使用掩码, 直接把所有特征塞进来比较好?
+        输入特征要求 b,512,n n可以为任意值
 
         """
-        # n, 512, 900 -> n, 512, 1800
-        # n, 512, 1024 -> n, 512, 2048
-        fused_fts_low, fused_fts_mid, fused_fts_high = self.FAM(sp_fts, qry_fts)
-        logger.debug("FAM: ", fused_fts_low.shape)
-        fused_fts = self.MSFM(fused_fts_low, fused_fts_mid, fused_fts_high)
+        spt_fg_fts_low, spt_fg_fts_mid, spt_fg_fts_high = self.FAM(sp_fts)
+        logger.debug("FAM: ", spt_fg_fts_low.shape)
+        fused_fts = self.MSFM(spt_fg_fts_low, spt_fg_fts_mid, spt_fg_fts_high)
         logger.debug("MSFM: ", fused_fts.shape)
         # ([1, 512, 2304])
         # 将1D特征转换为2D形状
-        # torch.Size([1, 512, 2048]) -> [1, 512, 32, 32]
+        # torch.Size([1, 512, 2n]) -> [1, 512, 32, 32]
         # 动态重塑特征为二维
         B, C, N = fused_fts.shape  # B: Batch, C: Channels, N: 第三维
         side_length = int(np.ceil(np.sqrt(N)))  # 计算正方形边长
@@ -417,9 +388,6 @@ class FADAM(nn.Module):
         fused_fts_square = fused_fts.view(B, C, side_length, side_length)
 
         logger.debug("1D to 2D: ", fused_fts_square.shape)
-        # fused_fts_square = fused_fts.view(
-        #     fused_fts.shape[0], fused_fts.shape[1], int(2048**0.5), int(2048**0.5)
-        # )
         # 使用卷积处理维度
         fused_fts_reshaped = F.interpolate(
             fused_fts_square, size=(64, 64), mode="bilinear", align_corners=True

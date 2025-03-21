@@ -1,0 +1,1968 @@
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "12"
+INFO - main - Run "CHAOST2_cv0" with ID "2"
+INFO - main - Create model...
+INFO - main - Loaded model from ./runs/GMRD_CHAOST2_CV0_train/10/snapshots/1000.pth
+INFO - main - Set optimizer...
+INFO - main - Load data...
+INFO - main - Loading data completed...
+INFO - main - Start training...
+INFO - main - This is epoch "0" of "30" epochs.
+INFO - main - step 100: total_loss: 0.569452946484089, query_loss: 0.4898432493209839, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 10000000000.0-9999999999.430548
+INFO - main - step 200: total_loss: 0.5402191305160522, query_loss: 0.4668562825024128, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.569452946484089-0.029233815968036758
+INFO - main - step 300: total_loss: 0.5421663472056388, query_loss: 0.4704846411943436, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.5402191305160522
+INFO - main - step 400: total_loss: 0.5483620086312294, query_loss: 0.47464085191488264, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.5402191305160522
+INFO - main - step 500: total_loss: 0.5414362546801567, query_loss: 0.4705097189545631, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.5402191305160522
+INFO - main - step 600: total_loss: 0.5410168012976646, query_loss: 0.46830430045723914, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.5402191305160522
+INFO - main - step 700: total_loss: 0.561966911405325, query_loss: 0.48736550271511075, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.5402191305160522
+INFO - main - step 800: total_loss: 0.5270637774467468, query_loss: 0.461015505194664, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.5402191305160522-0.013155353069305376
+INFO - main - step 900: total_loss: 0.5608108910918236, query_loss: 0.48211435601115227, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.5270637774467468
+INFO - main - step 1000: total_loss: 0.5222295728325844, query_loss: 0.45894771814346313, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.5270637774467468-0.004834204614162396
+INFO - main - This is epoch "1" of "30" epochs.
+INFO - main - step 1100: total_loss: 0.5322230386734009, query_loss: 0.4669495689868927, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.5222295728325844
+INFO - main - step 1200: total_loss: 0.49169549375772476, query_loss: 0.43542243003845216, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.5222295728325844-0.030534079074859666
+INFO - main - step 1300: total_loss: 0.5366914138197899, query_loss: 0.47070020869374274, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.49169549375772476
+INFO - main - step 1400: total_loss: 0.507828245460987, query_loss: 0.4538485930860043, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.49169549375772476
+INFO - main - step 1500: total_loss: 0.5479968926310539, query_loss: 0.47647099673748017, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.49169549375772476
+INFO - main - step 1600: total_loss: 0.5563343375921249, query_loss: 0.47912530198693276, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.49169549375772476
+INFO - main - step 1700: total_loss: 0.5129606229066849, query_loss: 0.45358604565262794, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.49169549375772476
+INFO - main - step 1800: total_loss: 0.5145394857227802, query_loss: 0.4542279113829136, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.49169549375772476
+INFO - main - step 1900: total_loss: 0.47740679532289504, query_loss: 0.42626513838768004, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.49169549375772476-0.014288698434829716
+INFO - main - step 2000: total_loss: 0.5087938614189624, query_loss: 0.4480000232160091, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.47740679532289504
+INFO - main - ###### Taking snapshot ######
+INFO - main - This is epoch "2" of "30" epochs.
+INFO - main - step 2100: total_loss: 0.5379578018188477, query_loss: 0.47295418530702593, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.47740679532289504
+INFO - main - step 2200: total_loss: 0.5524854500591755, query_loss: 0.4750659550726414, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.47740679532289504
+INFO - main - step 2300: total_loss: 0.5200325828790665, query_loss: 0.45989707559347154, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.47740679532289504
+INFO - main - step 2400: total_loss: 0.5411969563364982, query_loss: 0.4723950859904289, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.47740679532289504
+INFO - main - step 2500: total_loss: 0.5070589749515056, query_loss: 0.44928194433450697, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.47740679532289504
+INFO - main - step 2600: total_loss: 0.5092680270969868, query_loss: 0.45192567229270936, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.47740679532289504
+INFO - main - step 2700: total_loss: 0.5198371797800064, query_loss: 0.46014979615807533, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.47740679532289504
+INFO - main - step 2800: total_loss: 0.49984366446733475, query_loss: 0.4438791137933731, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.47740679532289504
+INFO - main - step 2900: total_loss: 0.5573968434333801, query_loss: 0.4862114903330803, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.47740679532289504
+INFO - main - step 3000: total_loss: 0.4979511511325836, query_loss: 0.4400385117530823, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.47740679532289504
+INFO - main - This is epoch "3" of "30" epochs.
+INFO - main - step 3100: total_loss: 0.5282137493789196, query_loss: 0.45799066469073296, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.47740679532289504
+INFO - main - step 3200: total_loss: 0.5257543447613716, query_loss: 0.46067887529730794, aux_loss: [0.] align_loss: [0.00032183]
+INFO - main - Min total loss 0.47740679532289504
+INFO - main - step 3300: total_loss: 0.5079571262001992, query_loss: 0.44880259603261946, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.47740679532289504
+INFO - main - step 3400: total_loss: 0.515798921585083, query_loss: 0.45704338669776917, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.47740679532289504
+INFO - main - step 3500: total_loss: 0.553005593419075, query_loss: 0.461061504483223, aux_loss: [0.] align_loss: [0.00765473]
+INFO - main - Min total loss 0.47740679532289504
+INFO - main - step 3600: total_loss: 0.5336437940597534, query_loss: 0.46998224705457686, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.47740679532289504
+INFO - main - step 3700: total_loss: 0.5420616286993026, query_loss: 0.4799096375703812, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.47740679532289504
+INFO - main - step 3800: total_loss: 0.5324175786972046, query_loss: 0.4667838434875011, aux_loss: [0.] align_loss: [0.00030833]
+INFO - main - Min total loss 0.47740679532289504
+INFO - main - step 3900: total_loss: 0.47108946084976194, query_loss: 0.4202994853258133, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.47740679532289504-0.006317334473133096
+INFO - main - step 4000: total_loss: 0.5262565375864505, query_loss: 0.4474375753104687, aux_loss: [0.] align_loss: [0.00781143]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - ###### Taking snapshot ######
+INFO - main - This is epoch "4" of "30" epochs.
+INFO - main - step 4100: total_loss: 0.5626685155928135, query_loss: 0.48293992727994917, aux_loss: [0.] align_loss: [0.0056641]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 4200: total_loss: 0.527367145717144, query_loss: 0.46632255107164383, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 4300: total_loss: 0.5273815304040909, query_loss: 0.4612999752163887, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 4400: total_loss: 0.5309226468205452, query_loss: 0.458248503357172, aux_loss: [0.] align_loss: [0.00692219]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 4500: total_loss: 0.564438666254282, query_loss: 0.47926339238882065, aux_loss: [0.] align_loss: [0.01446781]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 4600: total_loss: 0.6182135052978992, query_loss: 0.48565090775489805, aux_loss: [0.] align_loss: [0.0362023]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 4700: total_loss: 0.5293550877273083, query_loss: 0.4556530947983265, aux_loss: [0.] align_loss: [0.00554354]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 4800: total_loss: 0.5501651728153228, query_loss: 0.477993403673172, aux_loss: [0.] align_loss: [0.00357947]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 4900: total_loss: 0.529323808401823, query_loss: 0.44042177230119706, aux_loss: [0.] align_loss: [0.01992362]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 5000: total_loss: 0.5236410844326019, query_loss: 0.46470035329461096, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - This is epoch "5" of "30" epochs.
+INFO - main - step 5100: total_loss: 0.5079118292033672, query_loss: 0.45305471584200857, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 5200: total_loss: 0.4946054930984974, query_loss: 0.4446680399775505, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 5300: total_loss: 0.5381743942201137, query_loss: 0.4770156268775463, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 5400: total_loss: 0.6399931620061398, query_loss: 0.46313597202301027, aux_loss: [0.] align_loss: [0.06491361]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 5500: total_loss: 0.5901478098332882, query_loss: 0.450560445189476, aux_loss: [0.] align_loss: [0.05386581]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 5600: total_loss: 0.5356431517004967, query_loss: 0.4058532725274563, aux_loss: [0.] align_loss: [0.05141612]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 5700: total_loss: 0.7042549109458923, query_loss: 0.4604605406522751, aux_loss: [0.04542214] align_loss: [0.13502784]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 5800: total_loss: 0.7356252881884575, query_loss: 0.467901122123003, aux_loss: [0.04044417] align_loss: [0.16178766]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 5900: total_loss: 0.6789243233203888, query_loss: 0.4602259065210819, aux_loss: [0.] align_loss: [0.13130848]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 6000: total_loss: 0.6732651999592781, query_loss: 0.46313711315393447, aux_loss: [0.] align_loss: [0.12805818]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - ###### Taking snapshot ######
+INFO - main - This is epoch "6" of "30" epochs.
+INFO - main - step 6100: total_loss: 0.6505593049526215, query_loss: 0.4403082649409771, aux_loss: [0.03510541] align_loss: [0.130091]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 6200: total_loss: 0.6110004833340645, query_loss: 0.45189875885844233, aux_loss: [0.03963819] align_loss: [0.08534703]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 6300: total_loss: 0.6488900598883629, query_loss: 0.4370616264641285, aux_loss: [0.02657583] align_loss: [0.12816377]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 6400: total_loss: 0.5835277849435806, query_loss: 0.44525559067726134, aux_loss: [0.03433707] align_loss: [0.07143911]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 6500: total_loss: 0.6659058660268784, query_loss: 0.4619837273657322, aux_loss: [0.02715683] align_loss: [0.12182572]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 6600: total_loss: 0.6935147723555565, query_loss: 0.44948325246572496, aux_loss: [0.02440181] align_loss: [0.16198328]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 6700: total_loss: 0.712917477786541, query_loss: 0.4747082857787609, aux_loss: [0.02496287] align_loss: [0.15081325]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 6800: total_loss: 0.7239871245622634, query_loss: 0.47644482403993604, aux_loss: [0.02747825] align_loss: [0.16297203]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 6900: total_loss: 0.735168707370758, query_loss: 0.48181697517633437, aux_loss: [0.02460584] align_loss: [0.16482033]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 7000: total_loss: 0.7556504693627357, query_loss: 0.48533042550086974, aux_loss: [0.02421427] align_loss: [0.18151039]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - This is epoch "7" of "30" epochs.
+INFO - main - step 7100: total_loss: 0.691663301885128, query_loss: 0.47590378656983373, aux_loss: [0.] align_loss: [0.1331857]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 7200: total_loss: 0.6750959651172161, query_loss: 0.4590157201886177, aux_loss: [0.02154726] align_loss: [0.14040376]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 7300: total_loss: 0.7047294104099273, query_loss: 0.46448509514331815, aux_loss: [0.02130401] align_loss: [0.16325703]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 7400: total_loss: 0.6691269344091415, query_loss: 0.46622483611106874, aux_loss: [0.02175248] align_loss: [0.12418622]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 7500: total_loss: 0.6697859790921211, query_loss: 0.4439929856359959, aux_loss: [0.01982963] align_loss: [0.14972109]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 7600: total_loss: 0.6183714045584202, query_loss: 0.4461051152646542, aux_loss: [0.02105957] align_loss: [0.10739313]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 7700: total_loss: 0.761735620200634, query_loss: 0.4836417502164841, aux_loss: [0.] align_loss: [0.18981622]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 7800: total_loss: 0.643614042699337, query_loss: 0.44533640027046206, aux_loss: [0.01801896] align_loss: [0.12438652]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 7900: total_loss: 0.6773641157150269, query_loss: 0.46032343119382857, aux_loss: [0.02022019] align_loss: [0.14580789]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 8000: total_loss: 0.6921080255508423, query_loss: 0.46552756428718567, aux_loss: [0.02029184] align_loss: [0.14644532]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - ###### Taking snapshot ######
+INFO - main - This is epoch "8" of "30" epochs.
+INFO - main - step 8100: total_loss: 0.662140508890152, query_loss: 0.44358045935630797, aux_loss: [0.01842156] align_loss: [0.14937447]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 8200: total_loss: 0.6432602870464325, query_loss: 0.4243956345319748, aux_loss: [0.02052534] align_loss: [0.14916223]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 8300: total_loss: 0.7043729591369629, query_loss: 0.47069078028202055, aux_loss: [0.0208478] align_loss: [0.15543015]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 8400: total_loss: 0.6517008715867996, query_loss: 0.45417718932032586, aux_loss: [0.01786888] align_loss: [0.12868896]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 8500: total_loss: 0.6391628094017505, query_loss: 0.43661815494298933, aux_loss: [0.01841196] align_loss: [0.1333538]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 8600: total_loss: 0.6689639142155648, query_loss: 0.470351170450449, aux_loss: [0.01898888] align_loss: [0.12588969]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 8700: total_loss: 0.6283304873108864, query_loss: 0.45516825646162035, aux_loss: [0.] align_loss: [0.10521562]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 8800: total_loss: 0.5597784166038037, query_loss: 0.43657483249902723, aux_loss: [0.01892054] align_loss: [0.06316563]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 8900: total_loss: 0.5551699352264404, query_loss: 0.42787914887070655, aux_loss: [0.01810026] align_loss: [0.06815321]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 9000: total_loss: 0.6115343327820301, query_loss: 0.464518405944109, aux_loss: [0.01610991] align_loss: [0.08151186]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - This is epoch "9" of "30" epochs.
+INFO - main - step 9100: total_loss: 0.6390195426344871, query_loss: 0.4499931789934635, aux_loss: [0.01604196] align_loss: [0.12096883]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 9200: total_loss: 0.63111935287714, query_loss: 0.4362884087860584, aux_loss: [0.] align_loss: [0.12212735]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 9300: total_loss: 0.7010278576612472, query_loss: 0.4669387331604958, aux_loss: [0.01791748] align_loss: [0.15978152]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 9400: total_loss: 0.6309451958537102, query_loss: 0.44699170246720316, aux_loss: [0.0193615] align_loss: [0.11422733]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 9500: total_loss: 0.6166896545886993, query_loss: 0.4489564809203148, aux_loss: [0.02024028] align_loss: [0.10047182]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 9600: total_loss: 0.656451726257801, query_loss: 0.4634965638816357, aux_loss: [0.02066493] align_loss: [0.11528683]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 9700: total_loss: 0.6607128727436066, query_loss: 0.44943694785237315, aux_loss: [0.02033579] align_loss: [0.13804735]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 9800: total_loss: 0.6428700721263886, query_loss: 0.4269017718732357, aux_loss: [0.] align_loss: [0.13743559]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 9900: total_loss: 0.6871163448691369, query_loss: 0.44764752328395846, aux_loss: [0.01969275] align_loss: [0.15455194]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 10000: total_loss: 0.6290060165524483, query_loss: 0.41157077848911283, aux_loss: [0.02410015] align_loss: [0.14697357]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - ###### Taking snapshot ######
+INFO - main - This is epoch "10" of "30" epochs.
+INFO - main - step 10100: total_loss: 0.6979642197489738, query_loss: 0.44366936057806017, aux_loss: [0.02031466] align_loss: [0.17551443]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 10200: total_loss: 0.6217656973004341, query_loss: 0.40352745965123177, aux_loss: [0.01950958] align_loss: [0.14537573]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 10300: total_loss: 0.6576437252759934, query_loss: 0.42481217995285986, aux_loss: [0.01978561] align_loss: [0.15712944]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 10400: total_loss: 0.6003228405117988, query_loss: 0.39639366656541825, aux_loss: [0.] align_loss: [0.13464776]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 10500: total_loss: 0.5678609430789947, query_loss: 0.37597228214144707, aux_loss: [0.02627528] align_loss: [0.12831536]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 10600: total_loss: 0.6634070983529091, query_loss: 0.4151069615781307, aux_loss: [0.02152175] align_loss: [0.16745184]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 10700: total_loss: 0.6564058607816696, query_loss: 0.4186767613887787, aux_loss: [0.03372791] align_loss: [0.16117956]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 10800: total_loss: 0.6039296899735928, query_loss: 0.40053352668881415, aux_loss: [0.01915655] align_loss: [0.13086542]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 10900: total_loss: 0.6135850538313389, query_loss: 0.3733620610833168, aux_loss: [0.02128196] align_loss: [0.16576053]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 11000: total_loss: 0.6352123498916626, query_loss: 0.3971912311017513, aux_loss: [0.02082875] align_loss: [0.16245234]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - This is epoch "11" of "30" epochs.
+INFO - main - step 11100: total_loss: 0.600230929851532, query_loss: 0.36789496660232546, aux_loss: [0.02889317] align_loss: [0.15687467]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 11200: total_loss: 0.6103611170500517, query_loss: 0.37480958305299283, aux_loss: [0.02924296] align_loss: [0.15755844]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 11300: total_loss: 0.589208897203207, query_loss: 0.36656483575701715, aux_loss: [0.01584491] align_loss: [0.15003628]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 11400: total_loss: 0.6026597343385219, query_loss: 0.38058063596487046, aux_loss: [0.02301267] align_loss: [0.15079391]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 11500: total_loss: 0.6503704562783241, query_loss: 0.3968965154886246, aux_loss: [0.02253833] align_loss: [0.16707823]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 11600: total_loss: 0.5921916285157204, query_loss: 0.36210072197020055, aux_loss: [0.02285737] align_loss: [0.15132588]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 11700: total_loss: 0.5907528629899025, query_loss: 0.3572806625068188, aux_loss: [0.01838663] align_loss: [0.15599589]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 11800: total_loss: 0.6017716778814792, query_loss: 0.3845644463598728, aux_loss: [0.02062261] align_loss: [0.13848726]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 11900: total_loss: 0.5903428910672665, query_loss: 0.36076557755470273, aux_loss: [0.01802749] align_loss: [0.14944085]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 12000: total_loss: 0.582091085165739, query_loss: 0.34741687200963495, aux_loss: [0.01780616] align_loss: [0.1547174]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - ###### Taking snapshot ######
+INFO - main - This is epoch "12" of "30" epochs.
+INFO - main - step 12100: total_loss: 0.5879464821517467, query_loss: 0.3630151903629303, aux_loss: [0.02119261] align_loss: [0.15103069]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 12200: total_loss: 0.6307550525665283, query_loss: 0.36888757094740865, aux_loss: [0.02575868] align_loss: [0.17884412]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 12300: total_loss: 0.5184501865506173, query_loss: 0.3082611607760191, aux_loss: [0.02689138] align_loss: [0.14143805]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 12400: total_loss: 0.6065588742494583, query_loss: 0.3487437648326159, aux_loss: [0.] align_loss: [0.16907805]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 12500: total_loss: 0.5323888005316257, query_loss: 0.3181167069077492, aux_loss: [0.02256373] align_loss: [0.14202307]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 12600: total_loss: 0.5703814148902893, query_loss: 0.3435389339923859, aux_loss: [0.02190167] align_loss: [0.1511127]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 12700: total_loss: 0.5641850054264068, query_loss: 0.33717626735568046, aux_loss: [0.02489546] align_loss: [0.15261132]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 12800: total_loss: 0.5475012195110321, query_loss: 0.31497107848525047, aux_loss: [0.02149397] align_loss: [0.15677245]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 12900: total_loss: 0.575620718896389, query_loss: 0.34751472786068915, aux_loss: [0.02145928] align_loss: [0.15360565]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 13000: total_loss: 0.5639566701650619, query_loss: 0.33471362486481665, aux_loss: [0.01863524] align_loss: [0.15080637]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - This is epoch "13" of "30" epochs.
+INFO - main - step 13100: total_loss: 0.5324616105854512, query_loss: 0.3226432627439499, aux_loss: [0.0179126] align_loss: [0.13968408]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 13200: total_loss: 0.5335742831230164, query_loss: 0.3324974017590284, aux_loss: [0.01814911] align_loss: [0.12842943]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 13300: total_loss: 0.5511327108740807, query_loss: 0.33122432574629784, aux_loss: [0.01635638] align_loss: [0.14712653]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 13400: total_loss: 0.556655576378107, query_loss: 0.32511561989784243, aux_loss: [0.01739458] align_loss: [0.15464891]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 13500: total_loss: 0.550595468878746, query_loss: 0.31187098324298856, aux_loss: [0.01835281] align_loss: [0.15354186]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 13600: total_loss: 0.5342656379938125, query_loss: 0.303367483317852, aux_loss: [0.01894569] align_loss: [0.148348]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 13700: total_loss: 0.537776136547327, query_loss: 0.31922528460621835, aux_loss: [0.01973179] align_loss: [0.145944]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 13800: total_loss: 0.4944569781422615, query_loss: 0.2861731369793415, aux_loss: [0.] align_loss: [0.13498446]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 13900: total_loss: 0.5480537202954292, query_loss: 0.30765566185116766, aux_loss: [0.02206308] align_loss: [0.15721193]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 14000: total_loss: 0.49017021551728246, query_loss: 0.2891946507245302, aux_loss: [0.02055952] align_loss: [0.13381745]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - ###### Taking snapshot ######
+INFO - main - This is epoch "14" of "30" epochs.
+INFO - main - step 14100: total_loss: 0.5498195494711399, query_loss: 0.31674786292016505, aux_loss: [0.02566701] align_loss: [0.1556396]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 14200: total_loss: 0.5667150832712651, query_loss: 0.3278123444318771, aux_loss: [0.01573142] align_loss: [0.16388343]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 14300: total_loss: 0.5295789587497711, query_loss: 0.3160048872232437, aux_loss: [0.01695466] align_loss: [0.14762521]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 14400: total_loss: 0.5708211916685104, query_loss: 0.31098071686923506, aux_loss: [0.03326333] align_loss: [0.17682435]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 14500: total_loss: 0.5073961992561817, query_loss: 0.3026757162809372, aux_loss: [0.017189] align_loss: [0.13621457]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 14600: total_loss: 0.5396617969870567, query_loss: 0.323162130266428, aux_loss: [0.0209699] align_loss: [0.14121354]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 14700: total_loss: 0.5152174958586693, query_loss: 0.2904828342795372, aux_loss: [0.01928878] align_loss: [0.15061785]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 14800: total_loss: 0.5549128596484662, query_loss: 0.3217255253344774, aux_loss: [0.01766616] align_loss: [0.1543553]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 14900: total_loss: 0.5041449405252934, query_loss: 0.29450368784368036, aux_loss: [0.01660621] align_loss: [0.14100015]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 15000: total_loss: 0.5455513046681881, query_loss: 0.3298023393005133, aux_loss: [0.01876101] align_loss: [0.14571387]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - This is epoch "15" of "30" epochs.
+INFO - main - step 15100: total_loss: 0.4763408499956131, query_loss: 0.28360675103962424, aux_loss: [0.01761669] align_loss: [0.12773427]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 15200: total_loss: 0.5727809286117553, query_loss: 0.3412962646782398, aux_loss: [0.017508] align_loss: [0.15710159]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 15300: total_loss: 0.5502280142903327, query_loss: 0.30319123305380347, aux_loss: [0.01845002] align_loss: [0.162229]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 15400: total_loss: 0.5420441952347755, query_loss: 0.2974004663527012, aux_loss: [0.01460022] align_loss: [0.167197]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 15500: total_loss: 0.5309564451873302, query_loss: 0.29738120816648006, aux_loss: [0.01480752] align_loss: [0.15959622]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 15600: total_loss: 0.5584296698868275, query_loss: 0.3375059489160776, aux_loss: [0.01679578] align_loss: [0.14722663]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 15700: total_loss: 0.496413204818964, query_loss: 0.2980517323315144, aux_loss: [0.02107638] align_loss: [0.12979527]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 15800: total_loss: 0.5009237596392632, query_loss: 0.294785292968154, aux_loss: [0.01815423] align_loss: [0.13440911]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 15900: total_loss: 0.5461156834661961, query_loss: 0.3189616795629263, aux_loss: [0.01834866] align_loss: [0.15038884]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 16000: total_loss: 0.5188570410013199, query_loss: 0.3066652205586433, aux_loss: [0.01658073] align_loss: [0.13962592]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - ###### Taking snapshot ######
+INFO - main - This is epoch "16" of "30" epochs.
+INFO - main - step 16100: total_loss: 0.5101614666730165, query_loss: 0.29599560238420963, aux_loss: [0.0161458] align_loss: [0.14321074]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 16200: total_loss: 0.47815945848822594, query_loss: 0.2692022034525871, aux_loss: [0.01716402] align_loss: [0.13810371]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 16300: total_loss: 0.49339228242635724, query_loss: 0.27762973703444005, aux_loss: [0.01639178] align_loss: [0.14494205]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 16400: total_loss: 0.5378146602213383, query_loss: 0.31684228390455244, aux_loss: [0.01841843] align_loss: [0.15131713]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 16500: total_loss: 0.5055559085309506, query_loss: 0.2943438931554556, aux_loss: [0.] align_loss: [0.1438384]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 16600: total_loss: 0.5116968315839767, query_loss: 0.2984064953029156, aux_loss: [0.01404828] align_loss: [0.14174998]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 16700: total_loss: 0.5103107415139675, query_loss: 0.31025956600904464, aux_loss: [0.0169346] align_loss: [0.13736725]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 16800: total_loss: 0.5190333274006843, query_loss: 0.3072069750726223, aux_loss: [0.] align_loss: [0.13600747]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 16900: total_loss: 0.5414800243079663, query_loss: 0.28938700430095193, aux_loss: [0.02495971] align_loss: [0.16809443]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 17000: total_loss: 0.4879393455386162, query_loss: 0.2847842564433813, aux_loss: [0.02189925] align_loss: [0.13803375]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - This is epoch "17" of "30" epochs.
+INFO - main - step 17100: total_loss: 0.5056708060204983, query_loss: 0.29074468433856965, aux_loss: [0.02049327] align_loss: [0.1435366]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 17200: total_loss: 0.498051823079586, query_loss: 0.29108326449990274, aux_loss: [0.0250625] align_loss: [0.14298931]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 17300: total_loss: 0.53570945084095, query_loss: 0.30157995596528053, aux_loss: [0.01712409] align_loss: [0.15730628]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 17400: total_loss: 0.47686952114105224, query_loss: 0.27609879851341246, aux_loss: [0.01506862] align_loss: [0.1383288]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 17500: total_loss: 0.485884597748518, query_loss: 0.2801631427928805, aux_loss: [0.01520407] align_loss: [0.14086828]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 17600: total_loss: 0.5076552256941795, query_loss: 0.3030315092951059, aux_loss: [0.01594242] align_loss: [0.13778858]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 17700: total_loss: 0.48013500586152075, query_loss: 0.27095198921859265, aux_loss: [0.0146465] align_loss: [0.13686655]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 17800: total_loss: 0.5315656581521034, query_loss: 0.2895290140062571, aux_loss: [0.01381987] align_loss: [0.1638886]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 17900: total_loss: 0.4940968932956457, query_loss: 0.2840120889991522, aux_loss: [0.] align_loss: [0.14246528]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 18000: total_loss: 0.527669577151537, query_loss: 0.3129742295295, aux_loss: [0.0158354] align_loss: [0.14554565]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - ###### Taking snapshot ######
+INFO - main - This is epoch "18" of "30" epochs.
+INFO - main - step 18100: total_loss: 0.5179679295420647, query_loss: 0.30712596982717516, aux_loss: [0.01634246] align_loss: [0.14318651]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 18200: total_loss: 0.5045655968040228, query_loss: 0.27200036581605674, aux_loss: [0.01617026] align_loss: [0.15896285]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 18300: total_loss: 0.48814125850796697, query_loss: 0.2786109947413206, aux_loss: [0.01472592] align_loss: [0.14203142]
+INFO - main - Min total loss 0.47108946084976194
+INFO - main - step 18400: total_loss: 0.454960982054472, query_loss: 0.2671510010957718, aux_loss: [0.01644856] align_loss: [0.12512492]
+INFO - main - Min total loss 0.47108946084976194-0.016128478795289947
+INFO - main - step 18500: total_loss: 0.49887477219104764, query_loss: 0.2914219957590103, aux_loss: [0.01526394] align_loss: [0.1364047]
+INFO - main - Min total loss 0.454960982054472
+INFO - main - step 18600: total_loss: 0.5370284651219844, query_loss: 0.30350849077105524, aux_loss: [0.01530555] align_loss: [0.15936509]
+INFO - main - Min total loss 0.454960982054472
+INFO - main - step 18700: total_loss: 0.5088948479294777, query_loss: 0.2938407948613167, aux_loss: [0.02264228] align_loss: [0.14386421]
+INFO - main - Min total loss 0.454960982054472
+INFO - main - step 18800: total_loss: 0.4550611101090908, query_loss: 0.2598403797671199, aux_loss: [0.02778071] align_loss: [0.13191313]
+INFO - main - Min total loss 0.454960982054472
+INFO - main - step 18900: total_loss: 0.49232586652040483, query_loss: 0.2826374839246273, aux_loss: [0.01431867] align_loss: [0.13802165]
+INFO - main - Min total loss 0.454960982054472
+INFO - main - step 19000: total_loss: 0.5667728708684444, query_loss: 0.3420850843936205, aux_loss: [0.01734033] align_loss: [0.14698687]
+INFO - main - Min total loss 0.454960982054472
+INFO - main - This is epoch "19" of "30" epochs.
+INFO - main - step 19100: total_loss: 0.4794434915482998, query_loss: 0.2731959480792284, aux_loss: [0.01681513] align_loss: [0.13802513]
+INFO - main - Min total loss 0.454960982054472
+INFO - main - step 19200: total_loss: 0.48460592910647393, query_loss: 0.2678506001085043, aux_loss: [0.02137387] align_loss: [0.1443453]
+INFO - main - Min total loss 0.454960982054472
+INFO - main - step 19300: total_loss: 0.5444898690283299, query_loss: 0.30362564146518706, aux_loss: [0.01804176] align_loss: [0.15993378]
+INFO - main - Min total loss 0.454960982054472
+INFO - main - step 19400: total_loss: 0.4770672769844532, query_loss: 0.26724746741354466, aux_loss: [0.0180043] align_loss: [0.1406773]
+INFO - main - Min total loss 0.454960982054472
+INFO - main - step 19500: total_loss: 0.47325124360620974, query_loss: 0.25825686633586886, aux_loss: [0.] align_loss: [0.14439076]
+INFO - main - Min total loss 0.454960982054472
+INFO - main - step 19600: total_loss: 0.47089319631457327, query_loss: 0.2483355611562729, aux_loss: [0.01666543] align_loss: [0.14829478]
+INFO - main - Min total loss 0.454960982054472
+INFO - main - step 19700: total_loss: 0.46409041360020636, query_loss: 0.2612629646062851, aux_loss: [0.01680595] align_loss: [0.136623]
+INFO - main - Min total loss 0.454960982054472
+INFO - main - step 19800: total_loss: 0.49628163672983644, query_loss: 0.28835418790578843, aux_loss: [0.01593402] align_loss: [0.1338585]
+INFO - main - Min total loss 0.454960982054472
+INFO - main - step 19900: total_loss: 0.4432733219116926, query_loss: 0.26975458815693854, aux_loss: [0.0168969] align_loss: [0.11534439]
+INFO - main - Min total loss 0.454960982054472-0.011687660142779388
+INFO - main - step 20000: total_loss: 0.4928428331017494, query_loss: 0.2684975209087133, aux_loss: [0.01648948] align_loss: [0.15274006]
+INFO - main - Min total loss 0.4432733219116926
+INFO - main - ###### Taking snapshot ######
+INFO - main - This is epoch "20" of "30" epochs.
+INFO - main - step 20100: total_loss: 0.46796124547719953, query_loss: 0.273255926258862, aux_loss: [0.01464608] align_loss: [0.12894173]
+INFO - main - Min total loss 0.4432733219116926
+INFO - main - step 20200: total_loss: 0.5205735912919045, query_loss: 0.30103690341114997, aux_loss: [0.01786488] align_loss: [0.14832403]
+INFO - main - Min total loss 0.4432733219116926
+INFO - main - step 20300: total_loss: 0.46206617712974546, query_loss: 0.25402526393532754, aux_loss: [0.01275694] align_loss: [0.1400386]
+INFO - main - Min total loss 0.4432733219116926
+INFO - main - step 20400: total_loss: 0.44908778950572015, query_loss: 0.2585351146757603, aux_loss: [0.01584908] align_loss: [0.12826692]
+INFO - main - Min total loss 0.4432733219116926
+INFO - main - step 20500: total_loss: 0.4773838238418102, query_loss: 0.2573116189613938, aux_loss: [0.01947826] align_loss: [0.1464644]
+INFO - main - Min total loss 0.4432733219116926
+INFO - main - step 20600: total_loss: 0.45559653013944623, query_loss: 0.2594893429428339, aux_loss: [0.01493254] align_loss: [0.1308858]
+INFO - main - Min total loss 0.4432733219116926
+INFO - main - step 20700: total_loss: 0.4834327521920204, query_loss: 0.2587787542119622, aux_loss: [0.0174512] align_loss: [0.151871]
+INFO - main - Min total loss 0.4432733219116926
+INFO - main - step 20800: total_loss: 0.4488427549600601, query_loss: 0.23549018654972315, aux_loss: [0.02176166] align_loss: [0.1457837]
+INFO - main - Min total loss 0.4432733219116926
+INFO - main - step 20900: total_loss: 0.4734848940372467, query_loss: 0.27275006152689457, aux_loss: [0.01247907] align_loss: [0.13249737]
+INFO - main - Min total loss 0.4432733219116926
+INFO - main - step 21000: total_loss: 0.45167023964226244, query_loss: 0.24066235847771167, aux_loss: [0.02142033] align_loss: [0.13876608]
+INFO - main - Min total loss 0.4432733219116926
+INFO - main - This is epoch "21" of "30" epochs.
+INFO - main - step 21100: total_loss: 0.4935347881913185, query_loss: 0.27100143358111384, aux_loss: [0.01551843] align_loss: [0.14517225]
+INFO - main - Min total loss 0.4432733219116926
+INFO - main - step 21200: total_loss: 0.4644972731173038, query_loss: 0.26742153823375703, aux_loss: [0.01551968] align_loss: [0.13328074]
+INFO - main - Min total loss 0.4432733219116926
+INFO - main - step 21300: total_loss: 0.4433602936565876, query_loss: 0.23248837530612945, aux_loss: [0.01574335] align_loss: [0.14202137]
+INFO - main - Min total loss 0.4432733219116926
+INFO - main - step 21400: total_loss: 0.42744988955557345, query_loss: 0.24026179671287537, aux_loss: [0.01436546] align_loss: [0.12658828]
+INFO - main - Min total loss 0.4432733219116926-0.01582343235611916
+INFO - main - step 21500: total_loss: 0.4623985031247139, query_loss: 0.25666753835976125, aux_loss: [0.01269042] align_loss: [0.1370032]
+INFO - main - Min total loss 0.42744988955557345
+INFO - main - step 21600: total_loss: 0.4676516269147396, query_loss: 0.2519555888324976, aux_loss: [0.0118143] align_loss: [0.14040893]
+INFO - main - Min total loss 0.42744988955557345
+INFO - main - step 21700: total_loss: 0.4593756617605686, query_loss: 0.22801053773611785, aux_loss: [0.02380264] align_loss: [0.15170987]
+INFO - main - Min total loss 0.42744988955557345
+INFO - main - step 21800: total_loss: 0.4803145332634449, query_loss: 0.26031884364783764, aux_loss: [0.01433358] align_loss: [0.14494884]
+INFO - main - Min total loss 0.42744988955557345
+INFO - main - step 21900: total_loss: 0.424815918058157, query_loss: 0.23747873909771441, aux_loss: [0.01450148] align_loss: [0.12545033]
+INFO - main - Min total loss 0.42744988955557345-0.002633971497416454
+INFO - main - step 22000: total_loss: 0.46160519734025, query_loss: 0.2573297257721424, aux_loss: [0.02449977] align_loss: [0.13426468]
+INFO - main - Min total loss 0.424815918058157
+INFO - main - ###### Taking snapshot ######
+INFO - main - This is epoch "22" of "30" epochs.
+INFO - main - step 22100: total_loss: 0.44105781689286233, query_loss: 0.2204711903259158, aux_loss: [0.03482622] align_loss: [0.14901133]
+INFO - main - Min total loss 0.424815918058157
+INFO - main - step 22200: total_loss: 0.42115742787718774, query_loss: 0.23878752626478672, aux_loss: [0.01394215] align_loss: [0.1215498]
+INFO - main - Min total loss 0.424815918058157-0.003658490180969254
+INFO - main - step 22300: total_loss: 0.44985001370310784, query_loss: 0.2595042600482702, aux_loss: [0.01508161] align_loss: [0.12675542]
+INFO - main - Min total loss 0.42115742787718774
+INFO - main - step 22400: total_loss: 0.4719541627168655, query_loss: 0.25445014119148257, aux_loss: [0.01542678] align_loss: [0.14042103]
+INFO - main - Min total loss 0.42115742787718774
+INFO - main - step 22500: total_loss: 0.42691580966115, query_loss: 0.22608622148633004, aux_loss: [0.01593158] align_loss: [0.13385719]
+INFO - main - Min total loss 0.42115742787718774
+INFO - main - step 22600: total_loss: 0.4666679924726486, query_loss: 0.26491164829581976, aux_loss: [0.01448897] align_loss: [0.13327594]
+INFO - main - Min total loss 0.42115742787718774
+INFO - main - step 22700: total_loss: 0.45584163673222067, query_loss: 0.24135620143264533, aux_loss: [0.01935145] align_loss: [0.14330673]
+INFO - main - Min total loss 0.42115742787718774
+INFO - main - step 22800: total_loss: 0.442658956348896, query_loss: 0.23133549354970456, aux_loss: [0.0160113] align_loss: [0.14283367]
+INFO - main - Min total loss 0.42115742787718774
+INFO - main - step 22900: total_loss: 0.4187185402214527, query_loss: 0.2178056338429451, aux_loss: [0.01478559] align_loss: [0.13207239]
+INFO - main - Min total loss 0.42115742787718774-0.0024388876557350225
+INFO - main - step 23000: total_loss: 0.43315784335136415, query_loss: 0.2375162421911955, aux_loss: [0.01683879] align_loss: [0.12850517]
+INFO - main - Min total loss 0.4187185402214527
+INFO - main - This is epoch "23" of "30" epochs.
+INFO - main - step 23100: total_loss: 0.4661666575819254, query_loss: 0.23733920887112617, aux_loss: [0.02256551] align_loss: [0.15256871]
+INFO - main - Min total loss 0.4187185402214527
+INFO - main - step 23200: total_loss: 0.42655799761414526, query_loss: 0.24404213443398476, aux_loss: [0.0142003] align_loss: [0.11821827]
+INFO - main - Min total loss 0.4187185402214527
+INFO - main - step 23300: total_loss: 0.4411219526827335, query_loss: 0.24368759825825692, aux_loss: [0.01314712] align_loss: [0.13026701]
+INFO - main - Min total loss 0.4187185402214527
+INFO - main - step 23400: total_loss: 0.4240835811197758, query_loss: 0.22090475529432296, aux_loss: [0.01632386] align_loss: [0.13439973]
+INFO - main - Min total loss 0.4187185402214527
+INFO - main - step 23500: total_loss: 0.42008368149399755, query_loss: 0.22790949616581202, aux_loss: [0.01730844] align_loss: [0.12880947]
+INFO - main - Min total loss 0.4187185402214527
+INFO - main - step 23600: total_loss: 0.4369848431646824, query_loss: 0.24935529947280885, aux_loss: [0.01610959] align_loss: [0.12276347]
+INFO - main - Min total loss 0.4187185402214527
+INFO - main - step 23700: total_loss: 0.42006050363183023, query_loss: 0.21492106873542072, aux_loss: [0.01439336] align_loss: [0.1361668]
+INFO - main - Min total loss 0.4187185402214527
+INFO - main - step 23800: total_loss: 0.4238393898308277, query_loss: 0.22511175978928805, aux_loss: [0.01128095] align_loss: [0.13177857]
+INFO - main - Min total loss 0.4187185402214527
+INFO - main - step 23900: total_loss: 0.42229451328516004, query_loss: 0.23393797125667334, aux_loss: [0.01376456] align_loss: [0.12331648]
+INFO - main - Min total loss 0.4187185402214527
+INFO - main - step 24000: total_loss: 0.41282801449298856, query_loss: 0.21428892899304627, aux_loss: [0.01470765] align_loss: [0.13045749]
+INFO - main - Min total loss 0.4187185402214527-0.005890525728464158
+INFO - main - ###### Taking snapshot ######
+INFO - main - This is epoch "24" of "30" epochs.
+INFO - main - step 24100: total_loss: 0.4585437014698982, query_loss: 0.2413537897914648, aux_loss: [0.01395864] align_loss: [0.14393175]
+INFO - main - Min total loss 0.41282801449298856
+INFO - main - step 24200: total_loss: 0.46796836122870444, query_loss: 0.2365825879573822, aux_loss: [0.01839727] align_loss: [0.15261886]
+INFO - main - Min total loss 0.41282801449298856
+INFO - main - step 24300: total_loss: 0.460039651542902, query_loss: 0.22145263515412808, aux_loss: [0.02213967] align_loss: [0.1621805]
+INFO - main - Min total loss 0.41282801449298856
+INFO - main - step 24400: total_loss: 0.38538703724741935, query_loss: 0.20111148603260517, aux_loss: [0.01345265] align_loss: [0.12227619]
+INFO - main - Min total loss 0.41282801449298856-0.02744097724556921
+INFO - main - step 24500: total_loss: 0.3804536410421133, query_loss: 0.20150180745869875, aux_loss: [0.01536172] align_loss: [0.11697586]
+INFO - main - Min total loss 0.38538703724741935-0.004933396205306029
+INFO - main - step 24600: total_loss: 0.4116559001803398, query_loss: 0.2158755474537611, aux_loss: [0.01897201] align_loss: [0.12766919]
+INFO - main - Min total loss 0.3804536410421133
+INFO - main - step 24700: total_loss: 0.40816907621920107, query_loss: 0.20380426235496998, aux_loss: [0.01462206] align_loss: [0.13100976]
+INFO - main - Min total loss 0.3804536410421133
+INFO - main - step 24800: total_loss: 0.3868517616391182, query_loss: 0.193327617906034, aux_loss: [0.01377432] align_loss: [0.1299297]
+INFO - main - Min total loss 0.3804536410421133
+INFO - main - step 24900: total_loss: 0.4341997104883194, query_loss: 0.23384275682270528, aux_loss: [0.0133642] align_loss: [0.13182035]
+INFO - main - Min total loss 0.3804536410421133
+INFO - main - step 25000: total_loss: 0.41069210395216943, query_loss: 0.2183036919310689, aux_loss: [0.0134355] align_loss: [0.13093136]
+INFO - main - Min total loss 0.3804536410421133
+INFO - main - This is epoch "25" of "30" epochs.
+INFO - main - step 25100: total_loss: 0.4464174370467663, query_loss: 0.22552138164639474, aux_loss: [0.01840541] align_loss: [0.15048341]
+INFO - main - Min total loss 0.3804536410421133
+INFO - main - step 25200: total_loss: 0.41621173202991485, query_loss: 0.22341349862515927, aux_loss: [0.01468378] align_loss: [0.12623768]
+INFO - main - Min total loss 0.3804536410421133
+INFO - main - step 25300: total_loss: 0.4242228013277054, query_loss: 0.2143165109306574, aux_loss: [0.0167459] align_loss: [0.1412767]
+INFO - main - Min total loss 0.3804536410421133
+INFO - main - step 25400: total_loss: 0.41755885392427444, query_loss: 0.22669815711677074, aux_loss: [0.01451883] align_loss: [0.12624316]
+INFO - main - Min total loss 0.3804536410421133
+INFO - main - step 25500: total_loss: 0.4149747131764889, query_loss: 0.1974191775918007, aux_loss: [0.02114373] align_loss: [0.1435932]
+INFO - main - Min total loss 0.3804536410421133
+INFO - main - step 25600: total_loss: 0.39023862928152087, query_loss: 0.18710479110479356, aux_loss: [0.01741734] align_loss: [0.13350196]
+INFO - main - Min total loss 0.3804536410421133
+INFO - main - step 25700: total_loss: 0.37011086612939836, query_loss: 0.17871971245855092, aux_loss: [0.01458886] align_loss: [0.12753917]
+INFO - main - Min total loss 0.3804536410421133-0.010342774912714958
+INFO - main - step 25800: total_loss: 0.42176644936203955, query_loss: 0.22138482172042132, aux_loss: [0.01555878] align_loss: [0.13264965]
+INFO - main - Min total loss 0.37011086612939836
+INFO - main - step 25900: total_loss: 0.4208773110061884, query_loss: 0.21620749797672034, aux_loss: [0.01509727] align_loss: [0.13149004]
+INFO - main - Min total loss 0.37011086612939836
+INFO - main - step 26000: total_loss: 0.4063675829023123, query_loss: 0.20152791142463683, aux_loss: [0.01392251] align_loss: [0.13452357]
+INFO - main - Min total loss 0.37011086612939836
+INFO - main - ###### Taking snapshot ######
+INFO - main - This is epoch "26" of "30" epochs.
+INFO - main - step 26100: total_loss: 0.3854083000123501, query_loss: 0.1933392359316349, aux_loss: [0.02145925] align_loss: [0.12899652]
+INFO - main - Min total loss 0.37011086612939836
+INFO - main - step 26200: total_loss: 0.4232702077925205, query_loss: 0.21091809540987014, aux_loss: [0.02065158] align_loss: [0.13798818]
+INFO - main - Min total loss 0.37011086612939836
+INFO - main - step 26300: total_loss: 0.4140753600746393, query_loss: 0.19991015143692492, aux_loss: [0.01247036] align_loss: [0.1412386]
+INFO - main - Min total loss 0.37011086612939836
+INFO - main - step 26400: total_loss: 0.36368868462741377, query_loss: 0.18187344927340746, aux_loss: [0.01562333] align_loss: [0.1190346]
+INFO - main - Min total loss 0.37011086612939836-0.006422181501984592
+INFO - main - step 26500: total_loss: 0.433751674592495, query_loss: 0.2251539371535182, aux_loss: [0.01349127] align_loss: [0.14163803]
+INFO - main - Min total loss 0.36368868462741377
+INFO - main - step 26600: total_loss: 0.41088185645639896, query_loss: 0.1945088105648756, aux_loss: [0.01550999] align_loss: [0.1429031]
+INFO - main - Min total loss 0.36368868462741377
+INFO - main - step 26700: total_loss: 0.4100106947869062, query_loss: 0.19882207959890366, aux_loss: [0.02031574] align_loss: [0.13791195]
+INFO - main - Min total loss 0.36368868462741377
+INFO - main - step 26800: total_loss: 0.4204482799768448, query_loss: 0.21261038064956664, aux_loss: [0.01230657] align_loss: [0.13933091]
+INFO - main - Min total loss 0.36368868462741377
+INFO - main - step 26900: total_loss: 0.41295704394578936, query_loss: 0.21334040395915507, aux_loss: [0.01828483] align_loss: [0.13118291]
+INFO - main - Min total loss 0.36368868462741377
+INFO - main - step 27000: total_loss: 0.3913791450858116, query_loss: 0.18656855836510658, aux_loss: [0.01665458] align_loss: [0.1356513]
+INFO - main - Min total loss 0.36368868462741377
+INFO - main - This is epoch "27" of "30" epochs.
+INFO - main - step 27100: total_loss: 0.4417113287746906, query_loss: 0.22280211865901947, aux_loss: [0.02018243] align_loss: [0.14030153]
+INFO - main - Min total loss 0.36368868462741377
+INFO - main - step 27200: total_loss: 0.4098413363099098, query_loss: 0.21815906804054974, aux_loss: [0.01681492] align_loss: [0.12627873]
+INFO - main - Min total loss 0.36368868462741377
+INFO - main - step 27300: total_loss: 0.43538610309362413, query_loss: 0.22160478096455336, aux_loss: [0.01825523] align_loss: [0.14136398]
+INFO - main - Min total loss 0.36368868462741377
+INFO - main - step 27400: total_loss: 0.3691897443681955, query_loss: 0.18241157423704862, aux_loss: [0.01626727] align_loss: [0.1257038]
+INFO - main - Min total loss 0.36368868462741377
+INFO - main - step 27500: total_loss: 0.3826608461141586, query_loss: 0.19304737009108067, aux_loss: [0.01906788] align_loss: [0.12469877]
+INFO - main - Min total loss 0.36368868462741377
+INFO - main - step 27600: total_loss: 0.3853764460608363, query_loss: 0.18452138433232904, aux_loss: [0.01247489] align_loss: [0.1301364]
+INFO - main - Min total loss 0.36368868462741377
+INFO - main - step 27700: total_loss: 0.4011175025999546, query_loss: 0.19302811320871116, aux_loss: [0.01503371] align_loss: [0.13812894]
+INFO - main - Min total loss 0.36368868462741377
+INFO - main - step 27800: total_loss: 0.41393299847841264, query_loss: 0.20173148166388274, aux_loss: [0.01877245] align_loss: [0.14126134]
+INFO - main - Min total loss 0.36368868462741377
+INFO - main - step 27900: total_loss: 0.4543067888915539, query_loss: 0.23290197271853685, aux_loss: [0.02151331] align_loss: [0.14512858]
+INFO - main - Min total loss 0.36368868462741377
+INFO - main - step 28000: total_loss: 0.41302028357982634, query_loss: 0.195239694789052, aux_loss: [0.] align_loss: [0.14376462]
+INFO - main - Min total loss 0.36368868462741377
+INFO - main - ###### Taking snapshot ######
+INFO - main - This is epoch "28" of "30" epochs.
+INFO - main - step 28100: total_loss: 0.36028575465083124, query_loss: 0.17593125585466624, aux_loss: [0.01693922] align_loss: [0.12268094]
+INFO - main - Min total loss 0.36368868462741377-0.003402929976582536
+INFO - main - step 28200: total_loss: 0.3857235454767942, query_loss: 0.17068448439240455, aux_loss: [0.02050531] align_loss: [0.14568976]
+INFO - main - Min total loss 0.36028575465083124
+INFO - main - step 28300: total_loss: 0.3850546722114086, query_loss: 0.19368892814964056, aux_loss: [0.01431674] align_loss: [0.12645903]
+INFO - main - Min total loss 0.36028575465083124
+INFO - main - step 28400: total_loss: 0.4154075513035059, query_loss: 0.19537110541015865, aux_loss: [0.01977515] align_loss: [0.14625913]
+INFO - main - Min total loss 0.36028575465083124
+INFO - main - step 28500: total_loss: 0.3621638732776046, query_loss: 0.1839754928275943, aux_loss: [0.01513588] align_loss: [0.11456435]
+INFO - main - Min total loss 0.36028575465083124
+INFO - main - step 28600: total_loss: 0.36640177011489866, query_loss: 0.18218701239675283, aux_loss: [0.01420882] align_loss: [0.11998966]
+INFO - main - Min total loss 0.36028575465083124
+INFO - main - step 28700: total_loss: 0.39982650339603426, query_loss: 0.18951278571039437, aux_loss: [0.01436746] align_loss: [0.13530949]
+INFO - main - Min total loss 0.36028575465083124
+INFO - main - step 28800: total_loss: 0.4105895808339119, query_loss: 0.1995286287739873, aux_loss: [0.0141829] align_loss: [0.14182691]
+INFO - main - Min total loss 0.36028575465083124
+INFO - main - step 28900: total_loss: 0.3661267985403538, query_loss: 0.16916388992220163, aux_loss: [0.0125609] align_loss: [0.13179041]
+INFO - main - Min total loss 0.36028575465083124
+INFO - main - step 29000: total_loss: 0.4438300724327564, query_loss: 0.23412710472941398, aux_loss: [0.01587915] align_loss: [0.13711733]
+INFO - main - Min total loss 0.36028575465083124
+INFO - main - This is epoch "29" of "30" epochs.
+INFO - main - step 29100: total_loss: 0.410798056460917, query_loss: 0.1877204790338874, aux_loss: [0.01587614] align_loss: [0.1505605]
+INFO - main - Min total loss 0.36028575465083124
+INFO - main - step 29200: total_loss: 0.41728484094142915, query_loss: 0.2152184796333313, aux_loss: [0.02554572] align_loss: [0.13603212]
+INFO - main - Min total loss 0.36028575465083124
+INFO - main - step 29300: total_loss: 0.3490757191181183, query_loss: 0.17138539899140595, aux_loss: [0.01472038] align_loss: [0.11719272]
+INFO - main - Min total loss 0.36028575465083124-0.011210035532712936
+INFO - main - step 29400: total_loss: 0.36805359601974486, query_loss: 0.18468487426638602, aux_loss: [0.01602009] align_loss: [0.11699166]
+INFO - main - Min total loss 0.3490757191181183
+INFO - main - step 29500: total_loss: 0.3582302384078503, query_loss: 0.1767699522897601, aux_loss: [0.01946512] align_loss: [0.11871032]
+INFO - main - Min total loss 0.3490757191181183
+INFO - main - step 29600: total_loss: 0.37054410748183725, query_loss: 0.18748713567852973, aux_loss: [0.01292333] align_loss: [0.12133322]
+INFO - main - Min total loss 0.3490757191181183
+INFO - main - step 29700: total_loss: 0.3899118119478226, query_loss: 0.20996594808995725, aux_loss: [0.01536259] align_loss: [0.11671121]
+INFO - main - Min total loss 0.3490757191181183
+INFO - main - step 29800: total_loss: 0.363980780094862, query_loss: 0.18172795314341783, aux_loss: [0.01529461] align_loss: [0.11942455]
+INFO - main - Min total loss 0.3490757191181183
+INFO - main - step 29900: total_loss: 0.39554535210132596, query_loss: 0.19785309012979269, aux_loss: [0.01524186] align_loss: [0.13108721]
+INFO - main - Min total loss 0.3490757191181183
+INFO - main - step 30000: total_loss: 0.34580488853156566, query_loss: 0.17541763558983803, aux_loss: [0.01688331] align_loss: [0.11198402]
+INFO - main - Min total loss 0.3490757191181183-0.003270830586552642
+INFO - main - ###### Taking snapshot ######
+INFO - main - End of training.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 7:32:04
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "27"
+INFO - main - Run "CHAOST2_cv0" with ID "7"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+ERROR - GMRD - Failed after 0:00:01!
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "28"
+INFO - main - Run "CHAOST2_cv0" with ID "8"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+ERROR - GMRD - Failed after 0:00:02!
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "29"
+INFO - main - Run "CHAOST2_cv0" with ID "9"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+ERROR - GMRD - Failed after 0:00:03!
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "30"
+INFO - main - Run "CHAOST2_cv0" with ID "0"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.0007285436149686575
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.008274667896330357
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.0010302369482815266
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.017253590747714043
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.0034340438432991505
+INFO - main - Mean class Dice: 0.006821759976446629
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.531765341758728
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.33450600504875183
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.30947157740592957
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.37341123819351196
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.24391354620456696
+INFO - main - Mean class Dice: 0.38728857040405273
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.5937728881835938
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.4522126317024231
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.6863260269165039
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.4692426323890686
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.3858507573604584
+INFO - main - Mean class Dice: 0.550388514995575
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.658725917339325
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.6824976205825806
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.6492058634757996
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.5559214949607849
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.4686800241470337
+INFO - main - Mean class Dice: 0.6365877389907837
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.0034340438432991505, 'RK': 0.24391354620456696, 'LK': 0.3858507573604584, 'SPLEEN': 0.4686800241470337}
+INFO - main - Mean Dice: {'LIVER': 0.006821759976446629, 'RK': 0.38728857040405273, 'LK': 0.550388514995575, 'SPLEEN': 0.6365877389907837}
+INFO - main - Total Mean Dice: 0.3952716460917145
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:47
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "31"
+INFO - main - Run "CHAOST2_cv0" with ID "1"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.49542683362960815
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.3973041772842407
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.4288451075553894
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.3292573094367981
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.2617998719215393
+INFO - main - Mean class Dice: 0.4127083420753479
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.23158544301986694
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.3178092837333679
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.30224910378456116
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.2029082030057907
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.15270517766475677
+INFO - main - Mean class Dice: 0.2636379897594452
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.13387198746204376
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.15296196937561035
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.2156987339258194
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.11014926433563232
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.08343104273080826
+INFO - main - Mean class Dice: 0.15317048132419586
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.2448321282863617
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.5616307258605957
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.33513620495796204
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.20507638156414032
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.21137715876102448
+INFO - main - Mean class Dice: 0.33666884899139404
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.2617998719215393, 'RK': 0.15270517766475677, 'LK': 0.08343104273080826, 'SPLEEN': 0.21137715876102448}
+INFO - main - Mean Dice: {'LIVER': 0.4127083420753479, 'RK': 0.2636379897594452, 'LK': 0.15317048132419586, 'SPLEEN': 0.33666884899139404}
+INFO - main - Total Mean Dice: 0.29154641553759575
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:47
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "32"
+INFO - main - Run "CHAOST2_cv0" with ID "2"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.46906423568725586
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.39106443524360657
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.4289171099662781
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.30184033513069153
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.25005030632019043
+INFO - main - Mean class Dice: 0.397721529006958
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.09702233970165253
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.1415872871875763
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.12342281639575958
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.09961692988872528
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.061340317130088806
+INFO - main - Mean class Dice: 0.11541233956813812
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.31665509939193726
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.42674142122268677
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.4472760558128357
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.3236176371574402
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.2351154386997223
+INFO - main - Mean class Dice: 0.37857258319854736
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.0
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.028568994253873825
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.04331470653414726
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.0029089960735291243
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.009521224536001682
+INFO - main - Mean class Dice: 0.018698174506425858
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.25005030632019043, 'RK': 0.061340317130088806, 'LK': 0.2351154386997223, 'SPLEEN': 0.009521224536001682}
+INFO - main - Mean Dice: {'LIVER': 0.397721529006958, 'RK': 0.11541233956813812, 'LK': 0.37857258319854736, 'SPLEEN': 0.018698174506425858}
+INFO - main - Total Mean Dice: 0.22760115657001734
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:47
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "33"
+INFO - main - Run "CHAOST2_cv0" with ID "3"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.4629329741001129
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.39009302854537964
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.4265454113483429
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.2999314069747925
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.2477497160434723
+INFO - main - Mean class Dice: 0.394875705242157
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.15236271917819977
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.19661562144756317
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.2380412369966507
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.1468408852815628
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.10145699232816696
+INFO - main - Mean class Dice: 0.1834651082754135
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.5049030780792236
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.5438603758811951
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.7701504826545715
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.42637717723846436
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.4020920991897583
+INFO - main - Mean class Dice: 0.561322808265686
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.10427001118659973
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.20573173463344574
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.24528302252292633
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.04765525087714195
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.08346431702375412
+INFO - main - Mean class Dice: 0.15073499083518982
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.2477497160434723, 'RK': 0.10145699232816696, 'LK': 0.4020920991897583, 'SPLEEN': 0.08346431702375412}
+INFO - main - Mean Dice: {'LIVER': 0.394875705242157, 'RK': 0.1834651082754135, 'LK': 0.561322808265686, 'SPLEEN': 0.15073499083518982}
+INFO - main - Total Mean Dice: 0.3225996531546116
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:47
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "34"
+INFO - main - Run "CHAOST2_cv0" with ID "4"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.48412397503852844
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.41430196166038513
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.44762471318244934
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.31880372762680054
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.2646551728248596
+INFO - main - Mean class Dice: 0.4162135720252991
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.39839842915534973
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.6112062335014343
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.7453025579452515
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.5117279291152954
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.40667468309402466
+INFO - main - Mean class Dice: 0.5666587948799133
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.3383338153362274
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.36757010221481323
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.5809952616691589
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.27663859724998474
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.24968497455120087
+INFO - main - Mean class Dice: 0.3908844292163849
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.3292429447174072
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.5067883133888245
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.39665669202804565
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.26004305481910706
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.2333260476589203
+INFO - main - Mean class Dice: 0.3731827437877655
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.2646551728248596, 'RK': 0.40667468309402466, 'LK': 0.24968497455120087, 'SPLEEN': 0.2333260476589203}
+INFO - main - Mean Dice: {'LIVER': 0.4162135720252991, 'RK': 0.5666587948799133, 'LK': 0.3908844292163849, 'SPLEEN': 0.3731827437877655}
+INFO - main - Total Mean Dice: 0.4367348849773407
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:48
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "35"
+INFO - main - Run "CHAOST2_cv0" with ID "5"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.0
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.0
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.0
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.0
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.0
+INFO - main - Mean class Dice: 0.0
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.0
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.0
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.0
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.0
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.0
+INFO - main - Mean class Dice: 0.0
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.0
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.0
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.0
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.0
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.0
+INFO - main - Mean class Dice: 0.0
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.0
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.0
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.0
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.0
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.0
+INFO - main - Mean class Dice: 0.0
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.0, 'RK': 0.0, 'LK': 0.0, 'SPLEEN': 0.0}
+INFO - main - Mean Dice: {'LIVER': 0.0, 'RK': 0.0, 'LK': 0.0, 'SPLEEN': 0.0}
+INFO - main - Total Mean Dice: 0.0
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:48
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "36"
+INFO - main - Run "CHAOST2_cv0" with ID "6"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.48026713728904724
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.42287957668304443
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.4502204656600952
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.3268886208534241
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.2675096392631531
+INFO - main - Mean class Dice: 0.42006397247314453
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.32237711548805237
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.46770504117012024
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.46630141139030457
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.32418084144592285
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.24871952831745148
+INFO - main - Mean class Dice: 0.3951410949230194
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.5461008548736572
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.48993390798568726
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.773449718952179
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.3664220869541168
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.38873812556266785
+INFO - main - Mean class Dice: 0.5439766645431519
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.3194008767604828
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.5894789099693298
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.5036994814872742
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.26962655782699585
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.2751043140888214
+INFO - main - Mean class Dice: 0.42055147886276245
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.2675096392631531, 'RK': 0.24871952831745148, 'LK': 0.38873812556266785, 'SPLEEN': 0.2751043140888214}
+INFO - main - Mean Dice: {'LIVER': 0.42006397247314453, 'RK': 0.3951410949230194, 'LK': 0.5439766645431519, 'SPLEEN': 0.42055147886276245}
+INFO - main - Total Mean Dice: 0.44493330270051956
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:48
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "37"
+INFO - main - Run "CHAOST2_cv0" with ID "7"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.5008145570755005
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.48078975081443787
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.46415653824806213
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.37770092487335205
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.2963913679122925
+INFO - main - Mean class Dice: 0.45586544275283813
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.39564016461372375
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.5814106464385986
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.7367161512374878
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.467831015586853
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.3862422704696655
+INFO - main - Mean class Dice: 0.5453994870185852
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.45732447504997253
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.4210933446884155
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.6561694145202637
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.22033989429473877
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.29381030797958374
+INFO - main - Mean class Dice: 0.4387317895889282
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.2563716173171997
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.5080134272575378
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.3736579418182373
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.24531899392604828
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.21427248418331146
+INFO - main - Mean class Dice: 0.3458404839038849
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.2963913679122925, 'RK': 0.3862422704696655, 'LK': 0.29381030797958374, 'SPLEEN': 0.21427248418331146}
+INFO - main - Mean Dice: {'LIVER': 0.45586544275283813, 'RK': 0.5453994870185852, 'LK': 0.4387317895889282, 'SPLEEN': 0.3458404839038849}
+INFO - main - Total Mean Dice: 0.4464593008160591
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:48
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "38"
+INFO - main - Run "CHAOST2_cv0" with ID "8"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.5479959845542908
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.47864165902137756
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.479613333940506
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.3890819847583771
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.31225109100341797
+INFO - main - Mean class Dice: 0.47383323311805725
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.3753525912761688
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.5461045503616333
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.6527422666549683
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.3776639699935913
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.33098456263542175
+INFO - main - Mean class Dice: 0.487965852022171
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.6332220435142517
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.5675368309020996
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.7521359920501709
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.3266245722770691
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.41435492038726807
+INFO - main - Mean class Dice: 0.5698798894882202
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.5433335900306702
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.497242271900177
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.6203970909118652
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.374813437461853
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.3460512161254883
+INFO - main - Mean class Dice: 0.5089465975761414
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.31225109100341797, 'RK': 0.33098456263542175, 'LK': 0.41435492038726807, 'SPLEEN': 0.3460512161254883}
+INFO - main - Mean Dice: {'LIVER': 0.47383323311805725, 'RK': 0.487965852022171, 'LK': 0.5698798894882202, 'SPLEEN': 0.5089465975761414}
+INFO - main - Total Mean Dice: 0.5101563930511475
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:47
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "39"
+INFO - main - Run "CHAOST2_cv0" with ID "9"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.4704337418079376
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.5058011412620544
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.48882806301116943
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.4060949981212616
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.3060815632343292
+INFO - main - Mean class Dice: 0.46778950095176697
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.26942765712738037
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.3803352415561676
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.4622463583946228
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.26497581601142883
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.21095764636993408
+INFO - main - Mean class Dice: 0.3442462682723999
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.6109734773635864
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.59249347448349
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.7751800417900085
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.41509485244750977
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.43890202045440674
+INFO - main - Mean class Dice: 0.5984354615211487
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.464298278093338
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.5462563037872314
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.6152341365814209
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.276273638010025
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.32066479325294495
+INFO - main - Mean class Dice: 0.47551557421684265
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.3060815632343292, 'RK': 0.21095764636993408, 'LK': 0.43890202045440674, 'SPLEEN': 0.32066479325294495}
+INFO - main - Mean Dice: {'LIVER': 0.46778950095176697, 'RK': 0.3442462682723999, 'LK': 0.5984354615211487, 'SPLEEN': 0.47551557421684265}
+INFO - main - Total Mean Dice: 0.47149670124053955
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:48
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "40"
+INFO - main - Run "CHAOST2_cv0" with ID "0"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+ERROR - GMRD - Failed after 0:00:02!
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "41"
+INFO - main - Run "CHAOST2_cv0" with ID "1"
+INFO - main - Create model...
+ERROR - GMRD - Failed after 0:00:01!
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "13"
+INFO - main - Run "CHAOST2_cv0" with ID "3"
+INFO - main - Create model...
+INFO - main - Set optimizer...
+INFO - main - Load data...
+INFO - main - Loading data completed...
+INFO - main - Start training...
+INFO - main - This is epoch "0" of "30" epochs.
+ERROR - GMRD - Failed after 0:00:03!
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "14"
+INFO - main - Run "CHAOST2_cv0" with ID "4"
+INFO - main - Create model...
+INFO - main - Set optimizer...
+INFO - main - Load data...
+INFO - main - Loading data completed...
+INFO - main - Start training...
+INFO - main - This is epoch "0" of "30" epochs.
+INFO - main - step 100: total_loss: 0.7684396004676819, query_loss: 0.6753195369243622, aux_loss: [0.] align_loss: [0.07565598]
+INFO - main - Min total loss 10000000000.0-9999999999.23156
+INFO - main - step 200: total_loss: 0.5535879001021385, query_loss: 0.5535879001021385, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.7684396004676819-0.21485170036554335
+INFO - main - step 300: total_loss: 0.506108528971672, query_loss: 0.506108528971672, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.5535879001021385-0.04747937113046652
+INFO - main - step 400: total_loss: 0.4705637103319168, query_loss: 0.4705637103319168, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.506108528971672-0.03554481863975523
+INFO - main - step 500: total_loss: 0.45684775449335574, query_loss: 0.45684775449335574, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.4705637103319168-0.013715955838561056
+INFO - main - step 600: total_loss: 0.4274007588997483, query_loss: 0.4274007588997483, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.45684775449335574-0.029446995593607417
+INFO - main - step 700: total_loss: 0.3897121101617813, query_loss: 0.3897121101617813, aux_loss: [0.] align_loss: [0.]
+INFO - main - Min total loss 0.4274007588997483-0.03768864873796701
+INFO - main - step 800: total_loss: 0.46216766923666003, query_loss: 0.3886052475869656, aux_loss: [0.] align_loss: [0.02508283]
+INFO - main - Min total loss 0.3897121101617813
+INFO - main - step 900: total_loss: 0.5663763947784901, query_loss: 0.3628066404163837, aux_loss: [0.] align_loss: [0.09141349]
+INFO - main - Min total loss 0.3897121101617813
+INFO - main - step 1000: total_loss: 0.5979674660414457, query_loss: 0.3486223316937685, aux_loss: [0.08638749] align_loss: [0.15383674]
+INFO - main - Min total loss 0.3897121101617813
+INFO - main - This is epoch "1" of "30" epochs.
+INFO - main - step 1100: total_loss: 0.5833049627393484, query_loss: 0.3402583485096693, aux_loss: [0.06746876] align_loss: [0.179096]
+INFO - main - Min total loss 0.3897121101617813
+INFO - main - step 1200: total_loss: 0.5017654427886009, query_loss: 0.30816536888480184, aux_loss: [0.06855822] align_loss: [0.14003146]
+INFO - main - Min total loss 0.3897121101617813
+INFO - main - step 1300: total_loss: 0.5836083881929517, query_loss: 0.33591675583273173, aux_loss: [0.] align_loss: [0.19807875]
+INFO - main - Min total loss 0.3897121101617813
+INFO - main - step 1400: total_loss: 0.5345600391179324, query_loss: 0.31933420069515706, aux_loss: [0.04229191] align_loss: [0.17058401]
+INFO - main - Min total loss 0.3897121101617813
+INFO - main - step 1500: total_loss: 0.46323516249656677, query_loss: 0.2714360633864999, aux_loss: [0.04450765] align_loss: [0.1499802]
+INFO - main - Min total loss 0.3897121101617813
+INFO - main - step 1600: total_loss: 0.45976898370310665, query_loss: 0.26589997971430424, aux_loss: [0.04479516] align_loss: [0.15522593]
+INFO - main - Min total loss 0.3897121101617813
+INFO - main - step 1700: total_loss: 0.45130895502865315, query_loss: 0.2503834149986506, aux_loss: [0.0320116] align_loss: [0.15972085]
+INFO - main - Min total loss 0.3897121101617813
+INFO - main - step 1800: total_loss: 0.41408848866820336, query_loss: 0.2097167044878006, aux_loss: [0.04161143] align_loss: [0.15894674]
+INFO - main - Min total loss 0.3897121101617813
+INFO - main - step 1900: total_loss: 0.40909681271761655, query_loss: 0.20572703570127487, aux_loss: [0.03865576] align_loss: [0.16553983]
+INFO - main - Min total loss 0.3897121101617813
+INFO - main - step 2000: total_loss: 0.4388317786157131, query_loss: 0.22861228950321674, aux_loss: [0.05180126] align_loss: [0.17090376]
+INFO - main - Min total loss 0.3897121101617813
+INFO - main - ###### Taking snapshot ######
+INFO - main - This is epoch "2" of "30" epochs.
+INFO - main - step 2100: total_loss: 0.39473960146307946, query_loss: 0.19705449037253855, aux_loss: [0.02466488] align_loss: [0.15921146]
+INFO - main - Min total loss 0.3897121101617813
+INFO - main - step 2200: total_loss: 0.3997079241275787, query_loss: 0.19602208252996206, aux_loss: [0.02973112] align_loss: [0.1720376]
+INFO - main - Min total loss 0.3897121101617813
+INFO - main - step 2300: total_loss: 0.375716392621398, query_loss: 0.19003417499363423, aux_loss: [0.04383388] align_loss: [0.15195556]
+INFO - main - Min total loss 0.3897121101617813-0.013995717540383312
+INFO - main - step 2400: total_loss: 0.37021894469857214, query_loss: 0.1804517127200961, aux_loss: [0.04141474] align_loss: [0.15824243]
+INFO - main - Min total loss 0.375716392621398-0.00549744792282586
+INFO - main - step 2500: total_loss: 0.38358967788517473, query_loss: 0.17939498834311962, aux_loss: [0.02086678] align_loss: [0.17334872]
+INFO - main - Min total loss 0.37021894469857214
+INFO - main - step 2600: total_loss: 0.3534355653449893, query_loss: 0.16462045859545468, aux_loss: [0.03394052] align_loss: [0.16109487]
+INFO - main - Min total loss 0.37021894469857214-0.016783379353582817
+INFO - main - step 2700: total_loss: 0.3684674498438835, query_loss: 0.16189855882897974, aux_loss: [0.03095517] align_loss: [0.17761785]
+INFO - main - Min total loss 0.3534355653449893
+INFO - main - step 2800: total_loss: 0.3732629184424877, query_loss: 0.1585556290112436, aux_loss: [0.04045337] align_loss: [0.18414104]
+INFO - main - Min total loss 0.3534355653449893
+INFO - main - step 2900: total_loss: 0.35513489447534086, query_loss: 0.16870205353945494, aux_loss: [0.02671546] align_loss: [0.15707326]
+INFO - main - Min total loss 0.3534355653449893
+INFO - main - step 3000: total_loss: 0.3236928837001324, query_loss: 0.1470591881684959, aux_loss: [0.02443692] align_loss: [0.14872846]
+INFO - main - Min total loss 0.3534355653449893-0.02974268164485694
+INFO - main - This is epoch "3" of "30" epochs.
+INFO - main - step 3100: total_loss: 0.3579137775301933, query_loss: 0.16053762840107083, aux_loss: [0.02501082] align_loss: [0.17108797]
+INFO - main - Min total loss 0.3236928837001324
+INFO - main - step 3200: total_loss: 0.36187671050429343, query_loss: 0.16862706039100886, aux_loss: [0.04537702] align_loss: [0.1690646]
+INFO - main - Min total loss 0.3236928837001324
+INFO - main - step 3300: total_loss: 0.3714724496752024, query_loss: 0.17212122898548843, aux_loss: [0.02057806] align_loss: [0.17099307]
+INFO - main - Min total loss 0.3236928837001324
+INFO - main - step 3400: total_loss: 0.37483433544635775, query_loss: 0.16510877618566155, aux_loss: [0.0276511] align_loss: [0.18190391]
+INFO - main - Min total loss 0.3236928837001324
+INFO - main - step 3500: total_loss: 0.36111096166074275, query_loss: 0.17001583049073815, aux_loss: [0.02951583] align_loss: [0.16628121]
+INFO - main - Min total loss 0.3236928837001324
+INFO - main - step 3600: total_loss: 0.3442137075960636, query_loss: 0.1641182801872492, aux_loss: [0.02142212] align_loss: [0.15647471]
+INFO - main - Min total loss 0.3236928837001324
+INFO - main - step 3700: total_loss: 0.31647996068000794, query_loss: 0.14077941998839377, aux_loss: [0.03240365] align_loss: [0.15184738]
+INFO - main - Min total loss 0.3236928837001324-0.00721292302012444
+INFO - main - step 3800: total_loss: 0.30491881124675274, query_loss: 0.13361171031370758, aux_loss: [0.02244955] align_loss: [0.14874436]
+INFO - main - Min total loss 0.31647996068000794-0.011561149433255202
+INFO - main - step 3900: total_loss: 0.3090074802935123, query_loss: 0.13355896884575486, aux_loss: [0.01996252] align_loss: [0.15317254]
+INFO - main - Min total loss 0.30491881124675274
+INFO - main - step 4000: total_loss: 0.3105605499446392, query_loss: 0.1358971929177642, aux_loss: [0.02514526] align_loss: [0.15209553]
+INFO - main - Min total loss 0.30491881124675274
+INFO - main - ###### Taking snapshot ######
+INFO - main - This is epoch "4" of "30" epochs.
+INFO - main - step 4100: total_loss: 0.31702568236738443, query_loss: 0.13627790862694383, aux_loss: [0.02831087] align_loss: [0.15963538]
+INFO - main - Min total loss 0.30491881124675274
+INFO - main - step 4200: total_loss: 0.311158996000886, query_loss: 0.13369081726297735, aux_loss: [0.02147111] align_loss: [0.15614916]
+INFO - main - Min total loss 0.30491881124675274
+INFO - main - step 4300: total_loss: 0.3131710742413998, query_loss: 0.13979631382972002, aux_loss: [0.02077457] align_loss: [0.1514987]
+INFO - main - Min total loss 0.30491881124675274
+INFO - main - step 4400: total_loss: 0.3156116495281458, query_loss: 0.13934087792411445, aux_loss: [0.01766697] align_loss: [0.15582675]
+INFO - main - Min total loss 0.30491881124675274
+INFO - main - step 4500: total_loss: 0.3374210703372955, query_loss: 0.1472006692737341, aux_loss: [0.02388635] align_loss: [0.16991432]
+INFO - main - Min total loss 0.30491881124675274
+INFO - main - step 4600: total_loss: 0.3154156698286533, query_loss: 0.13617136441171168, aux_loss: [0.02030048] align_loss: [0.15838389]
+INFO - main - Min total loss 0.30491881124675274
+INFO - main - step 4700: total_loss: 0.33029125720262525, query_loss: 0.14477565165609121, aux_loss: [0.0307897] align_loss: [0.16434763]
+INFO - main - Min total loss 0.30491881124675274
+INFO - main - step 4800: total_loss: 0.2983594086766243, query_loss: 0.13320045869797467, aux_loss: [0.02182373] align_loss: [0.14281721]
+INFO - main - Min total loss 0.30491881124675274-0.006559402570128436
+INFO - main - step 4900: total_loss: 0.29026135072112086, query_loss: 0.12366186136379838, aux_loss: [0.02065846] align_loss: [0.14661443]
+INFO - main - Min total loss 0.2983594086766243-0.008098057955503446
+INFO - main - step 5000: total_loss: 0.31398526042699815, query_loss: 0.1295210246555507, aux_loss: [0.01607406] align_loss: [0.16536885]
+INFO - main - Min total loss 0.29026135072112086
+INFO - main - This is epoch "5" of "30" epochs.
+INFO - main - step 5100: total_loss: 0.3173153058439493, query_loss: 0.12435461355373263, aux_loss: [0.02067798] align_loss: [0.17291006]
+INFO - main - Min total loss 0.29026135072112086
+INFO - main - step 5200: total_loss: 0.30309860840439795, query_loss: 0.12535780834034085, aux_loss: [0.02123383] align_loss: [0.15694621]
+INFO - main - Min total loss 0.29026135072112086
+INFO - main - step 5300: total_loss: 0.2897568303346634, query_loss: 0.12103781156241894, aux_loss: [0.02276906] align_loss: [0.1486691]
+INFO - main - Min total loss 0.29026135072112086-0.0005045203864574854
+INFO - main - step 5400: total_loss: 0.29658138908445836, query_loss: 0.1265405580494553, aux_loss: [0.01892164] align_loss: [0.15114309]
+INFO - main - Min total loss 0.2897568303346634
+INFO - main - step 5500: total_loss: 0.2837028156965971, query_loss: 0.11257426839321852, aux_loss: [0.02025637] align_loss: [0.15062381]
+INFO - main - Min total loss 0.2897568303346634-0.006054014638066263
+INFO - main - step 5600: total_loss: 0.2915435254573822, query_loss: 0.11753226861357689, aux_loss: [0.01791319] align_loss: [0.15655057]
+INFO - main - Min total loss 0.2837028156965971
+INFO - main - step 5700: total_loss: 0.2795373605191708, query_loss: 0.12332542477175594, aux_loss: [0.01577353] align_loss: [0.13788337]
+INFO - main - Min total loss 0.2837028156965971-0.004165455177426336
+INFO - main - step 5800: total_loss: 0.3251720427721739, query_loss: 0.13102500285953284, aux_loss: [0.01924682] align_loss: [0.17565094]
+INFO - main - Min total loss 0.2795373605191708
+INFO - main - step 5900: total_loss: 0.3197846907377243, query_loss: 0.13152998179197312, aux_loss: [0.02228689] align_loss: [0.16871098]
+INFO - main - Min total loss 0.2795373605191708
+INFO - main - step 6000: total_loss: 0.26005132019519805, query_loss: 0.1093981540389359, aux_loss: [0.01851788] align_loss: [0.13065451]
+INFO - main - Min total loss 0.2795373605191708-0.01948604032397272
+INFO - main - ###### Taking snapshot ######
+INFO - main - This is epoch "6" of "30" epochs.
+INFO - main - step 6100: total_loss: 0.30477496586740016, query_loss: 0.12916858555749058, aux_loss: [0.01619583] align_loss: [0.15688343]
+INFO - main - Min total loss 0.26005132019519805
+INFO - main - step 6200: total_loss: 0.2739111726731062, query_loss: 0.10915828317403793, aux_loss: [0.01930386] align_loss: [0.14647453]
+INFO - main - Min total loss 0.26005132019519805
+INFO - main - step 6300: total_loss: 0.310975306481123, query_loss: 0.13603273166343569, aux_loss: [0.01632029] align_loss: [0.15683798]
+INFO - main - Min total loss 0.26005132019519805
+INFO - main - step 6400: total_loss: 0.2786014300584793, query_loss: 0.10981327181681991, aux_loss: [0.01734439] align_loss: [0.15075928]
+INFO - main - Min total loss 0.26005132019519805
+INFO - main - step 6500: total_loss: 0.2928249928355217, query_loss: 0.12744541063904763, aux_loss: [0.02203879] align_loss: [0.14748608]
+INFO - main - Min total loss 0.26005132019519805
+INFO - main - step 6600: total_loss: 0.3164648059755564, query_loss: 0.1420298047736287, aux_loss: [0.01666746] align_loss: [0.1575706]
+INFO - main - Min total loss 0.26005132019519805
+INFO - main - step 6700: total_loss: 0.2965539225190878, query_loss: 0.11407862229272724, aux_loss: [0.01605833] align_loss: [0.16472322]
+INFO - main - Min total loss 0.26005132019519805
+INFO - main - step 6800: total_loss: 0.2669866255670786, query_loss: 0.11105897987261415, aux_loss: [0.01741412] align_loss: [0.13828117]
+INFO - main - Min total loss 0.26005132019519805
+INFO - main - step 6900: total_loss: 0.30338780958205464, query_loss: 0.11407010851427912, aux_loss: [0.01640841] align_loss: [0.1709423]
+INFO - main - Min total loss 0.26005132019519805
+INFO - main - step 7000: total_loss: 0.2949336602538824, query_loss: 0.12360254557803273, aux_loss: [0.01549476] align_loss: [0.15380612]
+INFO - main - Min total loss 0.26005132019519805
+INFO - main - This is epoch "7" of "30" epochs.
+INFO - main - step 7100: total_loss: 0.2643673337996006, query_loss: 0.11015696192160249, aux_loss: [0.01701638] align_loss: [0.13760272]
+INFO - main - Min total loss 0.26005132019519805
+INFO - main - step 7200: total_loss: 0.2805320502817631, query_loss: 0.10758884791284799, aux_loss: [0.01509359] align_loss: [0.15688719]
+INFO - main - Min total loss 0.26005132019519805
+INFO - main - step 7300: total_loss: 0.2366141102835536, query_loss: 0.09470012088306248, aux_loss: [0.01519099] align_loss: [0.12528037]
+INFO - main - Min total loss 0.26005132019519805-0.02343720991164444
+INFO - main - step 7400: total_loss: 0.3113872777670622, query_loss: 0.12310214573517442, aux_loss: [0.01750982] align_loss: [0.17092346]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 7500: total_loss: 0.28806254632771017, query_loss: 0.11296347135677934, aux_loss: [0.02038932] align_loss: [0.15859996]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 7600: total_loss: 0.2540233377367258, query_loss: 0.10049694234505296, aux_loss: [0.01833266] align_loss: [0.136694]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 7700: total_loss: 0.2918926914781332, query_loss: 0.12023503234609961, aux_loss: [0.02166155] align_loss: [0.15432067]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 7800: total_loss: 0.2966391605883837, query_loss: 0.11318857492879034, aux_loss: [0.01589757] align_loss: [0.166617]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 7900: total_loss: 0.24550287440419197, query_loss: 0.09739979608915746, aux_loss: [0.01683909] align_loss: [0.13191791]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 8000: total_loss: 0.3046817072108388, query_loss: 0.13604100100696087, aux_loss: [0.01804668] align_loss: [0.15147452]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - ###### Taking snapshot ######
+INFO - main - This is epoch "8" of "30" epochs.
+INFO - main - step 8100: total_loss: 0.29663484916090965, query_loss: 0.13015331400558353, aux_loss: [0.01525474] align_loss: [0.15091011]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 8200: total_loss: 0.2807208643853664, query_loss: 0.1185104007460177, aux_loss: [0.01756844] align_loss: [0.14577916]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 8300: total_loss: 0.27805478379130366, query_loss: 0.11351868391036987, aux_loss: [0.0147233] align_loss: [0.1483834]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 8400: total_loss: 0.27017283357679844, query_loss: 0.10813403729349375, aux_loss: [0.01748556] align_loss: [0.14618789]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 8500: total_loss: 0.2448223901540041, query_loss: 0.0972593373246491, aux_loss: [0.01409352] align_loss: [0.13175054]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 8600: total_loss: 0.26872804820537566, query_loss: 0.11384886618703603, aux_loss: [0.01676816] align_loss: [0.1392276]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 8700: total_loss: 0.23997755356132985, query_loss: 0.09478706953115762, aux_loss: [0.01698503] align_loss: [0.12992121]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 8800: total_loss: 0.29071132861077786, query_loss: 0.1205166538245976, aux_loss: [0.0120967] align_loss: [0.15469746]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 8900: total_loss: 0.29274463906884196, query_loss: 0.11334285855293275, aux_loss: [0.01376966] align_loss: [0.1638495]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 9000: total_loss: 0.28838117465376856, query_loss: 0.11128376407083124, aux_loss: [0.02252793] align_loss: [0.1615735]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - This is epoch "9" of "30" epochs.
+INFO - main - step 9100: total_loss: 0.24391464911401273, query_loss: 0.08859984828624874, aux_loss: [0.01467776] align_loss: [0.14014076]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 9200: total_loss: 0.280953963547945, query_loss: 0.1137011493369937, aux_loss: [0.01831177] align_loss: [0.15161853]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 9300: total_loss: 0.26195068076252936, query_loss: 0.10408957431092858, aux_loss: [0.01576358] align_loss: [0.14293964]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 9400: total_loss: 0.26734988249838354, query_loss: 0.09654874965548516, aux_loss: [0.01253632] align_loss: [0.1561071]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 9500: total_loss: 0.26114758037030694, query_loss: 0.10459062736481428, aux_loss: [0.01732826] align_loss: [0.14124231]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 9600: total_loss: 0.2625540219247341, query_loss: 0.10911316805519164, aux_loss: [0.01399153] align_loss: [0.138233]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 9700: total_loss: 0.26045795194804666, query_loss: 0.10130264215171338, aux_loss: [0.01465991] align_loss: [0.1434359]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 9800: total_loss: 0.28799939796328544, query_loss: 0.11154213715344667, aux_loss: [0.01284042] align_loss: [0.16123624]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 9900: total_loss: 0.2769104766100645, query_loss: 0.11630958774127066, aux_loss: [0.01255867] align_loss: [0.1462692]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 10000: total_loss: 0.253894837424159, query_loss: 0.09785796403884887, aux_loss: [0.01543686] align_loss: [0.14157325]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - ###### Taking snapshot ######
+INFO - main - This is epoch "10" of "30" epochs.
+INFO - main - step 10100: total_loss: 0.2530312378704548, query_loss: 0.09411049591377378, aux_loss: [0.01400906] align_loss: [0.14382398]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 10200: total_loss: 0.2743085894733667, query_loss: 0.10791118051856756, aux_loss: [0.01279274] align_loss: [0.15226953]
+INFO - main - Min total loss 0.2366141102835536
+INFO - main - step 10300: total_loss: 0.23306116219609976, query_loss: 0.08820702478289605, aux_loss: [0.0142504] align_loss: [0.1307065]
+INFO - main - Min total loss 0.2366141102835536-0.00355294808745385
+INFO - main - step 10400: total_loss: 0.2567062363028526, query_loss: 0.09604947393760085, aux_loss: [0.01569268] align_loss: [0.14651178]
+INFO - main - Min total loss 0.23306116219609976
+INFO - main - step 10500: total_loss: 0.28897572942078115, query_loss: 0.11108221333473921, aux_loss: [0.01383761] align_loss: [0.16382049]
+INFO - main - Min total loss 0.23306116219609976
+INFO - main - step 10600: total_loss: 0.24517522405833006, query_loss: 0.09411339057609439, aux_loss: [0.01248011] align_loss: [0.13735577]
+INFO - main - Min total loss 0.23306116219609976
+INFO - main - step 10700: total_loss: 0.2797493229061365, query_loss: 0.11276731393299996, aux_loss: [0.01319048] align_loss: [0.15255119]
+INFO - main - Min total loss 0.23306116219609976
+INFO - main - step 10800: total_loss: 0.28189517457038166, query_loss: 0.10564284269697964, aux_loss: [0.01409861] align_loss: [0.16188662]
+INFO - main - Min total loss 0.23306116219609976
+INFO - main - step 10900: total_loss: 0.23803272619843482, query_loss: 0.09562720441259444, aux_loss: [0.01385453] align_loss: [0.128386]
+INFO - main - Min total loss 0.23306116219609976
+INFO - main - step 11000: total_loss: 0.272525004632771, query_loss: 0.11222204023040831, aux_loss: [0.01363388] align_loss: [0.1464796]
+INFO - main - Min total loss 0.23306116219609976
+INFO - main - This is epoch "11" of "30" epochs.
+INFO - main - step 11100: total_loss: 0.2876263654977083, query_loss: 0.1167542739585042, aux_loss: [0.01341391] align_loss: [0.15433806]
+INFO - main - Min total loss 0.23306116219609976
+INFO - main - step 11200: total_loss: 0.28031178094446657, query_loss: 0.09989855416119099, aux_loss: [0.01556644] align_loss: [0.16580406]
+INFO - main - Min total loss 0.23306116219609976
+INFO - main - step 11300: total_loss: 0.25448836397379637, query_loss: 0.10002655447460711, aux_loss: [0.0136849] align_loss: [0.14072186]
+INFO - main - Min total loss 0.23306116219609976
+INFO - main - step 11400: total_loss: 0.2828120055794716, query_loss: 0.1006247139070183, aux_loss: [0.01512474] align_loss: [0.16817547]
+INFO - main - Min total loss 0.23306116219609976
+INFO - main - step 11500: total_loss: 0.27693357385694983, query_loss: 0.10298044360242783, aux_loss: [0.01579618] align_loss: [0.16032751]
+INFO - main - Min total loss 0.23306116219609976
+INFO - main - step 11600: total_loss: 0.2543074433505535, query_loss: 0.09053933484479786, aux_loss: [0.0137738] align_loss: [0.14973627]
+INFO - main - Min total loss 0.23306116219609976
+INFO - main - step 11700: total_loss: 0.246155361905694, query_loss: 0.09694099433720112, aux_loss: [0.01441473] align_loss: [0.13514943]
+INFO - main - Min total loss 0.23306116219609976
+INFO - main - step 11800: total_loss: 0.2508017987757921, query_loss: 0.10038747460581363, aux_loss: [0.01261073] align_loss: [0.13651182]
+INFO - main - Min total loss 0.23306116219609976
+INFO - main - step 11900: total_loss: 0.22931329134851694, query_loss: 0.09126014619600027, aux_loss: [0.01189178] align_loss: [0.12408033]
+INFO - main - Min total loss 0.23306116219609976-0.0037478708475828237
+INFO - main - step 12000: total_loss: 0.27623444214463233, query_loss: 0.11436869932338595, aux_loss: [0.01425004] align_loss: [0.14784522]
+INFO - main - Min total loss 0.22931329134851694
+INFO - main - ###### Taking snapshot ######
+INFO - main - This is epoch "12" of "30" epochs.
+INFO - main - step 12100: total_loss: 0.23560875307768583, query_loss: 0.08732202758081258, aux_loss: [0.01273835] align_loss: [0.13438247]
+INFO - main - Min total loss 0.22931329134851694
+INFO - main - step 12200: total_loss: 0.2255489285290241, query_loss: 0.08105850976891815, aux_loss: [0.01485372] align_loss: [0.13054685]
+INFO - main - Min total loss 0.22931329134851694-0.003764362819492828
+INFO - main - step 12300: total_loss: 0.2483449826389551, query_loss: 0.09310767577029765, aux_loss: [0.01325259] align_loss: [0.14153612]
+INFO - main - Min total loss 0.2255489285290241
+INFO - main - step 12400: total_loss: 0.22828916758298873, query_loss: 0.08207283284980804, aux_loss: [0.01230106] align_loss: [0.13215676]
+INFO - main - Min total loss 0.2255489285290241
+INFO - main - step 12500: total_loss: 0.2745991291105747, query_loss: 0.09993605576455593, aux_loss: [0.01358902] align_loss: [0.16085896]
+INFO - main - Min total loss 0.2255489285290241
+INFO - main - step 12600: total_loss: 0.28412068471312524, query_loss: 0.10694298410788178, aux_loss: [0.01206276] align_loss: [0.16410533]
+INFO - main - Min total loss 0.2255489285290241
+INFO - main - step 12700: total_loss: 0.2616651021316648, query_loss: 0.09516084932722152, aux_loss: [0.01509669] align_loss: [0.15269618]
+INFO - main - Min total loss 0.2255489285290241
+INFO - main - step 12800: total_loss: 0.27176241122186184, query_loss: 0.096805473389104, aux_loss: [0.01210022] align_loss: [0.16174795]
+INFO - main - Min total loss 0.2255489285290241
+INFO - main - step 12900: total_loss: 0.2470485457032919, query_loss: 0.08987225510179997, aux_loss: [0.01150542] align_loss: [0.14406563]
+INFO - main - Min total loss 0.2255489285290241
+INFO - main - step 13000: total_loss: 0.25690537825226784, query_loss: 0.08960759558714926, aux_loss: [0.01610383] align_loss: [0.15357316]
+INFO - main - Min total loss 0.2255489285290241
+INFO - main - This is epoch "13" of "30" epochs.
+INFO - main - step 13100: total_loss: 0.24959135703742505, query_loss: 0.08918819620274007, aux_loss: [0.0123148] align_loss: [0.14631948]
+INFO - main - Min total loss 0.2255489285290241
+INFO - main - step 13200: total_loss: 0.24665011432021855, query_loss: 0.09967341632582247, aux_loss: [0.01156357] align_loss: [0.13415925]
+INFO - main - Min total loss 0.2255489285290241
+INFO - main - step 13300: total_loss: 0.26074692226946355, query_loss: 0.09434020070359111, aux_loss: [0.01177239] align_loss: [0.15322067]
+INFO - main - Min total loss 0.2255489285290241
+INFO - main - step 13400: total_loss: 0.2718475744500756, query_loss: 0.097633913224563, aux_loss: [0.01259109] align_loss: [0.16131991]
+INFO - main - Min total loss 0.2255489285290241
+INFO - main - step 13500: total_loss: 0.27149118347093465, query_loss: 0.09457724149338902, aux_loss: [0.01445529] align_loss: [0.16389664]
+INFO - main - Min total loss 0.2255489285290241
+INFO - main - step 13600: total_loss: 0.26253622069954874, query_loss: 0.09271297958679497, aux_loss: [0.01309076] align_loss: [0.15691544]
+INFO - main - Min total loss 0.2255489285290241
+INFO - main - step 13700: total_loss: 0.25945433929562567, query_loss: 0.08993181873112917, aux_loss: [0.01176083] align_loss: [0.15632845]
+INFO - main - Min total loss 0.2255489285290241
+INFO - main - step 13800: total_loss: 0.26093759201467037, query_loss: 0.09512438910081983, aux_loss: [0.01410463] align_loss: [0.15294595]
+INFO - main - Min total loss 0.2255489285290241
+INFO - main - step 13900: total_loss: 0.25117051154375075, query_loss: 0.09496546011418104, aux_loss: [0.01366088] align_loss: [0.14381611]
+INFO - main - Min total loss 0.2255489285290241
+INFO - main - step 14000: total_loss: 0.24274463407695293, query_loss: 0.08486112463288009, aux_loss: [0.01426059] align_loss: [0.14523996]
+INFO - main - Min total loss 0.2255489285290241
+INFO - main - ###### Taking snapshot ######
+INFO - main - This is epoch "14" of "30" epochs.
+INFO - main - step 14100: total_loss: 0.25959355749189855, query_loss: 0.0932470645569265, aux_loss: [0.01200363] align_loss: [0.15420215]
+INFO - main - Min total loss 0.2255489285290241
+INFO - main - step 14200: total_loss: 0.26290671087801454, query_loss: 0.08856186010874807, aux_loss: [0.01145533] align_loss: [0.16186522]
+INFO - main - Min total loss 0.2255489285290241
+INFO - main - step 14300: total_loss: 0.27228730730712414, query_loss: 0.09597549761645496, aux_loss: [0.01266342] align_loss: [0.16364488]
+INFO - main - Min total loss 0.2255489285290241
+INFO - main - step 14400: total_loss: 0.25261458709836004, query_loss: 0.09339149648323655, aux_loss: [0.01183403] align_loss: [0.14664625]
+INFO - main - Min total loss 0.2255489285290241
+INFO - main - step 14500: total_loss: 0.23559068873524666, query_loss: 0.09403167735785246, aux_loss: [0.01246044] align_loss: [0.12917668]
+INFO - main - Min total loss 0.2255489285290241
+INFO - main - step 14600: total_loss: 0.22454911433160304, query_loss: 0.08124128897674382, aux_loss: [0.01551419] align_loss: [0.13080725]
+INFO - main - Min total loss 0.2255489285290241-0.0009998141974210673
+INFO - main - step 14700: total_loss: 0.24909191410988568, query_loss: 0.09971600423566997, aux_loss: [0.01127908] align_loss: [0.13672775]
+INFO - main - Min total loss 0.22454911433160304
+INFO - main - step 14800: total_loss: 0.24157115086913108, query_loss: 0.0891088298521936, aux_loss: [0.0140582] align_loss: [0.13982722]
+INFO - main - Min total loss 0.22454911433160304
+INFO - main - step 14900: total_loss: 0.2670055543631315, query_loss: 0.10536135656759144, aux_loss: [0.01243928] align_loss: [0.14888337]
+INFO - main - Min total loss 0.22454911433160304
+INFO - main - step 15000: total_loss: 0.25441385731101035, query_loss: 0.10956915605813265, aux_loss: [0.01126698] align_loss: [0.13182217]
+INFO - main - Min total loss 0.22454911433160304
+INFO - main - This is epoch "15" of "30" epochs.
+WARNING - GMRD - Aborted after 3:48:18!
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "42"
+INFO - main - Run "CHAOST2_cv0" with ID "2"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+ERROR - GMRD - Failed after 0:00:02!
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "43"
+INFO - main - Run "CHAOST2_cv0" with ID "3"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.7679710984230042
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.6680111885070801
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.7374402284622192
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.6588912606239319
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.5500598549842834
+INFO - main - Mean class Dice: 0.7080783843994141
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.7982174158096313
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.8833413124084473
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.8902431130409241
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.8336157202720642
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.7430373430252075
+INFO - main - Mean class Dice: 0.8513544201850891
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.7547879219055176
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.759264349937439
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.8398290276527405
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.7053129076957703
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.6216894388198853
+INFO - main - Mean class Dice: 0.7647985816001892
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.752596378326416
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.8412027955055237
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.8344277739524841
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.7623980641365051
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.665295422077179
+INFO - main - Mean class Dice: 0.797656238079071
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.5500598549842834, 'RK': 0.7430373430252075, 'LK': 0.6216894388198853, 'SPLEEN': 0.665295422077179}
+INFO - main - Mean Dice: {'LIVER': 0.7080783843994141, 'RK': 0.8513544201850891, 'LK': 0.7647985816001892, 'SPLEEN': 0.797656238079071}
+INFO - main - Total Mean Dice: 0.7804719060659409
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:45
+INFO - GMRD - Running command 'main'
+INFO - GMRD - Started run with ID "44"
+INFO - main - Run "CHAOST2_cv0" with ID "4"
+INFO - main - Create model...
+INFO - main - Load data...
+INFO - main - Starting validation...
+INFO - main - Test Class: LIVER
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.7646752595901489
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.6613630652427673
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.7392685413360596
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.6341909170150757
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LIVER
+INFO - main - Mean class IoU: 0.5409446954727173
+INFO - main - Mean class Dice: 0.6998744010925293
+INFO - main - Test Class: RK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.8335891366004944
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.9087423086166382
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.9095567464828491
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.8604360818862915
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: RK
+INFO - main - Mean class IoU: 0.7841458320617676
+INFO - main - Mean class Dice: 0.8780810832977295
+INFO - main - Test Class: LK
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.7775707840919495
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.7370498776435852
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.8448323011398315
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.7442532181739807
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: LK
+INFO - main - Mean class IoU: 0.635927140712738
+INFO - main - Mean class Dice: 0.7759265303611755
+INFO - main - Test Class: SPLEEN
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_2.nii.gz.
+INFO - main - Dice score: 0.8082793354988098
+INFO - main - 2 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_3.nii.gz.
+INFO - main - Dice score: 0.8603984713554382
+INFO - main - 3 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_5.nii.gz.
+INFO - main - Dice score: 0.8328546285629272
+INFO - main - 5 has been saved. 
+INFO - main - Tested query volume: \chaos_MR_T2_normalized\image_8.nii.gz.
+INFO - main - Dice score: 0.7704975605010986
+INFO - main - 8 has been saved. 
+INFO - main - Test Class: SPLEEN
+INFO - main - Mean class IoU: 0.6933754682540894
+INFO - main - Mean class Dice: 0.8180075287818909
+INFO - main - Final results...
+INFO - main - Mean IoU: {'LIVER': 0.5409446954727173, 'RK': 0.7841458320617676, 'LK': 0.635927140712738, 'SPLEEN': 0.6933754682540894}
+INFO - main - Mean Dice: {'LIVER': 0.6998744010925293, 'RK': 0.8780810832977295, 'LK': 0.7759265303611755, 'SPLEEN': 0.8180075287818909}
+INFO - main - Total Mean Dice: 0.7929723858833313
+INFO - main - End of validation.
+INFO - GMRD - Result: 1
+INFO - GMRD - Completed after 0:00:45

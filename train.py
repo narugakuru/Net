@@ -156,7 +156,7 @@ def main(_run, _config, _log):
             )
 
             # Compute outputs and losses.
-            query_pred, align_loss, aux_loss, coarse_loss = model(
+            query_pred, align_loss, aux_loss = model(
                 support_images, support_fg_mask, query_images, query_labels, train=True
             )
             aux_loss = 0.5 * aux_loss
@@ -172,7 +172,7 @@ def main(_run, _config, _log):
                 query_labels,
             )
 
-            loss = query_loss + align_loss + aux_loss + coarse_loss
+            loss = query_loss + align_loss + aux_loss
 
             # Compute gradient and do SGD step.
             for param in model.parameters():
