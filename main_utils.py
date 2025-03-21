@@ -6,6 +6,7 @@ import psutil  # 用于系统内存管理
 import torch
 import csv
 import re
+import json
 
 
 def find_max_mean_row(file_path):
@@ -222,7 +223,7 @@ def extract_logger_data(base_dir, output_csv):
                 if matches:
                     last_dict_str = matches[-1]  # 获取最后一个字典
                     try:
-                        data_dict = eval(last_dict_str)
+                        data_dict = json.loads(last_dict_str)
                         # 将字典中的数值格式化为4位小数
                         formatted_dict = {
                             k: "{:.4f}".format(float(v)) for k, v in data_dict.items()

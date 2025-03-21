@@ -132,8 +132,13 @@ def main(_run, _config, _log):
                     query_image_s = query_image[0][idx_[sub_chunck]:idx_[sub_chunck + 1]]  # C' x 3 x H x W
                     query_pred_s = []
                     for i in range(query_image_s.shape[0]):
-                        _pred_s, _, _ = model([support_image_s], [support_fg_mask_s], [query_image_s[[i]]],
-                                           train=False)  # 1 x 2 x H x W
+                        _pred_s, _, _, _ = model(
+                            [support_image_s],
+                            [support_fg_mask_s],
+                            [query_image_s[[i]]],
+                            query_pred_s,
+                            train=False,
+                        )  # 1 x 2 x H x W
                         query_pred_s.append(_pred_s)
                     query_pred_s = torch.cat(query_pred_s, dim=0)  # [9, 2, 256, 256]  [9, 2, 256, 256]
                     query_pred_s = query_pred_s.argmax(dim=1).cpu()  # C x H x W   [9, 256, 256]

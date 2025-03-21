@@ -22,7 +22,7 @@ if __name__ == "__main__":
         }
         # 运行脚本
         print("Running training...")
-        run_train(train_config_updates)
+        # run_train(train_config_updates)
 
         #### 验证模型测试 #####
         # 获取最新实验的所有模型文件
