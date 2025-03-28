@@ -18,7 +18,7 @@ from .dataset_specifics import *
 class TestDataset(Dataset):
 
     def __init__(self, args):
-
+        self.resize_transform = deftfx.Resize((256, 256), antialias=True)
         # reading the paths
         if args["dataset"] == "CMR":
             self.image_dirs = glob.glob(
@@ -78,6 +78,10 @@ class TestDataset(Dataset):
         sample["image"] = torch.from_numpy(img[idx])
         sample["label"] = torch.from_numpy(lbl[idx])
 
+        # 在返回前进行 resize
+        sample["image"] = self.resize_transform(sample["image"].float())
+        sample["label"] = self.resize_transform(sample["label"].float())
+
         return sample
 
     def get_support_index(self, n_shot, C):
@@ -125,6 +129,10 @@ class TestDataset(Dataset):
 
             sample["image"] = torch.from_numpy(img[idx][idx_])
             sample["label"] = torch.from_numpy(lbl[idx][idx_])
+
+        # 在返回前进行 resize
+        sample["image"] = self.resize_transform(sample["image"].float())
+        sample["label"] = self.resize_transform(sample["label"].float())
 
         return sample
 
