@@ -22,11 +22,12 @@ if __name__ == "__main__":
         }
         # 运行脚本
         print("Running training...")
-        run_train(train_config_updates)
+        # run_train(train_config_updates)
 
         #### 验证模型测试 #####
         # 获取最新实验的所有模型文件
-        snapshot_files = get_latest_snapshot_files(prepath)[-1:]
+        snapshot_files = [0]
+        # snapshot_files = get_latest_snapshot_files(prepath)[-1:]
         # files = [
         #     "./runs/GMRD_CMR_CV0_train/1/snapshots/3000.pth",
         #     "./runs/GMRD_CMR_CV0_train/1/snapshots/6000.pth",

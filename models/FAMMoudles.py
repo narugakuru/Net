@@ -372,9 +372,9 @@ class FADAM(nn.Module):
 
         """
         spt_fg_fts_low, spt_fg_fts_mid, spt_fg_fts_high = self.FAM(sp_fts)
-        logger.debug("FAM: ", spt_fg_fts_low.shape)
+        # logger.debug("FAM: ", spt_fg_fts_low.shape)
         fused_fts = self.MSFM(spt_fg_fts_low, spt_fg_fts_mid, spt_fg_fts_high)
-        logger.debug("MSFM: ", fused_fts.shape)
+        # logger.debug("MSFM: ", fused_fts.shape)
         # ([1, 512, 2304])
         # 将1D特征转换为2D形状
         # torch.Size([1, 512, 2n]) -> [1, 512, 32, 32]
@@ -388,7 +388,7 @@ class FADAM(nn.Module):
             fused_fts = padded_fts
         fused_fts_square = fused_fts.view(B, C, side_length, side_length)
 
-        logger.debug("1D to 2D: ", fused_fts_square.shape)
+        # logger.debug("1D to 2D: ", fused_fts_square.shape)
         # 使用卷积处理维度
         fused_fts_reshaped = F.interpolate(
             fused_fts_square, size=(64, 64), mode="bilinear", align_corners=True
@@ -397,6 +397,6 @@ class FADAM(nn.Module):
 
         # 在这里调整 output 的维度到 [1, 1, 1, 512, 64, 64]
         output = output.unsqueeze(0).unsqueeze(0)  # 在第1和第2维度插入两层
-        logger.debug("FADAM output reshaped: ", output.shape)
+        # logger.debug("FADAM output reshaped: ", output.shape)
 
         return output

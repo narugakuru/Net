@@ -34,7 +34,7 @@ class FewShotSeg(nn.Module):
         self.mlp2 = MLP(256, self.bg_num)  # 多层感知机，用于背景
         self.decoder1 = Decoder(self.fg_num)  # 前景解码器
         self.decoder2 = Decoder(self.bg_num)  # 背景解码器
-        # self.FADAM = FADAM()
+        self.FADAM = FADAM()
 
     def forward(self, supp_imgs, supp_mask, qry_imgs, train=False):
         """
@@ -146,7 +146,7 @@ class FewShotSeg(nn.Module):
             # FAM要求输入是b,512,n，FAM转为b,512,900。
             # MSFM输出是torch.Size([1, 512, 1800])
             # FADAM输出 1,1,1,512,64,64
-            # supp_fts = self.FADAM(spt_fg_fts)
+            supp_fts = self.FADAM(spt_fg_fts)
 
             # GMRD 生成多个原型
             ####################################################################
