@@ -4,9 +4,9 @@ import torch.nn.functional as F  # 导入PyTorch的函数式API模块
 import numpy as np  # 导入NumPy库
 
 # from .encoder import Res101Encoder  # 从当前包导入Res50Encoder类（被注释掉）
-from utils import set_logger
+# from utils import set_logger
 
-logger = set_logger()
+# logger = set_logger()
 
 
 class AttentionMacthcing(nn.Module):  # 定义AttentionMacthcing类，继承自nn.Module

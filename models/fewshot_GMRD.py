@@ -121,132 +121,99 @@ class FewShotSeg(nn.Module):
         # supp_bs支持集的批量大小。
         # 对支持集批量的每个Support单独和Query 进行计算相似度。获取累加损失和预测结果。
         for epi in range(supp_bs):
-            ###### 提取原型 ######
-            if supp_mask[epi][0].sum() == 0:  # 如果没有前景
-                supp_fts_ = [
-                    [
-                        self.getFeatures(
-                            supp_fts[[epi], way, shot], supp_mask[[epi], way, shot]
-                        )
-                        for shot in range(self.n_shots)
-                    ]
-                    for way in range(self.n_ways)
-                ]
-                fg_prototypes = self.getPrototype(supp_fts_)
 
-                ###### 获取查询预测 ######
-                qry_pred = torch.stack(
-                    [
-                        self.getPred(
-                            qry_fts[epi], fg_prototypes[way], self.thresh_pred[way]
-                        )
-                        for way in range(self.n_ways)
-                    ],
-                    dim=1,
-                )  # 2 x N x Wa x H' x W'
-                preds = F.interpolate(
-                    qry_pred, size=img_size, mode="bilinear", align_corners=True
-                )
-                preds = torch.cat((1.0 - preds, preds), dim=1)  # 拼接前景和背景预测
-                outputs.append(preds)  # 追加输出
-                if train:
-                    align_loss_epi = self.alignLoss(
-                        [supp_fts[epi]], [qry_fts[epi]], preds, supp_mask[epi]
+            # supp_fts torch.Size([1, 1, 1, 512, 64, 64]) batch*way*shot*512*H*W
+            # qry_fts  torch.Size([1, 1, 512, 64, 64]) batch*shot*512*H*W
+
+            # supp_fts torch.Size([1, 1, 3, 512, 64, 64])
+            # supp_mask torch.Size([1, 1, 3, 256, 256])
+            spt_fg_fts = [  # 获取支持前景特征 torch.Size([1, 512, 44])
+                [
+                    self.get_fg(
+                        supp_fts[[epi], way, shot], supp_mask[[epi], way, shot]
+                    )  # 获取每个样本的前景特征
+                    for shot in range(self.n_shots)
+                ]
+                for way in range(self.n_ways)
+            ]  # (1, 512, N)
+
+            # qry_fg_fts = [  # 获取查询前景特征 torch.Size([1, 512, 65536])
+            #     self.get_fg(qry_fts[way], qry_pred_coarse[epi])
+            #     for way in range(self.n_ways)
+            # ]  # (1, 512, N)
+
+            # 使用FADAM清洗域信息 #################################################
+            # FAM要求输入是b,512,n，FAM转为b,512,900。
+            # MSFM输出是torch.Size([1, 512, 1800])
+            # FADAM输出 1,1,1,512,64,64
+            # supp_fts = self.FADAM(spt_fg_fts)
+
+            # GMRD 生成多个原型
+            ####################################################################
+
+            # supp_fts[[epi], way, shot] -> torch.Size([1, 512, 64, 64])
+            # supp_mask[[epi], way, shot] -> torch.Size([1, 256, 256])
+
+            fg_pts = [
+                [
+                    self.get_fg_pts(
+                        supp_fts[[epi], way, shot], supp_mask[[epi], way, shot]
                     )
-                    align_loss += align_loss_epi  # 计算对齐损失
-            else:
-                # supp_fts torch.Size([1, 1, 1, 512, 64, 64]) batch*way*shot*512*H*W
-                # qry_fts  torch.Size([1, 1, 512, 64, 64]) batch*shot*512*H*W
-
-                # supp_fts torch.Size([1, 1, 3, 512, 64, 64])
-                # supp_mask torch.Size([1, 1, 3, 256, 256])
-                spt_fg_fts = [  # 获取支持前景特征 torch.Size([1, 512, 44])
-                    [
-                        self.get_fg(
-                            supp_fts[[epi], way, shot], supp_mask[[epi], way, shot]
-                        )  # 获取每个样本的前景特征
-                        for shot in range(self.n_shots)
-                    ]
-                    for way in range(self.n_ways)
-                ]  # (1, 512, N)
-
-                # qry_fg_fts = [  # 获取查询前景特征 torch.Size([1, 512, 65536])
-                #     self.get_fg(qry_fts[way], qry_pred_coarse[epi])
-                #     for way in range(self.n_ways)
-                # ]  # (1, 512, N)
-
-                # 使用FADAM清洗域信息 #################################################
-                # FAM要求输入是b,512,n，FAM转为b,512,900。
-                # MSFM输出是torch.Size([1, 512, 1800])
-                # FADAM输出 1,1,1,512,64,64
-                # supp_fts = self.FADAM(spt_fg_fts)
-
-                # GMRD 生成多个原型
-                ####################################################################
-
-                # supp_fts[[epi], way, shot] -> torch.Size([1, 512, 64, 64])
-                # supp_mask[[epi], way, shot] -> torch.Size([1, 256, 256])
-
-                fg_pts = [
-                    [
-                        self.get_fg_pts(
-                            supp_fts[[epi], way, shot], supp_mask[[epi], way, shot]
-                        )
-                        for shot in range(self.n_shots)
-                    ]
-                    for way in range(self.n_ways)
+                    for shot in range(self.n_shots)
                 ]
-                fg_pts = self.get_all_prototypes(fg_pts)  # 所有前景原型 （100+2）*512
+                for way in range(self.n_ways)
+            ]
+            fg_pts = self.get_all_prototypes(fg_pts)  # 所有前景原型 （100+2）*512
 
-                bg_pts = [
-                    [
-                        self.get_bg_pts(
-                            supp_fts[[epi], way, shot], supp_mask[[epi], way, shot]
-                        )
-                        for shot in range(self.n_shots)
-                    ]
-                    for way in range(self.n_ways)
+            bg_pts = [
+                [
+                    self.get_bg_pts(
+                        supp_fts[[epi], way, shot], supp_mask[[epi], way, shot]
+                    )
+                    for shot in range(self.n_shots)
                 ]
-                bg_pts = self.get_all_prototypes(bg_pts)  # 所有背景原型 （600+2）* 512
+                for way in range(self.n_ways)
+            ]
+            bg_pts = self.get_all_prototypes(bg_pts)  # 所有背景原型 （600+2）* 512
 
-                ###### 获取查询预测 ######
-                fg_sim = torch.stack(
-                    [
-                        self.get_fg_sim(qry_fts[epi], fg_pts[way])
-                        for way in range(self.n_ways)
-                    ],
-                    dim=1,
-                ).squeeze(0)
-                bg_sim = torch.stack(
-                    [
-                        self.get_bg_sim(qry_fts[epi], bg_pts[way])
-                        for way in range(self.n_ways)
-                    ],
-                    dim=1,
-                ).squeeze(0)
+            ###### 获取查询预测 ######
+            fg_sim = torch.stack(
+                [
+                    self.get_fg_sim(qry_fts[epi], fg_pts[way])
+                    for way in range(self.n_ways)
+                ],
+                dim=1,
+            ).squeeze(0)
+            bg_sim = torch.stack(
+                [
+                    self.get_bg_sim(qry_fts[epi], bg_pts[way])
+                    for way in range(self.n_ways)
+                ],
+                dim=1,
+            ).squeeze(0)
 
-                preds = F.interpolate(
-                    fg_sim, size=img_size, mode="bilinear", align_corners=True
-                )
-                bg_preds = F.interpolate(
-                    bg_sim, size=img_size, mode="bilinear", align_corners=True
-                )
+            preds = F.interpolate(
+                fg_sim, size=img_size, mode="bilinear", align_corners=True
+            )
+            bg_preds = F.interpolate(
+                bg_sim, size=img_size, mode="bilinear", align_corners=True
+            )
 
-                preds = torch.cat([bg_preds, preds], dim=1)  # 拼接背景和前景的预测
-                preds = torch.softmax(preds, dim=1)  # 应用softmax
+            preds = torch.cat([bg_preds, preds], dim=1)  # 拼接背景和前景的预测
+            preds = torch.softmax(preds, dim=1)  # 应用softmax
 
-                outputs.append(preds)  # 追加输出
-                if train:
-                    align_loss_epi, aux_loss_epi = self.align_aux_Loss(
-                        [supp_fts[epi]],
-                        [qry_fts[epi]],
-                        preds,
-                        supp_mask[epi],
-                        fg_pts,
-                        bg_pts,
-                    )  # fg_pts, bg_pts
-                    align_loss += align_loss_epi  # 计算对齐损失
-                    aux_loss += aux_loss_epi  # 计算辅助损失
+            outputs.append(preds)  # 追加输出
+            if train:
+                align_loss_epi, aux_loss_epi = self.align_aux_Loss(
+                    [supp_fts[epi]],
+                    [qry_fts[epi]],
+                    preds,
+                    supp_mask[epi],
+                    fg_pts,
+                    bg_pts,
+                )  # fg_pts, bg_pts
+                align_loss += align_loss_epi  # 计算对齐损失
+                aux_loss += aux_loss_epi  # 计算辅助损失
 
         output = torch.stack(outputs, dim=1)  # N x B x (1 + Wa) x H x W
         output = output.view(-1, *output.shape[2:])  # 重塑输出形状
