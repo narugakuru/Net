@@ -109,7 +109,7 @@ class Scores():
         return self.TP / (self.TP + self.FP + self.FN)
 
 
-def set_logger(path):
+def set_logger(path="./runs/logger.log"):
     logger = logging.getLogger()
     logger.handlers = []
     formatter = logging.Formatter('[%(levelname)] - %(name)s - %(message)s')
@@ -125,4 +125,3 @@ def set_logger(path):
     stream_handler.setFormatter(formatter)
     logger.addHandler(stream_handler)
     return logger
-

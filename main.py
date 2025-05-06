@@ -26,7 +26,7 @@ if __name__ == "__main__":
 
         #### 验证模型测试 #####
         # 获取最新实验的所有模型文件
-        snapshot_files = get_latest_snapshot_files(prepath)
+        snapshot_files = get_latest_snapshot_files(prepath)[-1:]
         # files = [
         #     "./runs/GMRD_CMR_CV0_train/1/snapshots/3000.pth",
         #     "./runs/GMRD_CMR_CV0_train/1/snapshots/6000.pth",
@@ -34,8 +34,9 @@ if __name__ == "__main__":
         # ]
         for snapshot in snapshot_files:
             test_config_updates = {
-                "reload_model_path": snapshot,
+                # "reload_model_path": snapshot,
                 # "reload_model_path": f"{prepath}/4/snapshots/7000.pth",
+                "reload_model_path": "./runs/GMRD_CHAOST2_CV1_train/2/snapshots/10000.pth",
                 "mode": "val",
                 "dataset": dataset,
                 "eval_fold": eval_fold,

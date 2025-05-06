@@ -12,7 +12,7 @@ import numpy as np
 import random
 import cv2
 from models.moudles import MLP, Decoder
-
+from models.FAMMoudles import FADAM
 
 class FewShotSeg(nn.Module):
 
@@ -34,6 +34,7 @@ class FewShotSeg(nn.Module):
         self.mlp2 = MLP(256, self.bg_num)  # 多层感知机，用于背景
         self.decoder1 = Decoder(self.fg_num)  # 前景解码器
         self.decoder2 = Decoder(self.bg_num)  # 背景解码器
+        # self.FADAM = FADAM()
 
     def forward(self, supp_imgs, supp_mask, qry_imgs, train=False):
         """
