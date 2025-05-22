@@ -3,6 +3,97 @@ import torch.nn as nn  # 导入PyTorch的神经网络模块
 import torch.nn.functional as F  # 导入PyTorch的函数式API模块
 import numpy as np  # 导入NumPy库
 
+# from .encoder import Res101Encoder  # 从当前包导入Res50Encoder类（被注释掉）
+# from utils import set_logger
+
+# logger = set_logger()
+
+
+class AttentionMacthcing(nn.Module):  # 定义AttentionMacthcing类，继承自nn.Module
+    def __init__(self, feature_dim=512, seq_len=5000):  # 初始化方法
+        super(AttentionMacthcing, self).__init__()  # 调用父类的初始化方法
+        self.fc_spt = nn.Sequential(  # 定义用于空间特征的全连接层序列
+            nn.Linear(seq_len, seq_len // 10),  # 第一个全连接层（序列长度到长度的1/10）
+            nn.ReLU(),  # ReLU激活函数
+            nn.Linear(seq_len // 10, seq_len),  # 第二个全连接层（1/10到原序列长度）
+        )
+        self.fc_qry = nn.Sequential(  # 定义用于查询特征的全连接层序列
+            nn.Linear(seq_len, seq_len // 10),  # 第一个全连接层
+            nn.ReLU(),  # ReLU激活函数
+            nn.Linear(seq_len // 10, seq_len),  # 第二个全连接层
+        )
+        self.fc_fusion = nn.Sequential(  # 定义融合特征的全连接层序列
+            nn.Linear(
+                seq_len * 2, seq_len // 5
+            ),  # 第一个全连接层，输入为两个序列的长度
+            nn.ReLU(),  # ReLU激活函数
+            nn.Linear(seq_len // 5, 2 * seq_len),  # 第二个全连接层
+        )
+        self.sigmoid = nn.Sigmoid()  # Sigmoid激活函数
+
+    def correlation_matrix(self, spt_fg_fts, qry_fg_fts):  # 计算相关矩阵的方法
+        """
+        计算空间前景特征与查询前景特征之间的相关矩阵。
+
+        参数:
+            spt_fg_fts (torch.Tensor): 空间前景特征。
+            qry_fg_fts (torch.Tensor): 查询前景特征。
+
+        返回:
+            torch.Tensor: 余弦相似度矩阵。形状: [1, 1, N]。
+        """
+
+        spt_fg_fts = F.normalize(
+            spt_fg_fts, p=2, dim=1
+        )  # 对空间前景特征进行L2归一化，形状 [1, 512, 900]
+        qry_fg_fts = F.normalize(
+            qry_fg_fts, p=2, dim=1
+        )  # 对查询前景特征进行L2归一化，形状 [1, 512, 900]
+
+        cosine_similarity = torch.sum(  # 计算余弦相似度
+            spt_fg_fts * qry_fg_fts, dim=1, keepdim=True
+        )  # 形状: [1, 1, N]
+
+        return cosine_similarity  # 返回余弦相似度矩阵
+
+    def forward(self, spt_fg_fts, qry_fg_fts, band):  # 前向传播方法
+        """
+        参数:
+            spt_fg_fts (torch.Tensor): 空间前景特征。
+            qry_fg_fts (torch.Tensor): 查询前景特征。
+            band (str): 频带类型，'low'，'high'或其他。
+
+        返回:
+            torch.Tensor: 融合后的张量。形状: [1, 512, 5000]。
+        """
+
+        spt_proj = F.relu(
+            self.fc_spt(spt_fg_fts)
+        )  # 使用全连接层对空间特征进行投影，形状: [1, 512, 900]
+        qry_proj = F.relu(
+            self.fc_qry(qry_fg_fts)
+        )  # 使用全连接层对查询特征进行投影，形状: [1, 512, 900]
+
+        similarity_matrix = self.sigmoid(  # 计算余弦相似度并应用sigmoid激活
+            self.correlation_matrix(spt_fg_fts, qry_fg_fts)
+        )
+
+        if band == "low" or band == "high":  # 判断频带类型
+            weighted_spt = (1 - similarity_matrix) * spt_proj  # 根据相似度加权空间特征
+            weighted_qry = (1 - similarity_matrix) * qry_proj  # 根据相似度加权查询特征
+        else:  # 其他频带类型
+            weighted_spt = similarity_matrix * spt_proj  # 根据相似度加权空间特征
+            weighted_qry = similarity_matrix * qry_proj  # 根据相似度加权查询特征
+
+        combined = torch.cat(  # 将加权后的空间特征与查询特征拼接
+            (weighted_spt, weighted_qry), dim=2
+        )  # 形状: [1, 1024, 900]
+        fused_tensor = F.relu(
+            self.fc_fusion(combined)
+        )  # 使用全连接层对拼接结果进行融合，形状: [1, 512, 900]
+
+        return fused_tensor  # 返回融合后的张量
+
 
 class FAM(nn.Module):  # 定义FAM类（特征注意力匹配模块）
 
@@ -108,7 +199,7 @@ class FAM(nn.Module):  # 定义FAM类（特征注意力匹配模块）
         max_radius = np.sqrt((H // 2) ** 2 + (W // 2) ** 2)  # 计算最大半径
         low_cutoff = max_radius * cutoff  # 低频截止值
         high_cutoff = max_radius * (1 - cutoff)  # 高频截止值
-        # [1,512,32,32]
+
         fft_tensor = torch.fft.fftshift(  # 计算傅里叶变换并进行频移
             torch.fft.fft2(tensor, dim=(-2, -1)), dim=(-2, -1)
         )
@@ -273,15 +364,14 @@ class FADAM(nn.Module):
         # 额外的卷积层用于特征形状转换
         self.reshape_conv = nn.Conv2d(feature_dim, feature_dim, kernel_size=1)
 
-    def forward(self, fts):
+    def forward(self, sp_fts):
         """
         用于清洗域相关信息
 
         输入特征要求 b,512,n n可以为任意值
-        修改为输入特征 b,512,64,64
 
         """
-        spt_fg_fts_low, spt_fg_fts_mid, spt_fg_fts_high = self.FAM(fts)
+        spt_fg_fts_low, spt_fg_fts_mid, spt_fg_fts_high = self.FAM(sp_fts)
         # logger.debug("FAM: ", spt_fg_fts_low.shape)
         fused_fts = self.MSFM(spt_fg_fts_low, spt_fg_fts_mid, spt_fg_fts_high)
         # logger.debug("MSFM: ", fused_fts.shape)

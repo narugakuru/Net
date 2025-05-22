@@ -220,6 +220,32 @@ class FewShotSeg(nn.Module):
 
         return output, align_loss / supp_bs, aux_loss / supp_bs  # 返回输出和损失
 
+    def masked_average_pooling(self, feature, mask):
+        # 得到一个原型(batch_size, channels)
+        mask = F.interpolate(
+            mask.unsqueeze(1),
+            size=feature.shape[-2:],
+            mode="bilinear",
+            align_corners=True,
+        )
+        masked_feature = torch.sum(feature * mask, dim=(2, 3)) / (
+            mask.sum(dim=(2, 3)) + 1e-5
+        )
+        return masked_feature
+
+    def masked_feature(self, feature, mask):
+        # 调整mask尺寸以匹配feature的空间维度
+        mask = F.interpolate(
+            mask.unsqueeze(1),  # 增加通道维度 (B,1,H,W)
+            size=feature.shape[-2:],  # 匹配feature的高宽
+            mode="bilinear",
+            align_corners=True,
+        )
+
+        # 直接返回mask区域的特征 (B,C,H,W)
+        masked_feature = feature * mask
+        return masked_feature
+
     def getPred(self, fts, prototype, thresh):
         """
         计算特征与原型之间的距离
@@ -252,7 +278,7 @@ class FewShotSeg(nn.Module):
                 期望形状: 1 x H x W
 
         Returns:
-            masked_fts: 掩模后的特征
+            masked_fts: 1 x C
         """
 
         fts = F.interpolate(
@@ -264,11 +290,11 @@ class FewShotSeg(nn.Module):
             mask[None, ...].sum(dim=(-2, -1)) + 1e-5
         )  # 1 x C
 
-        return masked_fts  # 返回前景特征
+        return masked_fts  # 返回前景特征原型
 
     def getPrototype(self, fg_fts):
         """
-        通过平均特征获得原型
+        通过平均特征获得原型，把所有shot原型累计求一个平均
 
         Args:
             fg_fts: 每个方式/shot的前景特征列表
@@ -284,7 +310,7 @@ class FewShotSeg(nn.Module):
             for way in fg_fts
         ]  # 连接所有前景特征并计算平均值
 
-        return fg_prototypes  # 返回前景原型
+        return fg_prototypes  # 返回平均的前景原型
 
     def alignLoss(self, supp_fts, qry_fts, pred, fore_mask):
         """
@@ -648,7 +674,7 @@ class FewShotSeg(nn.Module):
         prototypes = [
             sum([shot for shot in way]) / n_shots for way in fg_fts
         ]  # 计算平均原型
-        return prototypes  # 返回平均原型
+        return prototypes  # 返回平均原型 [1，102，512]
 
     def get_fg_sim(self, fts, prototypes):
         """
@@ -668,7 +694,7 @@ class FewShotSeg(nn.Module):
         pts_ = F.normalize(prototypes, dim=-1)  # 归一化原型
         fg_sim = torch.matmul(fts_, pts_.transpose(0, 1)).permute(
             0, 3, 1, 2
-        )  # 计算相似度
+        )  # 计算相似度 102,64,64
         fg_sim = self.decoder1(fg_sim)  # 解码
 
         return fg_sim  # 返回前景相似度

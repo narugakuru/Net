@@ -22,7 +22,7 @@ if __name__ == "__main__":
         }
         # 运行脚本
         print("Running training...")
-        # run_train(train_config_updates)
+        run_train(train_config_updates)
 
         #### 验证模型测试 #####
         # 获取最新实验的所有模型文件
@@ -37,7 +37,7 @@ if __name__ == "__main__":
             test_config_updates = {
                 # "reload_model_path": snapshot,
                 # "reload_model_path": f"{prepath}/4/snapshots/7000.pth",
-                "reload_model_path": "./runs/GMRD_CHAOST2_CV1_train/2/snapshots/10000.pth",
+                "reload_model_path": "./runs/GMRD_CHAOST2_CV1_train/2/snapshots/10000.pth",  # dice 83.15/84.19精度
                 "mode": "val",
                 "dataset": dataset,
                 "eval_fold": eval_fold,
