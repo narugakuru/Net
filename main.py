@@ -18,7 +18,7 @@ if __name__ == "__main__":
             "mode": "train",
             "eval_fold": eval_fold,
             "dataset": dataset,
-            "save_snapshot_every": 2000,
+            "save_snapshot_every": 1000,
         }
         # 运行脚本
         print("Running training...")

@@ -12,7 +12,7 @@ import numpy as np
 import random
 import cv2
 from models.moudles import MLP, Decoder
-from models.FAMMoudles import FADAM
+from models.FAMMoudles import *
 
 class FewShotSeg(nn.Module):
 
@@ -34,7 +34,7 @@ class FewShotSeg(nn.Module):
         self.mlp2 = MLP(256, self.bg_num)  # 多层感知机，用于背景
         self.decoder1 = Decoder(self.fg_num)  # 前景解码器
         self.decoder2 = Decoder(self.bg_num)  # 背景解码器
-        self.FADAM = FADAM()
+        self.FADAM = FADAM_2D_Optimized()
 
     def forward(self, supp_imgs, supp_mask, qry_imgs, train=False):
         """
@@ -127,15 +127,15 @@ class FewShotSeg(nn.Module):
 
             # supp_fts torch.Size([1, 1, 3, 512, 64, 64])
             # supp_mask torch.Size([1, 1, 3, 256, 256])
-            spt_fg_fts = [  # 获取支持前景特征 torch.Size([1, 512, 44])
-                [
-                    self.get_fg(
-                        supp_fts[[epi], way, shot], supp_mask[[epi], way, shot]
-                    )  # 获取每个样本的前景特征
-                    for shot in range(self.n_shots)
-                ]
-                for way in range(self.n_ways)
-            ]  # (1, 512, N)
+            # spt_fg_fts = [  # 获取支持前景特征 torch.Size([1, 512, 44])
+            #     [
+            #         self.get_fg(
+            #             supp_fts[[epi], way, shot], supp_mask[[epi], way, shot]
+            #         )  # 获取每个样本的前景特征
+            #         for shot in range(self.n_shots)
+            #     ]
+            #     for way in range(self.n_ways)
+            # ]  # (1, 512, N)
 
             # qry_fg_fts = [  # 获取查询前景特征 torch.Size([1, 512, 65536])
             #     self.get_fg(qry_fts[way], qry_pred_coarse[epi])
@@ -146,7 +146,7 @@ class FewShotSeg(nn.Module):
             # FAM要求输入是b,512,n，FAM转为b,512,900。
             # MSFM输出是torch.Size([1, 512, 1800])
             # FADAM输出 1,1,1,512,64,64
-            supp_fts = self.FADAM(spt_fg_fts)
+            supp_fts = self.FADAM(supp_fts[0])
 
             # GMRD 生成多个原型
             ####################################################################

@@ -3,310 +3,292 @@ import torch.nn as nn  # 导入PyTorch的神经网络模块
 import torch.nn.functional as F  # 导入PyTorch的函数式API模块
 import numpy as np  # 导入NumPy库
 
+# from .encoder import Res101Encoder  # 从当前包导入Res50Encoder类（被注释掉）
+# from utils import set_logger
 
-class FAM(nn.Module):  # 定义FAM类（特征注意力匹配模块）
+# logger = set_logger()
 
-    def __init__(self, feature_dim=512, N=1024):  # 初始化方法
+
+class FAM_Optimized(nn.Module):  # 优化后的FAM模块
+
+    def __init__(self, feature_dim=512):
         """
+        优化后的FAM模块，直接处理2D图像特征
         参数:
-            feature_dim 在这里没有使用到，只是为了保持一致
-            N 池化层，AttentionMacthcing的序列长度控制参数
-        返回:
-
+            feature_dim: 特征维度，默认512
         """
-        super(FAM, self).__init__()  # 调用父类的初始化方法
-        if torch.cuda.is_available():  # 检查CUDA是否可用
-            self.device = torch.device("cuda")  # 如果可用，设置为CUDA设备
+        super(FAM_Optimized, self).__init__()
+        if torch.cuda.is_available():
+            self.device = torch.device("cuda")
         else:
-            self.device = torch.device("cpu")  # 否则，设置为CPU设备
+            self.device = torch.device("cpu")
 
-        # self.attention_matching = AttentionMacthcing(
-        #     feature_dim, N
-        # )  # 实例化特征注意力匹配模块
-        self.adapt_pooling = nn.AdaptiveAvgPool1d(N)  # 定义自适应平均池化层
-
-    def forward(self, spt_fg_fts):  # 前向传播方法
+    def forward(self, image_features):
         """
-        前向传播FAM模块。
+        直接对2D图像特征进行频率分离
 
         参数:
-            # spt_fg_fts torch.Size([1, 512, 5650]) qry_fg_fts torch.Size([1, 512, 65536])
-            spt_fg_fts (list): 空间前景特征的列表。
-            qry_fg_fts (list): 查询前景特征的列表。
-            torch.Size([1, 1, 1, 512, 900]) --> torch.Size([1, 512, 900])
+            image_features: torch.Size([1, 1, 512, 64, 64]) 或 torch.Size([1, 512, 64, 64])
 
         返回:
-            tuple: 由融合后的低频、中频和高频特征组成的元组。
+            tuple: (low_freq, mid_freq, high_freq) 每个都是 [B, C, H, W] 格式
         """
+        # 处理输入维度 - 支持4D和5D输入
+        if image_features.dim() == 5:  # [1, 1, 512, 64, 64]
+            B, _, C, H, W = image_features.shape
+            image_features = image_features.squeeze(1)  # -> [1, 512, 64, 64]
+        elif image_features.dim() == 4:  # [1, 512, 64, 64]
+            B, C, H, W = image_features.shape
+        else:
+            raise ValueError(f"Expected 4D or 5D input, got {image_features.dim()}D")
 
-        spt_fg_fts = [
-            [self.adapt_pooling(fts) for fts in way] for way in spt_fg_fts
-        ]  # 自适应池化空间前景特征
-
-        # 获取高中低频 全部都是torch.Size([1, 512, 900])
-        spt_fg_fts_low, spt_fg_fts_mid, spt_fg_fts_high = (
-            self.filter_frequency_bands(  # 过滤空间前景特征的频带
-                spt_fg_fts[0][0], cutoff=0.30
-            )
+        # 直接对2D特征进行频率分离
+        low_freq, mid_freq, high_freq = self.filter_frequency_bands_2d(
+            image_features, cutoff=0.30
         )
 
-        return (
-            spt_fg_fts_low,
-            spt_fg_fts_mid,
-            spt_fg_fts_high,
-        )  # 返回融合后的低、中、高频特征
+        return low_freq, mid_freq, high_freq
 
-    def reshape_to_square(self, tensor):  # 将张量重塑为方形的方法
+    def filter_frequency_bands_2d(self, tensor, cutoff=0.3):
         """
-        将张量重塑为方形形状。
+        直接对2D图像特征进行频率带分离
 
         参数:
-            tensor (torch.Tensor): 输入张量，形状为(B, C, N)，其中B是批量大小，
-                C是通道数，N是元素数量。
+            tensor: [B, C, H, W] 格式的2D图像特征
+            cutoff: 频率分离的截止比例
 
         返回:
-            tuple: 返回一个元组：
-                - square_tensor (torch.Tensor): 重塑后的方形张量，形状为(B, C, side_length, side_length)，
-                  其中side_length是方形张量每一边的长度。
-                - side_length (int): 方形张量每一边的长度。
-                - side_length (int): 方形张量每一边的长度。
-                - N (int): 输入张量中的原始元素数量。
+            low_freq, mid_freq, high_freq: 分离后的频率特征
         """
-        B, C, N = tensor.shape  # 解包输入张量的形状
-        side_length = int(np.ceil(np.sqrt(N)))  # 计算方形张量边长
-        padded_length = side_length**2  # 计算填充的长度
+        tensor = tensor.float()
+        B, C, H, W = tensor.shape
 
-        padded_tensor = torch.zeros(
-            (B, C, padded_length), device=tensor.device
-        )  # 创建填充张量
-        padded_tensor[:, :, :N] = tensor  # 将原始张量填充到填充张量中
+        # 计算频率域的最大半径
+        max_radius = np.sqrt((H // 2) ** 2 + (W // 2) ** 2)
+        low_cutoff = max_radius * cutoff  # 低频截止
+        high_cutoff = max_radius * (1 - cutoff)  # 高频截止
 
-        square_tensor = padded_tensor.view(
-            B, C, side_length, side_length
-        )  # 变形为方形张量
-
-        return square_tensor, side_length, side_length, N  # 返回重塑后的张量及相关信息
-
-    def filter_frequency_bands(self, tensor, cutoff=0.2):  # 过滤频带的方法
-        """
-        将输入张量过滤为低、中和高频带。
-
-        参数:
-            tensor (torch.Tensor): 要过滤的输入张量。
-            cutoff (float, optional): 频带过滤的截止值。
-
-        返回:
-            torch.Tensor: 输入张量的低频带。
-            torch.Tensor: 输入张量的中频带。
-            torch.Tensor: 输入张量的高频带。
-        """
-
-        tensor = tensor.float()  # 转换为浮点型
-        tensor, H, W, N = self.reshape_to_square(tensor)  # 将张量重塑为方形
-        B, C, _, _ = tensor.shape  # 解包张量的形状
-
-        max_radius = np.sqrt((H // 2) ** 2 + (W // 2) ** 2)  # 计算最大半径
-        low_cutoff = max_radius * cutoff  # 低频截止值
-        high_cutoff = max_radius * (1 - cutoff)  # 高频截止值
-        # [1,512,32,32]
-        fft_tensor = torch.fft.fftshift(  # 计算傅里叶变换并进行频移
+        # 2D FFT变换
+        fft_tensor = torch.fft.fftshift(
             torch.fft.fft2(tensor, dim=(-2, -1)), dim=(-2, -1)
         )
 
-        def create_filter(  # 创建滤波器的内部方法
-            shape, low_cutoff, high_cutoff, mode="band", device=self.device
-        ):
-            rows, cols = shape  # 获取形状
-            center_row, center_col = rows // 2, cols // 2  # 计算中心位置
-
-            y, x = torch.meshgrid(  # 创建网格坐标
-                torch.arange(rows, device=device),
-                torch.arange(cols, device=device),
-                indexing="ij",
-            )
-            distance = torch.sqrt(
-                (y - center_row) ** 2 + (x - center_col) ** 2
-            )  # 计算距离
-
-            mask = torch.zeros(
-                (rows, cols), dtype=torch.float32, device=device
-            )  # 创建掩码
-
-            if mode == "low":  # 低频模式
-                mask[distance <= low_cutoff] = 1  # 在低频截止值内的mask设为1
-            elif mode == "high":  # 高频模式
-                mask[distance >= high_cutoff] = 1  # 在高频截止值外的mask设为1
-            elif mode == "band":  # 带通模式
-                mask[(distance > low_cutoff) & (distance < high_cutoff)] = (
-                    1  # 在频带内的mask设为1
-                )
-
-            return mask  # 返回掩码
-
-        low_pass_filter = create_filter(
+        # 创建频率滤波器
+        low_pass_filter = self.create_frequency_filter(
             (H, W), low_cutoff, None, mode="low"
-        )[  # 创建低通滤波器
+        )[
             None, None, :, :
-        ]
-        high_pass_filter = create_filter(
+        ]  # [1, 1, H, W]
+
+        high_pass_filter = self.create_frequency_filter(
             (H, W), None, high_cutoff, mode="high"
-        )[  # 创建高通滤波器
-            None, None, :, :
-        ]
-        mid_pass_filter = create_filter(
+        )[None, None, :, :]
+
+        mid_pass_filter = self.create_frequency_filter(
             (H, W), low_cutoff, high_cutoff, mode="band"
-        )[  # 创建带通滤波器
-            None, None, :, :
-        ]
+        )[None, None, :, :]
 
-        low_freq_fft = fft_tensor * low_pass_filter  # 通过低通滤波器获得低频傅里叶变换
-        high_freq_fft = (
-            fft_tensor * high_pass_filter
-        )  # 通过高通滤波器获得高频傅里叶变换
-        mid_freq_fft = fft_tensor * mid_pass_filter  # 通过带通滤波器获得中频傅里叶变换
+        # 应用滤波器
+        low_freq_fft = fft_tensor * low_pass_filter
+        high_freq_fft = fft_tensor * high_pass_filter
+        mid_freq_fft = fft_tensor * mid_pass_filter
 
-        low_freq_tensor = torch.fft.ifft2(  # 反傅里叶变换获得低频张量
+        # 反FFT变换，保持2D格式
+        low_freq_tensor = torch.fft.ifft2(
             torch.fft.ifftshift(low_freq_fft, dim=(-2, -1)), dim=(-2, -1)
         ).real
-        high_freq_tensor = torch.fft.ifft2(  # 反傅里叶变换获得高频张量
+
+        high_freq_tensor = torch.fft.ifft2(
             torch.fft.ifftshift(high_freq_fft, dim=(-2, -1)), dim=(-2, -1)
         ).real
-        mid_freq_tensor = torch.fft.ifft2(  # 反傅里叶变换获得中频张量
+
+        mid_freq_tensor = torch.fft.ifft2(
             torch.fft.ifftshift(mid_freq_fft, dim=(-2, -1)), dim=(-2, -1)
         ).real
 
-        low_freq_tensor = low_freq_tensor.view(B, C, H * W)[
-            :, :, :N
-        ]  # 调整低频张量的形状
-        high_freq_tensor = high_freq_tensor.view(B, C, H * W)[
-            :, :, :N
-        ]  # 调整高频张量的形状
-        mid_freq_tensor = mid_freq_tensor.view(B, C, H * W)[
-            :, :, :N
-        ]  # 调整中频张量的形状
+        return low_freq_tensor, mid_freq_tensor, high_freq_tensor
 
-        return (
-            low_freq_tensor,
-            mid_freq_tensor,
-            high_freq_tensor,
-        )  # 返回低、中、高频张量
-
-
-class CrossAttentionFusion(nn.Module):  # 定义CrossAttentionFusion类
-    def __init__(self, embed_dim):  # 初始化方法
-        super(CrossAttentionFusion, self).__init__()  # 调用父类的初始化方法
-        self.query = nn.Linear(embed_dim, embed_dim)  # 定义查询的线性层
-        self.key = nn.Linear(embed_dim, embed_dim)  # 定义键的线性层
-        self.value = nn.Linear(embed_dim, embed_dim)  # 定义值的线性层
-        self.softmax = nn.Softmax(dim=-1)  # 定义softmax层
-
-    def forward(self, Q_feature, K_feature):  # 前向传播方法
-        B, C, N = Q_feature.shape  # 解包查询特征的形状
-
-        Q_feature = Q_feature.permute(0, 2, 1)  # 转置查询特征
-        K_feature = K_feature.permute(0, 2, 1)  # 转置键特征
-
-        Q = self.query(Q_feature)  # 形状: [B, N, C]
-        K = self.key(K_feature)  # 形状: [B, N, C]
-        V = self.value(K_feature)  # 形状: [B, N, C]
-
-        attention_scores = torch.matmul(
-            Q, K.transpose(-2, -1)
-        ) / torch.sqrt(  # 计算注意力分数
-            torch.tensor(C, dtype=torch.float32)
-        )
-        attention_weights = self.softmax(
-            attention_scores
-        )  # 应用softmax获得注意力权重，形状: [B, N, N]
-
-        attended_features = torch.matmul(
-            attention_weights, V
-        )  # 加权特征，形状: [B, N, C]
-        attended_features = attended_features.permute(0, 2, 1)  # 转置
-
-        return attended_features  # 返回加权后的特征
-
-
-class MSFM(nn.Module):  # 定义MSFM类（多尺度特征融合模块）
-    def __init__(self, feature_dim):  # 初始化方法
-        super(MSFM, self).__init__()  # 调用父类的初始化方法
-        self.CA1 = CrossAttentionFusion(feature_dim)  # 实例化第一个交叉注意力融合模块
-        self.CA2 = CrossAttentionFusion(feature_dim)  # 实例化第二个交叉注意力融合模块
-        self.relu = nn.ReLU()  # ReLU激活函数
-
-    def forward(self, low, mid, high):  # 前向传播方法
-        low_new = self.CA1(mid, low)  # 低频特征的注意力融合
-        high_new = self.CA2(mid, high)  # 高频特征的注意力融合
-        fused_features = self.relu(
-            low_new + mid + high_new
-        )  # 融合低、中、高频特征并激活
-
-        return fused_features  # 返回融合后的特征
-
-
-"""
-class FADAM(nn.Module):
-    def __init__(self, feature_dim=512, N=900):
-        # Frequency-Aware Domain Adaptation Module (FADAM)
-        super(FADAM, self).__init__()
-        self.FAM = FAM(feature_dim=512, N=N)  # 实例化特征注意力匹配模块
-        self.MSFM = MSFM(feature_dim=512)  # 实例化多尺度特征融合模块
-
-    def forward(self, sp_fts, qry_fts):
-        # n,512,900
-        fused_fts_low, fused_fts_mid, fused_fts_high = self.FAM(  # 融合特征
-            sp_fts, qry_fts
-        )
-        # n,512,1800
-        fused_fts = self.MSFM(fused_fts_low, fused_fts_mid, fused_fts_high)
-        return fused_fts 
-"""
-
-
-# Frequency-Aware Domain Adaptation Module (FADAM)
-class FADAM(nn.Module):
-
-    def __init__(self, feature_dim=512, N=1024):
-        super(FADAM, self).__init__()
-        self.FAM = FAM(feature_dim=512, N=N)  # 实例化特征注意力匹配模块
-        self.MSFM = MSFM(feature_dim=512)  # 实例化多尺度特征融合模块
-        # 额外的卷积层用于特征形状转换
-        self.reshape_conv = nn.Conv2d(feature_dim, feature_dim, kernel_size=1)
-
-    def forward(self, fts):
+    def create_frequency_filter(self, shape, low_cutoff, high_cutoff, mode="band"):
         """
-        用于清洗域相关信息
+        创建频率域滤波器
 
-        输入特征要求 b,512,n n可以为任意值
-        修改为输入特征 b,512,64,64
+        参数:
+            shape: (H, W) 图像尺寸
+            low_cutoff: 低频截止值
+            high_cutoff: 高频截止值
+            mode: 滤波器类型 ("low", "high", "band")
 
+        返回:
+            mask: 频率滤波器掩码
         """
-        spt_fg_fts_low, spt_fg_fts_mid, spt_fg_fts_high = self.FAM(fts)
-        # logger.debug("FAM: ", spt_fg_fts_low.shape)
-        fused_fts = self.MSFM(spt_fg_fts_low, spt_fg_fts_mid, spt_fg_fts_high)
-        # logger.debug("MSFM: ", fused_fts.shape)
-        # ([1, 512, 2304])
-        # 将1D特征转换为2D形状
-        # torch.Size([1, 512, 2n]) -> [1, 512, 32, 32]
-        # 动态重塑特征为二维
-        B, C, N = fused_fts.shape  # B: Batch, C: Channels, N: 第三维
-        side_length = int(np.ceil(np.sqrt(N)))  # 计算正方形边长
-        if side_length**2 != N:
-            # 补齐到正方形
-            padded_fts = torch.zeros((B, C, side_length**2), device=fused_fts.device)
-            padded_fts[:, :, :N] = fused_fts
-            fused_fts = padded_fts
-        fused_fts_square = fused_fts.view(B, C, side_length, side_length)
+        rows, cols = shape
+        center_row, center_col = rows // 2, cols // 2
 
-        # logger.debug("1D to 2D: ", fused_fts_square.shape)
-        # 使用卷积处理维度
-        fused_fts_reshaped = F.interpolate(
-            fused_fts_square, size=(64, 64), mode="bilinear", align_corners=True
+        # 创建距离矩阵
+        y, x = torch.meshgrid(
+            torch.arange(rows, device=self.device),
+            torch.arange(cols, device=self.device),
+            indexing="ij",
         )
-        output = self.reshape_conv(fused_fts_reshaped)
+        distance = torch.sqrt((y - center_row) ** 2 + (x - center_col) ** 2)
 
-        # 在这里调整 output 的维度到 [1, 1, 1, 512, 64, 64]
-        output = output.unsqueeze(0).unsqueeze(0)  # 在第1和第2维度插入两层
-        # logger.debug("FADAM output reshaped: ", output.shape)
+        # 创建滤波器掩码
+        mask = torch.zeros((rows, cols), dtype=torch.float32, device=self.device)
+
+        if mode == "low":
+            mask[distance <= low_cutoff] = 1
+        elif mode == "high":
+            mask[distance >= high_cutoff] = 1
+        elif mode == "band":
+            mask[(distance > low_cutoff) & (distance < high_cutoff)] = 1
+
+        return mask
+
+
+class CrossAttentionFusion_2D(nn.Module):
+    """
+    适配2D特征的交叉注意力融合模块
+    """
+
+    def __init__(self, embed_dim):
+        super(CrossAttentionFusion_2D, self).__init__()
+        self.query = nn.Conv2d(embed_dim, embed_dim, 1)  # 1x1卷积替代线性层
+        self.key = nn.Conv2d(embed_dim, embed_dim, 1)
+        self.value = nn.Conv2d(embed_dim, embed_dim, 1)
+        self.softmax = nn.Softmax(dim=-1)
+
+    def forward(self, Q_feature, K_feature):
+        """
+        参数:
+            Q_feature, K_feature: [B, C, H, W]
+        返回:
+            attended_features: [B, C, H, W]
+        """
+        B, C, H, W = Q_feature.shape
+
+        # 生成查询、键、值
+        Q = self.query(Q_feature).view(B, C, -1).permute(0, 2, 1)  # [B, HW, C]
+        K = self.key(K_feature).view(B, C, -1).permute(0, 2, 1)  # [B, HW, C]
+        V = self.value(K_feature).view(B, C, -1).permute(0, 2, 1)  # [B, HW, C]
+
+        # 计算注意力
+        attention_scores = torch.matmul(Q, K.transpose(-2, -1)) / np.sqrt(C)
+        attention_weights = self.softmax(attention_scores)  # [B, HW, HW]
+
+        # 应用注意力
+        attended_features = torch.matmul(attention_weights, V)  # [B, HW, C]
+        attended_features = attended_features.permute(0, 2, 1).view(B, C, H, W)
+
+        return attended_features
+
+
+class EfficientCrossAttentionFusion_2D(nn.Module):
+    """
+    高效的交叉注意力融合模块
+    """
+
+    def __init__(self, embed_dim, reduction_ratio=4):
+        super(EfficientCrossAttentionFusion_2D, self).__init__()
+        reduced_dim = embed_dim // reduction_ratio
+
+        self.query = nn.Sequential(nn.Conv2d(embed_dim, reduced_dim, 1), nn.ReLU())
+        self.key = nn.Sequential(nn.Conv2d(embed_dim, reduced_dim, 1), nn.ReLU())
+        self.value = nn.Conv2d(embed_dim, embed_dim, 1)
+        self.output_proj = nn.Conv2d(embed_dim, embed_dim, 1)
+
+    def forward(self, Q_feature, K_feature):
+        """
+        使用降维的高效注意力计算
+        Q=mid
+        K,V=low/high
+        """
+        B, C, H, W = Q_feature.shape
+
+        # 降维的查询和键
+        Q = self.query(Q_feature).view(B, -1, H * W)  # [B, C//4, HW]
+        K = self.key(K_feature).view(B, -1, H * W)  # [B, C//4, HW]
+        V = self.value(K_feature).view(B, C, H * W)  # [B, C, HW]
+
+        # 计算注意力权重
+        attention_scores = torch.bmm(Q.transpose(1, 2), K) / np.sqrt(
+            Q.size(1)
+        )  # [B, HW, HW]
+        attention_weights = F.softmax(attention_scores, dim=-1)
+
+        # 应用注意力
+        attended_features = torch.bmm(
+            V, attention_weights.transpose(1, 2)
+        )  # [B, C, HW]
+        attended_features = attended_features.view(B, C, H, W)
+
+        return self.output_proj(attended_features)
+
+
+class MSFM_2D(nn.Module):
+    """
+    适配2D特征的多尺度特征融合模块
+    """
+
+    def __init__(self, feature_dim):
+        super(MSFM_2D, self).__init__()
+        self.CA1 = EfficientCrossAttentionFusion_2D(feature_dim)
+        self.CA2 = EfficientCrossAttentionFusion_2D(feature_dim)
+        self.relu = nn.ReLU()
+
+    def forward(self, low, mid, high):
+        """
+        参数:
+            low, mid, high: [B, C, H, W] 格式的特征
+        返回:
+            fused_features: [B, C, H, W]
+        """
+        low_new = self.CA1(mid, low)
+        high_new = self.CA2(mid, high)
+        fused_features = self.relu(low_new + mid + high_new)
+
+        return fused_features
+
+
+class FADAM_2D_Optimized(nn.Module):
+    """
+    显存优化版本的FADAM模块
+    """
+
+    def __init__(self, feature_dim=512, target_size=32):
+        super(FADAM_2D_Optimized, self).__init__()
+        self.FAM = FAM_Optimized(feature_dim=feature_dim)
+        self.MSFM = MSFM_2D(feature_dim=feature_dim)
+        self.target_size = target_size
+
+        # 添加降维和升维模块
+        self.downsample = nn.AdaptiveAvgPool2d((target_size, target_size))
+        self.upsample = nn.Upsample(size=(64, 64), mode="bilinear", align_corners=False)
+
+    def forward(self, image_features):
+        """
+        参数:
+            image_features: [1, 1, 512, 64, 64] 或 [1, 512, 64, 64]
+        """
+        # 处理输入维度
+        if image_features.dim() == 5:
+            _, B, C, H, W = image_features.shape
+            image_features = image_features.squeeze(1)
+        else:
+            B, C, H, W = image_features.shape
+
+        # 降维到32x32进行处理
+        downsampled_features = self.downsample(image_features)  # [B, C, 32, 32]
+
+        # FAM频率分离
+        low_freq, mid_freq, high_freq = self.FAM(downsampled_features)
+
+        # MSFM特征融合（在32x32尺寸下）
+        fused_features = self.MSFM(low_freq, mid_freq, high_freq)
+
+        # 上采样回64x64
+        output_features = self.upsample(fused_features)  # [B, C, 64, 64]
+
+        # 调整输出格式
+        output = output_features.unsqueeze(0).unsqueeze(0)  # [1, 1, B, C, H, W]
 
         return output
